@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/salesConfigBackgroundColor"
+    android:fillViewport="true"
+    tools:context="com.example.kaushiknsanji.storeapp.ui.inventory.config.SalesConfigActivityFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/sales_config_vertical_padding"
+        android:paddingTop="@dimen/sales_config_vertical_padding">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_sales_config_left_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/guideline_sales_config_horizontal_keyline" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_sales_config_right_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/guideline_sales_config_horizontal_keyline" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_sales_config_product_info"
+            style="@style/BaseCardLightStyle"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintRight_toRightOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_sales_config_product_edit"
+                    android:layout_width="@dimen/btn_material_size"
+                    android:layout_height="@dimen/btn_material_size"
+                    android:background="?attr/selectableItemBackground"
+                    android:src="@drawable/layer_sales_config_edit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_sales_config_product_name"
+                    android:layout_width="@dimen/match_constraint_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/text_sales_config_product_name_margin_right"
+                    android:layout_marginRight="@dimen/text_sales_config_product_name_margin_right"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toStartOf="@+id/imgbtn_sales_config_product_edit"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/imgbtn_sales_config_product_edit"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@tools:sample/full_names" />
+
+                <TextView
+                    android:id="@+id/text_sales_config_product_sku"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sales_config_same_section_vertical_margin"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_sales_config_product_sku_size"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="@+id/text_sales_config_product_name"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="@+id/text_sales_config_product_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sales_config_product_name"
+                    tools:text="A12233455" />
+
+                <TextView
+                    android:id="@+id/text_sales_config_product_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sales_config_same_section_vertical_margin"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="italic"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toStartOf="@+id/imgbtn_sales_config_product_edit"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/imgbtn_sales_config_product_edit"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sales_config_product_sku"
+                    tools:text="Sports" />
+
+                <TextView
+                    android:id="@+id/text_sales_config_product_desc"
+                    style="@style/ConstraintCenterHorizontalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/text_sales_config_product_desc_horizontal_margin"
+                    android:layout_marginLeft="@dimen/text_sales_config_product_desc_horizontal_margin"
+                    android:layout_marginRight="@dimen/text_sales_config_product_desc_horizontal_margin"
+                    android:layout_marginStart="@dimen/text_sales_config_product_desc_horizontal_margin"
+                    android:layout_marginTop="@dimen/sales_config_same_section_vertical_margin"
+                    android:background="@drawable/shape_sales_config_product_desc_box"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sales_config_product_category"
+                    tools:text="@tools:sample/lorem" />
+
+                <TableLayout
+                    android:id="@+id/tablelayout_sales_config_product_attrs"
+                    style="@style/ConstraintCenterHorizontalStyle"
+                    android:layout_width="@dimen/match_constraint_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sales_config_same_section_vertical_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sales_config_product_desc" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_sales_config_product_total_availability"
+            style="@style/BaseCardLightStyle"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sales_config_same_section_vertical_margin"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintRight_toRightOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/card_sales_config_product_info">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_sales_config_total_available_title"
+                    style="@style/ConstraintTopCenterHorizontalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sales_config_title_total_available"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    app:layout_constrainedWidth="true" />
+
+                <TextView
+                    android:id="@+id/text_sales_config_total_available_quantity"
+                    style="@style/ConstraintCenterHorizontalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sales_config_same_section_vertical_margin"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@android:color/holo_green_dark"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sales_config_total_available_title"
+                    tools:text="888" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <View
+            android:id="@+id/divider_sales_config_info_suppliers_1"
+            style="@style/BaseSalesConfigDividerStyle.Divider1"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintRight_toRightOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/card_sales_config_product_total_availability" />
+
+        <View
+            android:id="@+id/divider_sales_config_info_suppliers_2"
+            style="@style/BaseSalesConfigDividerStyle.Divider2"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintRight_toRightOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/divider_sales_config_info_suppliers_1" />
+
+        <TextView
+            android:id="@+id/text_sales_config_suppliers_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sales_config_same_section_vertical_margin"
+            android:gravity="center"
+            android:text="@string/sales_config_title_suppliers_section"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintRight_toRightOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/divider_sales_config_info_suppliers_2" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_sales_config_suppliers"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sales_config_vertical_margin"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintRight_toRightOf="@+id/guideline_sales_config_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_sales_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/text_sales_config_suppliers_title"
+            tools:listitem="@layout/item_sales_config_supplier" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>

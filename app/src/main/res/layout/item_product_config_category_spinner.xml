@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/text1"
+    style="@style/Widget.AppCompat.TextView.SpinnerItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/productConfigInputFieldsBackgroundColor"
+    android:ellipsize="marquee"
+    android:padding="@dimen/spinner_product_config_category_item_padding"
+    android:singleLine="true"
+    android:textAlignment="inherit"
+    android:textColor="@android:color/black"
+    tools:text="@tools:sample/full_names" />

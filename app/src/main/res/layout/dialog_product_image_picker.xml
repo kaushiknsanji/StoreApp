@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ImagePickerCardStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_picker_camera"
+            style="@style/ImagePickerIconStyle"
+            app:layout_constraintBottom_toTopOf="@+id/image_picker_gallery"
+            app:layout_constraintEnd_toStartOf="@+id/text_picker_camera_label"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/text_picker_camera_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_dialog_image_picker_camera" />
+
+        <TextView
+            android:id="@+id/text_picker_camera_label"
+            style="@style/ImagePickerTextLabelStyle"
+            android:layout_marginLeft="@dimen/text_image_picker_content_margin"
+            android:layout_marginStart="@dimen/text_image_picker_content_margin"
+            android:text="@string/product_image_picker_label_camera"
+            app:layout_constraintBottom_toBottomOf="@+id/image_picker_camera"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/image_picker_camera"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_picker_camera"
+            app:layout_constraintTop_toTopOf="@+id/image_picker_camera" />
+
+        <View
+            android:id="@+id/view_picker_camera_overlay"
+            style="@style/ConstraintCenterHorizontalStyle"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="@dimen/match_constraint_0dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="@+id/image_picker_camera"
+            app:layout_constraintTop_toTopOf="@+id/image_picker_camera" />
+
+        <ImageView
+            android:id="@+id/image_picker_gallery"
+            style="@style/ImagePickerIconStyle"
+            android:layout_marginTop="@dimen/text_image_picker_content_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/image_picker_camera"
+            app:layout_constraintLeft_toLeftOf="@+id/image_picker_camera"
+            app:layout_constraintRight_toRightOf="@+id/image_picker_camera"
+            app:layout_constraintStart_toStartOf="@+id/image_picker_camera"
+            app:layout_constraintTop_toBottomOf="@+id/image_picker_camera"
+            app:srcCompat="@drawable/ic_dialog_image_picker_gallery" />
+
+        <TextView
+            android:id="@+id/text_picker_gallery_label"
+            style="@style/ImagePickerTextLabelStyle"
+            android:text="@string/product_image_picker_label_gallery"
+            app:layout_constraintBottom_toBottomOf="@+id/image_picker_gallery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="@+id/text_picker_camera_label"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_picker_camera_label"
+            app:layout_constraintTop_toTopOf="@+id/image_picker_gallery" />
+
+        <View
+            android:id="@+id/view_picker_gallery_overlay"
+            style="@style/ConstraintCenterHorizontalStyle"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="@dimen/match_constraint_0dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="@+id/image_picker_gallery"
+            app:layout_constraintTop_toTopOf="@+id/image_picker_gallery" />
+
+        <Button
+            android:id="@+id/btn_picker_close"
+            style="@style/MaterialLabelButtonStyle"
+            android:layout_marginBottom="@dimen/btn_image_picker_action_margin_bottom"
+            android:layout_marginEnd="@dimen/btn_image_picker_action_margin_right"
+            android:layout_marginRight="@dimen/btn_image_picker_action_margin_right"
+            android:layout_marginTop="@dimen/btn_image_picker_action_margin_top"
+            android:text="@string/product_image_picker_action_close"
+            android:textColor="@color/productImageButtonLabelCloseColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_picker_gallery" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

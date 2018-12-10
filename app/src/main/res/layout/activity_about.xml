@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kaushiknsanji.storeapp.ui.about.AboutActivity">
+
+    <!-- For the Custom Toolbar -->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="@dimen/app_bar_no_elevation">
+
+        <!-- App Toolbar -->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/about_title" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!-- Content of the Activity -->
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_about_gradient_background"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/scrollview_about_content_padding">
+
+            <android.support.v7.widget.CardView
+                style="@style/AboutInfoCardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- For the App Icon -->
+                    <ImageView
+                        android:id="@+id/image_about_app_icon"
+                        style="@style/ConstraintTopCenterHorizontalStyle"
+                        android:layout_width="@dimen/match_constraint_0dp"
+                        android:layout_height="@dimen/match_constraint_0dp"
+                        android:layout_marginTop="@dimen/card_about_internal_content_margin"
+                        app:layout_constraintDimensionRatio="1.6"
+                        app:srcCompat="@drawable/ic_all_store" />
+
+                    <!-- For the Title Text in the content -->
+                    <TextView
+                        android:id="@+id/text_about_content_title"
+                        style="@style/ConstraintCenterHorizontalStyle"
+                        android:layout_width="@dimen/match_constraint_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_about_internal_content_margin"
+                        android:layout_marginLeft="@dimen/card_about_internal_content_margin"
+                        android:layout_marginRight="@dimen/card_about_internal_content_margin"
+                        android:layout_marginStart="@dimen/card_about_internal_content_margin"
+                        android:layout_marginTop="@dimen/card_about_internal_content_margin"
+                        android:gravity="center"
+                        android:text="@string/app_name"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_about_content_title_size"
+                        app:layout_constraintBottom_toTopOf="@+id/text_about_content_intro"
+                        app:layout_constraintTop_toBottomOf="@+id/image_about_app_icon"
+                        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                    <!-- For the introductory text -->
+                    <TextView
+                        android:id="@+id/text_about_content_intro"
+                        style="@style/AboutContentTextStyle"
+                        app:layout_constraintBottom_toTopOf="@+id/text_about_content_desc"
+                        app:layout_constraintEnd_toEndOf="@+id/text_about_content_title"
+                        app:layout_constraintLeft_toLeftOf="@+id/text_about_content_title"
+                        app:layout_constraintRight_toRightOf="@+id/text_about_content_title"
+                        app:layout_constraintStart_toStartOf="@+id/text_about_content_title"
+                        app:layout_constraintTop_toBottomOf="@+id/text_about_content_title"
+                        tools:text="@string/text_about_content_intro" />
+
+                    <!-- For the description text -->
+                    <TextView
+                        android:id="@+id/text_about_content_desc"
+                        style="@style/AboutContentTextStyle"
+                        app:layout_constraintBottom_toTopOf="@+id/image_about_github"
+                        app:layout_constraintEnd_toEndOf="@+id/text_about_content_intro"
+                        app:layout_constraintLeft_toLeftOf="@+id/text_about_content_intro"
+                        app:layout_constraintRight_toRightOf="@+id/text_about_content_intro"
+                        app:layout_constraintStart_toStartOf="@+id/text_about_content_intro"
+                        app:layout_constraintTop_toBottomOf="@+id/text_about_content_intro"
+                        tools:text="@string/text_about_content_desc" />
+
+                    <!-- ImageView linking to the course -->
+                    <ImageView
+                        android:id="@+id/image_about_udacity"
+                        style="@style/AboutClickableImageViewStyle"
+                        app:layout_constraintBottom_toBottomOf="@+id/image_about_github"
+                        app:layout_constraintEnd_toStartOf="@+id/image_about_github"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/image_about_github"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/image_about_github"
+                        app:srcCompat="@drawable/ic_about_udacity" />
+
+                    <!-- ImageView linking to the developer's portfolio -->
+                    <ImageView
+                        android:id="@+id/image_about_github"
+                        style="@style/AboutClickableImageViewStyle"
+                        android:layout_marginBottom="@dimen/card_about_internal_content_margin"
+                        android:layout_marginTop="@dimen/card_about_internal_content_margin"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/image_about_linkedin"
+                        app:layout_constraintLeft_toRightOf="@+id/image_about_udacity"
+                        app:layout_constraintRight_toLeftOf="@+id/image_about_linkedin"
+                        app:layout_constraintStart_toEndOf="@+id/image_about_udacity"
+                        app:layout_constraintTop_toBottomOf="@+id/text_about_content_desc"
+                        app:srcCompat="@drawable/ic_about_github" />
+
+                    <!-- ImageView linking to the developer's bio -->
+                    <ImageView
+                        android:id="@+id/image_about_linkedin"
+                        style="@style/AboutClickableImageViewStyle"
+                        app:layout_constraintBottom_toBottomOf="@+id/image_about_github"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/image_about_github"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/image_about_github"
+                        app:layout_constraintTop_toTopOf="@+id/image_about_github"
+                        app:srcCompat="@drawable/ic_about_linkedin" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </FrameLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

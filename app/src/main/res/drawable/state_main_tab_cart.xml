@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" android:constantSize="true">
+    <item android:drawable="@drawable/ic_main_tab_cart_accent" android:state_enabled="true" android:state_selected="true" />
+    <item android:drawable="@drawable/ic_main_tab_cart_default" android:state_enabled="true" android:state_selected="false" />
+</selector>

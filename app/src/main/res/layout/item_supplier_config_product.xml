@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BaseCardLightStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground">
+
+        <include
+            android:id="@+id/include_all_product_item"
+            style="@style/ConstraintTopCenterHorizontalStyle"
+            layout="@layout/layout_all_product_item" />
+
+        <EditText
+            android:id="@+id/edittext_supplier_config_item_product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/edittext_supplier_config_item_product_price_margin_right"
+            android:layout_marginRight="@dimen/edittext_supplier_config_item_product_price_margin_right"
+            android:layout_marginTop="@dimen/edittext_supplier_config_item_product_price_margin_top"
+            android:background="@drawable/shape_supplier_config_edit_box"
+            android:ems="5"
+            android:inputType="numberDecimal"
+            android:theme="@style/SupplierConfigTextInputTheme"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include_all_product_item" />
+
+        <TextView
+            android:id="@+id/text_supplier_config_item_product_price_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/text_supplier_config_item_product_price_label_margin_right"
+            android:layout_marginRight="@dimen/text_supplier_config_item_product_price_label_margin_right"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            app:layout_constraintBaseline_toBaselineOf="@+id/edittext_supplier_config_item_product_price"
+            app:layout_constraintEnd_toStartOf="@+id/edittext_supplier_config_item_product_price"
+            app:layout_constraintRight_toLeftOf="@+id/edittext_supplier_config_item_product_price"
+            tools:text="@string/supplier_config_item_product_label_price" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

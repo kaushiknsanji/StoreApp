@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/product_item_horizontal_margin"
+    android:layout_marginLeft="@dimen/product_item_horizontal_margin"
+    android:layout_marginRight="@dimen/product_item_horizontal_margin"
+    android:layout_marginStart="@dimen/product_item_horizontal_margin">
+
+    <TextView
+        android:id="@+id/text_product_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/product_item_horizontal_margin"
+        android:layout_marginRight="@dimen/product_item_horizontal_margin"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/image_product_item_photo"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/image_product_item_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/full_names" />
+
+    <ImageView
+        android:id="@+id/image_product_item_photo"
+        android:layout_width="@dimen/match_constraint_0dp"
+        android:layout_height="@dimen/match_constraint_0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="W,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_all_product_default" />
+
+    <TextView
+        android:id="@+id/text_product_item_sku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/product_item_horizontal_margin"
+        android:layout_marginRight="@dimen/product_item_horizontal_margin"
+        android:layout_marginTop="@dimen/product_item_vertical_margin"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_product_item_sku_size"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/image_product_item_photo"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/image_product_item_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_product_item_name"
+        tools:text="A12233455" />
+
+    <TextView
+        android:id="@+id/text_product_item_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/product_item_vertical_margin"
+        android:layout_marginEnd="@dimen/product_item_horizontal_margin"
+        android:layout_marginRight="@dimen/product_item_horizontal_margin"
+        android:layout_marginTop="@dimen/product_item_vertical_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textStyle="italic"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/image_product_item_photo"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/image_product_item_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_product_item_sku"
+        app:layout_constraintVertical_bias="0"
+        tools:text="Sports" />
+
+</android.support.constraint.ConstraintLayout>

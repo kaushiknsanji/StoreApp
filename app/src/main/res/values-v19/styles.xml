@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Makes the content flow behind the status bar -->
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <!-- Style for the Main Activity of the App -->
+    <style name="AppTheme.Main">
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
+
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/imgbtn_item_product_config_attr_remove"
+        style="@style/RemoveCircleImageButtonStyle"
+        app:layout_constraintBottom_toBottomOf="@+id/textinput_item_product_config_attr_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textinput_item_product_config_attr_name" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textinput_item_product_config_attr_name"
+        style="@style/ProductConfigTextInputStyle"
+        android:layout_marginBottom="@dimen/item_product_config_attr_inner_margin"
+        android:layout_marginEnd="@dimen/item_product_config_attr_inner_margin"
+        android:layout_marginLeft="@dimen/item_product_config_attr_inner_margin"
+        android:layout_marginRight="@dimen/item_product_config_attr_inner_margin"
+        android:layout_marginStart="@dimen/item_product_config_attr_inner_margin"
+        android:layout_marginTop="@dimen/item_product_config_attr_inner_margin"
+        android:theme="@style/ProductConfigTextInputTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textinput_item_product_config_attr_value"
+        app:layout_constraintLeft_toRightOf="@+id/imgbtn_item_product_config_attr_remove"
+        app:layout_constraintRight_toLeftOf="@+id/textinput_item_product_config_attr_value"
+        app:layout_constraintStart_toEndOf="@+id/imgbtn_item_product_config_attr_remove"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edittext_item_product_config_attr_name"
+            style="@style/ProductConfigItemAttrEditTextStyle"
+            android:hint="@string/product_config_attr_hint_name" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textinput_item_product_config_attr_value"
+        style="@style/ProductConfigTextInputStyle"
+        android:layout_height="@dimen/match_constraint_0dp"
+        android:layout_marginEnd="@dimen/item_product_config_attr_inner_margin"
+        android:layout_marginLeft="@dimen/item_product_config_attr_inner_margin"
+        android:layout_marginRight="@dimen/item_product_config_attr_inner_margin"
+        android:layout_marginStart="@dimen/item_product_config_attr_inner_margin"
+        android:theme="@style/ProductConfigTextInputTheme"
+        app:layout_constraintBottom_toBottomOf="@+id/textinput_item_product_config_attr_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/textinput_item_product_config_attr_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textinput_item_product_config_attr_name"
+        app:layout_constraintTop_toTopOf="@+id/textinput_item_product_config_attr_name">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edittext_item_product_config_attr_value"
+            style="@style/ProductConfigItemAttrEditTextStyle"
+            android:hint="@string/product_config_attr_hint_value" />
+
+    </android.support.design.widget.TextInputLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ======================================== -->
+    <!-- FOR THE PRODUCT CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ======================================== -->
+    <!-- Input length restriction for the Product SKU field -->
+    <integer name="product_config_sku_max_length">10</integer>
+
+    <!-- ======================================= -->
+    <!-- FOR THE PRODUCT IMAGE ACTIVITY/FRAGMENT -->
+    <!-- ======================================= -->
+    <!-- Number of Grid columns for the RecyclerView of Images -->
+    <integer name="product_image_grid_span_count">4</integer>
+
+    <!-- ========================================= -->
+    <!-- FOR THE SUPPLIER CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ========================================= -->
+    <!-- Input length restriction for the Supplier Code field -->
+    <integer name="supplier_config_code_max_length">12</integer>
+
+    <!-- ================================================= -->
+    <!-- FOR THE SUPPLIER PRODUCT PICKER ACTIVITY/FRAGMENT -->
+    <!-- ================================================= -->
+    <!-- Minimum number of characters required to trigger the search lookup -->
+    <integer name="supplier_config_picker_search_start_threshold">3</integer>
+
+</resources>

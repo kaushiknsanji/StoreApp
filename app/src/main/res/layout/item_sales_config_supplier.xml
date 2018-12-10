@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BaseCardLightStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_sales_config_item_supplier_name_code"
+            style="@style/ConstraintTopCenterHorizontalStyle"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/text_sales_config_item_supplier_name_code_margin_left"
+            android:layout_marginStart="@dimen/text_sales_config_item_supplier_name_code_margin_left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constrainedWidth="true"
+            tools:text="@string/sales_list_item_supplier_name_code_format" />
+
+        <TextView
+            android:id="@+id/text_sales_config_item_supplier_selling_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_sales_config_item_supplier_selling_price_margin_top"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="italic"
+            app:layout_constraintLeft_toLeftOf="@+id/text_sales_config_item_supplier_name_code"
+            app:layout_constraintStart_toStartOf="@+id/text_sales_config_item_supplier_name_code"
+            app:layout_constraintTop_toBottomOf="@+id/text_sales_config_item_supplier_name_code"
+            tools:text="@string/sales_config_item_supplier_selling_price" />
+
+        <EditText
+            android:id="@+id/edittext_sales_config_item_supplier_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/edittext_sales_config_item_supplier_qty_horizontal_margin"
+            android:layout_marginLeft="@dimen/edittext_sales_config_item_supplier_qty_horizontal_margin"
+            android:layout_marginRight="@dimen/edittext_sales_config_item_supplier_qty_horizontal_margin"
+            android:layout_marginStart="@dimen/edittext_sales_config_item_supplier_qty_horizontal_margin"
+            android:layout_marginTop="@dimen/sales_config_vertical_margin"
+            android:background="@drawable/shape_sales_config_item_supplier_qty_edit_box"
+            android:ems="5"
+            android:inputType="number"
+            android:theme="@style/SalesConfigTextInputTheme"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@+id/imgbtn_sales_config_item_supplier_increase_qty"
+            app:layout_constraintLeft_toRightOf="@+id/imgbtn_sales_config_item_supplier_decrease_qty"
+            app:layout_constraintRight_toLeftOf="@+id/imgbtn_sales_config_item_supplier_increase_qty"
+            app:layout_constraintStart_toEndOf="@+id/imgbtn_sales_config_item_supplier_decrease_qty"
+            app:layout_constraintTop_toBottomOf="@+id/text_sales_config_item_supplier_selling_price" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_sales_config_item_supplier_increase_qty"
+            android:layout_width="@dimen/btn_material_size"
+            android:layout_height="@dimen/btn_material_size"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/state_sales_config_increase_qty"
+            app:layout_constraintBottom_toBottomOf="@+id/edittext_sales_config_item_supplier_qty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/edittext_sales_config_item_supplier_qty"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edittext_sales_config_item_supplier_qty"
+            app:layout_constraintTop_toTopOf="@+id/edittext_sales_config_item_supplier_qty" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_sales_config_item_supplier_decrease_qty"
+            android:layout_width="@dimen/btn_material_size"
+            android:layout_height="@dimen/btn_material_size"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/state_sales_config_decrease_qty"
+            app:layout_constraintBottom_toBottomOf="@+id/edittext_sales_config_item_supplier_qty"
+            app:layout_constraintEnd_toStartOf="@+id/edittext_sales_config_item_supplier_qty"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/edittext_sales_config_item_supplier_qty"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edittext_sales_config_item_supplier_qty" />
+
+        <TextView
+            android:id="@+id/text_sales_config_item_supplier_out_of_stock_alert"
+            style="@style/ConstraintCenterHorizontalStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sales_config_same_section_vertical_margin"
+            android:gravity="center"
+            android:text="@string/sales_list_item_out_of_stock"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/salesListItemOutOfStockColor"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toBottomOf="@+id/imgbtn_sales_config_item_supplier_decrease_qty" />
+
+        <View
+            android:id="@+id/divider_sales_config_item_supplier_action_buttons"
+            style="@style/SalesListItemDividerStyle"
+            android:layout_marginTop="@dimen/sales_config_same_section_vertical_margin"
+            app:layout_constraintTop_toBottomOf="@+id/text_sales_config_item_supplier_out_of_stock_alert" />
+
+        <Button
+            android:id="@+id/btn_sales_config_item_supplier_edit"
+            style="@style/MaterialLabelButtonStyle"
+            android:layout_marginTop="@dimen/sales_config_item_supplier_action_buttons_vertical_margin"
+            android:text="@string/action_edit"
+            android:textColor="@color/salesConfigItemSupplierButtonLabelEditColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_sales_config_item_supplier_action_buttons" />
+
+        <Button
+            android:id="@+id/btn_sales_config_item_supplier_procure"
+            style="@style/MaterialLabelButtonStyle"
+            android:layout_marginLeft="@dimen/sales_config_item_supplier_action_buttons_horizontal_margin"
+            android:layout_marginStart="@dimen/sales_config_item_supplier_action_buttons_horizontal_margin"
+            android:layout_marginTop="@dimen/sales_config_item_supplier_action_buttons_vertical_margin"
+            android:drawableLeft="@drawable/ic_sales_config_item_supplier_procure"
+            android:drawablePadding="@dimen/sales_config_item_action_buttons_drawable_padding"
+            android:drawableStart="@drawable/ic_sales_config_item_supplier_procure"
+            android:text="@string/sales_config_item_supplier_action_procure"
+            android:textColor="@color/salesConfigItemSupplierButtonLabelProcureColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/btn_sales_config_item_supplier_edit"
+            app:layout_constraintStart_toEndOf="@+id/btn_sales_config_item_supplier_edit"
+            app:layout_constraintTop_toBottomOf="@+id/divider_sales_config_item_supplier_action_buttons" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

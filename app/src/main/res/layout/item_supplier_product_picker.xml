@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/SupplierProductPickerItemCardStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground">
+
+        <include
+            android:id="@+id/include_all_product_item"
+            style="@style/ConstraintTopCenterHorizontalStyle"
+            layout="@layout/layout_all_product_item"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/image_supplier_product_picker_item_select"
+            style="@style/ConstraintCenterInParentStyle"
+            android:layout_width="@dimen/btn_material_size"
+            android:layout_height="@dimen/btn_material_size"
+            android:src="@drawable/state_all_select_circle" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

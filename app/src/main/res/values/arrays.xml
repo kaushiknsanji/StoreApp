@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Colors used by Swipe Refresh Progress Indicator -->
+    <array name="swipe_refresh_colors">
+        <item>@color/colorPrimary</item>
+        <item>@color/colorAccent</item>
+        <item>#00C853</item>
+        <item>#2962FF</item>
+    </array>
+
+</resources>

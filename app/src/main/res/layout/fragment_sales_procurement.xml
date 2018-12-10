@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/salesConfigBackgroundColor"
+    android:fillViewport="true"
+    tools:context="com.example.kaushiknsanji.storeapp.ui.inventory.procure.SalesProcurementActivityFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/sales_procurement_vertical_padding"
+        android:paddingTop="@dimen/sales_procurement_vertical_padding">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_sales_procurement_left_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/guideline_sales_procurement_horizontal_keyline" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_sales_procurement_right_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/guideline_sales_procurement_horizontal_keyline" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_sales_procurement_product_supplier_info"
+            style="@style/BaseCardLightStyle"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_sales_procurement_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_procurement_left_vertical"
+            app:layout_constraintRight_toRightOf="@+id/guideline_sales_procurement_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_sales_procurement_left_vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_sales_procurement_product_supplier_title"
+                    style="@style/ConstraintTopCenterHorizontalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/sales_procurement_title_product_supplier" />
+
+                <View
+                    android:id="@+id/divider_sales_procurement_product_supplier_availability"
+                    style="@style/SalesProcurementDividerStyle"
+                    android:layout_marginTop="@dimen/sales_procurement_vertical_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sales_procurement_product_supplier_title" />
+
+                <TextView
+                    android:id="@+id/text_sales_procurement_availability_title"
+                    style="@style/ConstraintCenterHorizontalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sales_procurement_same_section_vertical_margin"
+                    android:gravity="center"
+                    android:text="@string/sales_procurement_title_availability"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="italic"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintTop_toBottomOf="@+id/divider_sales_procurement_product_supplier_availability" />
+
+                <TextView
+                    android:id="@+id/text_sales_procurement_supplier_availability_total"
+                    style="@style/ConstraintCenterHorizontalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_sales_procurement_supplier_availability_total_margin_top"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@android:color/holo_green_dark"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sales_procurement_availability_title"
+                    tools:text="888" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_sales_procurement_phone"
+            style="@style/BaseCardLightStyle"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sales_procurement_same_section_vertical_margin"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_sales_procurement_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_procurement_left_vertical"
+            app:layout_constraintRight_toRightOf="@+id/guideline_sales_procurement_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_sales_procurement_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/card_sales_procurement_product_supplier_info">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_sales_procurement_phone_title"
+                    style="@style/ConstraintTopCenterHorizontalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sales_procurement_title_phone"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintHorizontal_bias="0" />
+
+                <View
+                    android:id="@+id/divider_sales_procurement_phone_title_list"
+                    style="@style/SalesProcurementDividerStyle"
+                    android:layout_marginTop="@dimen/divider_sales_procurement_phone_title_list_margin_top"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sales_procurement_phone_title" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview_sales_procurement_phone_list"
+                    style="@style/ConstraintCenterHorizontalStyle"
+                    android:layout_width="@dimen/match_constraint_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sales_procurement_same_section_vertical_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/divider_sales_procurement_phone_title_list"
+                    tools:listitem="@layout/item_sales_procurement_phone_contact" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_sales_procurement_email"
+            style="@style/BaseCardLightStyle"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sales_procurement_same_section_vertical_margin"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_sales_procurement_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_procurement_left_vertical"
+            app:layout_constraintRight_toRightOf="@+id/guideline_sales_procurement_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_sales_procurement_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/card_sales_procurement_phone">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_sales_procurement_email_title"
+                    style="@style/ConstraintTopCenterHorizontalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sales_procurement_title_email"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintHorizontal_bias="0" />
+
+                <View
+                    android:id="@+id/divider_sales_procurement_email_title_list"
+                    style="@style/SalesProcurementDividerStyle"
+                    android:layout_marginTop="@dimen/divider_sales_procurement_email_title_list_margin_top"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sales_procurement_email_title" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textinput_sales_procurement_reqd_product_qty"
+                    style="@style/SalesProcurementTextInputStyle"
+                    android:layout_marginTop="@dimen/sales_procurement_same_section_vertical_margin"
+                    android:hint="@string/sales_procurement_hint_reqd_product_qty"
+                    android:theme="@style/SalesConfigTextInputTheme"
+                    app:hintEnabled="true"
+                    app:layout_constraintEnd_toStartOf="@+id/imgbtn_sales_procurement_send_mail"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/imgbtn_sales_procurement_send_mail"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider_sales_procurement_email_title_list">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edittext_sales_procurement_reqd_product_qty"
+                        style="@style/SalesProcurementTextInputEditTextStyle"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/imgbtn_sales_procurement_send_mail"
+                    android:layout_width="@dimen/btn_material_size"
+                    android:layout_height="@dimen/btn_material_size"
+                    android:layout_marginLeft="@dimen/imgbtn_sales_procurement_send_mail_margin_left"
+                    android:layout_marginStart="@dimen/imgbtn_sales_procurement_send_mail_margin_left"
+                    android:background="?attr/selectableItemBackground"
+                    app:layout_constraintBottom_toBottomOf="@+id/textinput_sales_procurement_reqd_product_qty"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/textinput_sales_procurement_reqd_product_qty"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textinput_sales_procurement_reqd_product_qty"
+                    app:layout_constraintTop_toTopOf="@+id/textinput_sales_procurement_reqd_product_qty"
+                    app:srcCompat="@drawable/ic_sales_procurement_send_mail" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_sales_procurement_no_contacts"
+            style="@style/BaseCardLightStyle"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sales_procurement_same_section_vertical_margin"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_sales_procurement_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_procurement_left_vertical"
+            app:layout_constraintRight_toRightOf="@+id/guideline_sales_procurement_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_sales_procurement_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/card_sales_procurement_email">
+
+            <TextView
+                android:id="@+id/text_sales_procurement_no_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/text_sales_procurement_no_contacts_padding"
+                android:text="@string/sales_procurement_no_contacts"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/salesProcurementNoContactsColor" />
+
+        </android.support.v7.widget.CardView>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>

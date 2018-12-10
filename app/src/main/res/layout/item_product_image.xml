@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+
+    <android.support.constraint.Group
+        android:id="@+id/group_item_product_photo_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="image_item_product_photo_select_overlay, view_item_product_photo_select_border"
+        tools:visibility="visible" />
+
+    <android.support.constraint.Group
+        android:id="@+id/group_item_product_photo_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="image_item_product_photo_delete_overlay, view_item_product_photo_delete_border"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/image_item_product_photo"
+        style="@style/ConstraintCenterInParentStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_item_product_image_background_border_default"
+        android:padding="@dimen/image_item_product_photo_padding"
+        android:scaleType="centerCrop"
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintDimensionRatio="1:1"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/image_item_product_photo_select_overlay"
+        android:layout_width="@dimen/image_item_product_action_overlay_size"
+        android:layout_height="@dimen/image_item_product_action_overlay_size"
+        android:layout_margin="@dimen/image_item_product_action_overlay_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/image_item_product_photo"
+        app:layout_constraintEnd_toEndOf="@+id/image_item_product_photo"
+        app:layout_constraintRight_toRightOf="@+id/image_item_product_photo"
+        app:srcCompat="@drawable/layer_all_select_circle" />
+
+    <View
+        android:id="@+id/view_item_product_photo_select_border"
+        android:layout_width="@dimen/match_constraint_0dp"
+        android:layout_height="@dimen/match_constraint_0dp"
+        android:background="@drawable/shape_item_product_image_background_select_border"
+        app:layout_constraintBottom_toBottomOf="@+id/image_item_product_photo"
+        app:layout_constraintEnd_toEndOf="@+id/image_item_product_photo"
+        app:layout_constraintLeft_toLeftOf="@+id/image_item_product_photo"
+        app:layout_constraintRight_toRightOf="@+id/image_item_product_photo"
+        app:layout_constraintStart_toStartOf="@+id/image_item_product_photo"
+        app:layout_constraintTop_toTopOf="@+id/image_item_product_photo" />
+
+    <ImageView
+        android:id="@+id/image_item_product_photo_delete_overlay"
+        android:layout_width="@dimen/image_item_product_action_overlay_size"
+        android:layout_height="@dimen/image_item_product_action_overlay_size"
+        android:layout_margin="@dimen/image_item_product_action_overlay_margin"
+        app:layout_constraintEnd_toEndOf="@+id/image_item_product_photo"
+        app:layout_constraintRight_toRightOf="@+id/image_item_product_photo"
+        app:layout_constraintTop_toTopOf="@+id/image_item_product_photo"
+        app:srcCompat="@drawable/layer_item_product_image_delete_overlay" />
+
+    <View
+        android:id="@+id/view_item_product_photo_delete_border"
+        android:layout_width="@dimen/match_constraint_0dp"
+        android:layout_height="@dimen/match_constraint_0dp"
+        android:background="@drawable/shape_item_product_image_background_delete_border"
+        app:layout_constraintBottom_toBottomOf="@+id/image_item_product_photo"
+        app:layout_constraintEnd_toEndOf="@+id/image_item_product_photo"
+        app:layout_constraintLeft_toLeftOf="@+id/image_item_product_photo"
+        app:layout_constraintRight_toRightOf="@+id/image_item_product_photo"
+        app:layout_constraintStart_toStartOf="@+id/image_item_product_photo"
+        app:layout_constraintTop_toTopOf="@+id/image_item_product_photo" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,422 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Style for Custom App Bar -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!-- Style for Popups in Custom App Bar -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Style for the Main Activity of the App -->
+    <style name="AppTheme.Main" />
+
+    <!-- ==================================== -->
+    <!-- COMMON AND/OR BASE STYLES OF THE APP -->
+    <!-- ==================================== -->
+    <!-- Common Style used for Label Buttons -->
+    <style name="MaterialLabelButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/btn_label_material_height</item>
+        <item name="android:minWidth">@dimen/btn_label_material_min_width</item>
+        <item name="android:paddingLeft">@dimen/btn_label_material_padding_left</item>
+        <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/btn_label_material_padding_left
+        </item>
+        <item name="android:paddingEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/btn_label_material_padding_right
+        </item>
+        <item name="android:paddingRight">@dimen/btn_label_material_padding_right</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+
+    <!-- Base Style for the TextInputLayouts used -->
+    <style name="BaseTextInputStyle" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColorHint">@color/textInputHintColor</item>
+        <item name="hintTextAppearance">@style/BaseTextInputStyle.HintTextAppearance</item>
+        <item name="errorTextAppearance">@style/BaseTextInputStyle.ErrorTextAppearance</item>
+        <item name="counterTextAppearance">@style/BaseTextInputStyle.CounterTextAppearance</item>
+    </style>
+
+    <!-- Base Style for the TextInputLayout's Hint Text -->
+    <style name="BaseTextInputStyle.HintTextAppearance" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor">@color/textInputHintColor</item>
+    </style>
+
+    <!-- Base Style for the TextInputLayout's Error Text -->
+    <style name="BaseTextInputStyle.ErrorTextAppearance" parent="TextAppearance.Design.Error">
+        <item name="android:textColor">@color/textInputErrorColor</item>
+    </style>
+
+    <!-- Base Style for the TextInputLayout's Counter Text -->
+    <style name="BaseTextInputStyle.CounterTextAppearance" parent="TextAppearance.Design.Counter">
+        <item name="android:textColor">@color/textInputCounterColor</item>
+    </style>
+
+    <!-- Common Style for the Remove Circle Image Button -->
+    <style name="RemoveCircleImageButtonStyle">
+        <item name="android:layout_width">@dimen/btn_material_size</item>
+        <item name="android:layout_height">@dimen/btn_material_size</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="srcCompat">@drawable/layer_all_remove_circle</item>
+    </style>
+
+    <!-- Base Style for TextInputEditText -->
+    <style name="BaseTextInputEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Base Style for the CardViews -->
+    <style name="BaseCardLightStyle" parent="CardView.Light">
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardCornerRadius">@dimen/card_all_corner_radius</item>
+        <item name="contentPadding">@dimen/card_all_inner_padding</item>
+    </style>
+
+    <!-- ==================== -->
+    <!-- STYLES USED FOR TABS -->
+    <!-- ==================== -->
+    <!-- Style for the Tabs -->
+    <style name="MainTabStyle" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/mainTabIndicatorColor</item>
+        <item name="tabIndicatorHeight">@dimen/tab_main_indicator_height</item>
+        <item name="tabSelectedTextColor">@color/mainTabIndicatorColor</item>
+        <item name="tabBackground">@color/colorPrimary</item>
+        <!-- Spread the tabs to fill the entire screen width : START -->
+        <item name="tabMaxWidth">0dp</item>
+        <item name="tabMode">scrollable</item>
+        <!-- Spread the tabs to fill the entire screen width : END -->
+    </style>
+
+    <!-- ================================== -->
+    <!-- STYLES USED FOR CONSTRAINT LAYOUTS -->
+    <!-- ================================== -->
+
+    <!-- Style to align the View component under ConstraintLayout in center_horizontal format -->
+    <style name="ConstraintCenterHorizontalStyle">
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintRight_toRightOf">parent</item>
+    </style>
+
+    <!-- Style to align the View component under ConstraintLayout to the Top in center_horizontal format -->
+    <style name="ConstraintTopCenterHorizontalStyle" parent="ConstraintCenterHorizontalStyle">
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+
+    <!-- Style to align the View component under ConstraintLayout to the Bottom in center_horizontal format -->
+    <style name="ConstraintBottomCenterHorizontalStyle" parent="ConstraintCenterHorizontalStyle">
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+    </style>
+
+    <!-- Style to align the View component under ConstraintLayout to the complete Center of its Parent -->
+    <style name="ConstraintCenterInParentStyle" parent="ConstraintCenterHorizontalStyle">
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+    </style>
+
+    <!-- Style to align the View component under ConstraintLayout in center_vertical format -->
+    <style name="ConstraintCenterVerticalStyle">
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+    </style>
+
+    <!-- Style to align the View component under ConstraintLayout to the Left in center_vertical format -->
+    <style name="ConstraintLeftCenterVerticalStyle" parent="ConstraintCenterVerticalStyle">
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+    </style>
+
+    <!-- Style to align the View component under ConstraintLayout to the Right in center_vertical format -->
+    <style name="ConstraintRightCenterVerticalStyle" parent="ConstraintCenterVerticalStyle">
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintRight_toRightOf">parent</item>
+    </style>
+
+    <!-- ================================================ -->
+    <!-- STYLES USED FOR PRODUCT CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ================================================ -->
+
+    <!-- Style For the Input Field Labels -->
+    <style name="ProductConfigTextLabelStyle" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <!-- Style for TextInputLayout -->
+    <style name="ProductConfigTextInputStyle" parent="BaseTextInputStyle">
+        <item name="android:layout_width">@dimen/match_constraint_0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_product_config_edit_box</item>
+    </style>
+
+    <!-- Theme for TextInputLayout -->
+    <style name="ProductConfigTextInputTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlActivated">@color/productConfigTextInputActivatedColor</item>
+        <item name="colorControlHighlight">@color/productConfigTextInputActivatedColor</item>
+    </style>
+
+    <!-- Style for TextInputEditText -->
+    <style name="ProductConfigTextInputEditTextStyle" parent="BaseTextInputEditTextStyle">
+        <item name="android:background">@drawable/shape_product_config_edit_box</item>
+    </style>
+
+    <!-- Style for TextInputEditText used for Product Config Attribute Items -->
+    <style name="ProductConfigItemAttrEditTextStyle" parent="ProductConfigTextInputEditTextStyle">
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">text|textNoSuggestions|textCapSentences</item>
+    </style>
+
+    <!-- ==================================================== -->
+    <!-- STYLES USED FOR PRODUCT IMAGE PICKER DIALOG FRAGMENT -->
+    <!-- ==================================================== -->
+
+    <!-- Style for CardView -->
+    <style name="ImagePickerCardStyle" parent="CardView">
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardBackgroundColor">@color/productImagePickerBackgroundColor</item>
+        <item name="cardCornerRadius">@dimen/card_image_picker_corner_radius</item>
+        <item name="cardElevation">@dimen/dialog_material_elevation</item>
+    </style>
+
+    <!-- Style for the Icons -->
+    <style name="ImagePickerIconStyle">
+        <item name="android:layout_height">@dimen/image_picker_icons_size</item>
+        <item name="android:layout_width">@dimen/image_picker_icons_size</item>
+    </style>
+
+    <!-- Style for the Labels -->
+    <style name="ImagePickerTextLabelStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_image_picker_size</item>
+    </style>
+
+    <!-- =============================================== -->
+    <!-- STYLES USED FOR PRODUCT IMAGE ACTIVITY/FRAGMENT -->
+    <!-- =============================================== -->
+    <!-- Custom Activity Theme -->
+    <style name="AppTheme.ProductImage">
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeStyle">@style/ProductImageActionModeStyle</item>
+    </style>
+
+    <!-- For Contextual Action Mode -->
+    <style name="ProductImageActionModeStyle" parent="Widget.AppCompat.ActionMode">
+        <item name="background">@color/productImageItemPhotoBackgroundDeleteColor</item>
+    </style>
+
+    <!-- ================================================ -->
+    <!-- STYLES USED FOR THE PROGRESS BAR DIALOG FRAGMENT -->
+    <!-- ================================================ -->
+    <!-- Style for CardView -->
+    <style name="ProgressBarCardStyle" parent="CardView.Light">
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardCornerRadius">@dimen/card_progress_bar_corner_radius</item>
+        <item name="contentPadding">@dimen/card_progress_bar_content_padding</item>
+        <item name="cardElevation">@dimen/dialog_material_elevation</item>
+    </style>
+
+    <!-- ================================================= -->
+    <!-- STYLES USED FOR SUPPLIER CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ================================================= -->
+
+    <!-- Style For the Input Field Labels -->
+    <style name="SupplierConfigTextLabelStyle" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <!-- Style for TextInputLayout -->
+    <style name="SupplierConfigTextInputStyle" parent="BaseTextInputStyle">
+        <item name="android:layout_width">@dimen/match_constraint_0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_supplier_config_edit_box</item>
+    </style>
+
+    <!-- Theme for TextInputLayout -->
+    <style name="SupplierConfigTextInputTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlActivated">@color/supplierConfigTextInputActivatedColor</item>
+        <item name="colorControlHighlight">@color/supplierConfigTextInputActivatedColor</item>
+    </style>
+
+    <!-- Style for TextInputEditText -->
+    <style name="SupplierConfigTextInputEditTextStyle" parent="BaseTextInputEditTextStyle">
+        <item name="android:background">@drawable/shape_supplier_config_edit_box</item>
+    </style>
+
+    <!-- Base Style for Dividers -->
+    <style name="BaseSupplierConfigDividerStyle">
+        <item name="android:layout_width">@dimen/match_constraint_0dp</item>
+        <item name="android:layout_height">@dimen/divider_supplier_config_height</item>
+        <item name="android:background">@color/supplierConfigSectionDividerColor</item>
+    </style>
+
+    <!-- Style for Divider-1 -->
+    <style name="BaseSupplierConfigDividerStyle.Divider1">
+        <item name="android:layout_marginTop">@dimen/supplier_config_vertical_margin</item>
+    </style>
+
+    <!-- Style for Divider-2 -->
+    <style name="BaseSupplierConfigDividerStyle.Divider2">
+        <item name="android:layout_marginTop">@dimen/divider2_supplier_config_margin_top</item>
+    </style>
+
+    <!-- Style for section titles -->
+    <style name="SupplierConfigSectionTitleTextStyle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/supplier_config_same_section_vertical_margin
+        </item>
+        <item name="layout_constrainedWidth">true</item>
+    </style>
+
+    <!-- Style for RecyclerView -->
+    <style name="SupplierConfigRecyclerViewStyle">
+        <item name="android:layout_width">@dimen/match_constraint_0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/supplier_config_vertical_margin</item>
+    </style>
+
+    <!-- Style for Add Buttons -->
+    <style name="SupplierConfigButtonAddStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/supplier_config_same_section_vertical_margin
+        </item>
+        <item name="android:background">@drawable/state_supplier_config_add_btn_bg</item>
+    </style>
+
+    <!-- ========================================================= -->
+    <!-- STYLES USED FOR SUPPLIER PRODUCT PICKER ACTIVITY/FRAGMENT -->
+    <!-- ========================================================= -->
+    <!-- Style for CardView -->
+    <style name="SupplierProductPickerItemCardStyle" parent="BaseCardLightStyle">
+        <item name="cardBackgroundColor">@color/supplierConfigInputFieldsBackgroundColor</item>
+    </style>
+
+    <!-- ====================================== -->
+    <!-- STYLES USED FOR SUPPLIER LIST FRAGMENT -->
+    <!-- ====================================== -->
+    <!-- Style for Divider -->
+    <style name="SalesListItemDividerStyle" parent="ConstraintCenterHorizontalStyle">
+        <item name="android:layout_width">@dimen/match_constraint_0dp</item>
+        <item name="android:layout_height">@dimen/divider_sales_list_item_section_height</item>
+        <item name="android:background">@color/salesListItemDividerColor</item>
+    </style>
+
+    <!-- ============================================== -->
+    <!-- STYLES USED FOR SALES CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ============================================== -->
+    <!-- Base Style for Divider -->
+    <style name="BaseSalesConfigDividerStyle">
+        <item name="android:layout_width">@dimen/match_constraint_0dp</item>
+        <item name="android:layout_height">@dimen/divider_sales_config_height</item>
+        <item name="android:background">@color/salesConfigSectionDividerColor</item>
+    </style>
+
+    <!-- Style for Divider-1 -->
+    <style name="BaseSalesConfigDividerStyle.Divider1">
+        <item name="android:layout_marginTop">@dimen/sales_config_vertical_margin</item>
+    </style>
+
+    <!-- Style for Divider-2 -->
+    <style name="BaseSalesConfigDividerStyle.Divider2">
+        <item name="android:layout_marginTop">@dimen/divider2_sales_config_margin_top</item>
+    </style>
+
+    <!-- Theme for TextInputLayout -->
+    <style name="SalesConfigTextInputTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlActivated">@color/salesConfigTextInputActivatedColor</item>
+        <item name="colorControlHighlight">@color/salesConfigTextInputActivatedColor</item>
+    </style>
+
+    <!-- Base Style for the Table Columns of Product Attributes -->
+    <style name="SalesConfigProductAttrsTableColumnStyle">
+        <item name="android:layout_width">@dimen/size_by_weight_0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Subhead</item>
+        <item name="android:padding">@dimen/tablelayout_sales_config_product_attrs_cell_padding
+        </item>
+    </style>
+
+    <!-- Style for the Cells in the Product Attributes Table Column - Name -->
+    <style name="SalesConfigProductAttrsTableColumnStyle.Name">
+        <item name="android:layout_column">0</item>
+        <item name="android:gravity">center_vertical|end</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Style for the Cells in the Product Attributes Table Column - Value -->
+    <style name="SalesConfigProductAttrsTableColumnStyle.Value">
+        <item name="android:layout_column">1</item>
+        <item name="android:gravity">center_vertical|start</item>
+    </style>
+
+    <!-- =================================================== -->
+    <!-- STYLES USED FOR SALES PROCUREMENT ACTIVITY/FRAGMENT -->
+    <!-- =================================================== -->
+    <!-- Style for Divider -->
+    <style name="SalesProcurementDividerStyle" parent="ConstraintCenterHorizontalStyle">
+        <item name="android:layout_width">@dimen/match_constraint_0dp</item>
+        <item name="android:layout_height">@dimen/divider_sales_procurement_height</item>
+        <item name="android:background">@color/salesProcurementSectionDividerColor</item>
+    </style>
+
+    <!-- Style for TextInputLayout -->
+    <style name="SalesProcurementTextInputStyle" parent="BaseTextInputStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_sales_config_item_supplier_qty_edit_box
+        </item>
+    </style>
+
+    <!-- Style for TextInputEditText -->
+    <style name="SalesProcurementTextInputEditTextStyle" parent="BaseTextInputEditTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/shape_sales_config_item_supplier_qty_edit_box
+        </item>
+    </style>
+
+    <!-- ============================== -->
+    <!-- STYLES USED FOR ABOUT ACTIVITY -->
+    <!-- ============================== -->
+    <!-- Child Style of 'CardView' used for the info content in the About Activity -->
+    <style name="AboutInfoCardStyle" parent="CardView">
+        <item name="cardCornerRadius">@dimen/card_about_info_corner_radius</item>
+        <item name="cardBackgroundColor">@color/ic_launcher_background</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardElevation">@dimen/card_about_info_elevation</item>
+    </style>
+
+    <!-- Style for the Clickable ImageViews shown in the About Activity -->
+    <style name="AboutClickableImageViewStyle">
+        <item name="android:layout_width">@dimen/image_about_bio_size</item>
+        <item name="android:layout_height">@dimen/image_about_bio_size</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <!-- Style for the Text content shown in the About Activity -->
+    <style name="AboutContentTextStyle">
+        <item name="android:layout_width">@dimen/match_constraint_0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/card_about_internal_content_margin</item>
+        <item name="android:textSize">@dimen/text_about_content_size</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,410 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">StoreApp</string>
+
+    <!-- ============================== -->
+    <!-- COMMON STRINGS USED IN THE APP -->
+    <!-- ============================== -->
+    <!-- Common Menu/Button Actions -->
+    <string name="action_settings">Settings</string>
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_refresh">Refresh</string>
+
+    <!-- Common Snackbar Actions -->
+    <string name="snackbar_action_ok">OK</string>
+    <string name="snackbar_action_undo">UNDO</string>
+
+    <!-- Default Transition Name used for the Product ImageViews with default Image -->
+    <string name="transition_name_product_photo">StoreApp.ProductPhoto</string>
+
+    <!-- ============================= -->
+    <!-- STRINGS USED IN MAIN ACTIVITY -->
+    <!-- ============================= -->
+    <string name="main_tab_title_products">Products</string>
+    <string name="main_tab_title_suppliers">Suppliers</string>
+    <string name="main_tab_title_sales">Sales</string>
+
+    <!-- ================================================ -->
+    <!-- STRINGS USED IN PRODUCT CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ================================================ -->
+    <string name="product_config_title_add_product">Add Product</string>
+    <string name="product_config_title_edit_product">Edit Product</string>
+    <string name="product_config_label_name">Name</string>
+    <string name="product_config_label_sku">SKU</string>
+    <string name="product_config_hint_description">Description</string>
+    <string name="product_config_label_category">Category</string>
+    <string name="product_config_label_attrs">Additional Attributes</string>
+    <string name="product_config_btn_label_add_more_attrs">Add more</string>
+    <string name="product_config_spinner_category_prompt">Select Category</string>
+    <string name="product_config_attr_hint_name">Name</string>
+    <string name="product_config_attr_hint_value">Value</string>
+    <string name="product_config_empty_fields_validation_error">
+        All fields are required except for Product Attributes and Images.
+        Please fill and then click on \'Save\'.
+    </string>
+    <string name="product_config_attrs_partial_empty_fields_validation_error">
+        Incomplete Product Attributes found.
+        Please fill the missing details and then click on \'Save\'.
+    </string>
+    <string name="product_config_attrs_name_conflict_error">
+        <!-- Output will be like 'Attribute Name 'Width' has been defined more than once. Remove the duplicate.' -->
+        Attribute Name \'<xliff:g example="Width" id="attr_name">%1$s</xliff:g>\' has been defined more than once. Remove the duplicate.
+    </string>
+    <string name="product_config_no_product_found_error">
+        <!-- Output will be like 'No Product Found for Item Id 101' -->
+        No Product Found for Item Id <xliff:g example="101" id="item_id">%1$d</xliff:g>
+    </string>
+    <string name="product_config_category_null_error">
+        <!-- Output will be like 'NULL Id found for Category 'Sports'. Data may be inconsistent.' -->
+        NULL Id found for Category \'<xliff:g example="Sports" id="category_name">%1$s</xliff:g>\'. Data may be inconsistent.
+    </string>
+    <string name="product_config_insert_category_error">
+        <!-- Output will be like 'Failed to insert Category for Sports' -->
+        Failed to insert Category for <xliff:g example="Sports" id="category_name">%1$s</xliff:g>
+    </string>
+    <string name="product_config_insert_item_error">
+        <!-- Output will be like 'Failed to insert item for Bat' -->
+        Failed to insert Item for <xliff:g example="Bat" id="item_name">%1$s</xliff:g>
+    </string>
+    <string name="product_config_insert_item_addtnl_dtls_error">
+        <!-- Output will be like 'Failed to insert the Attributes and/or Images of Item
+        'Bat' with Item SKU #A11223445' -->
+        Failed to insert the Attributes and/or Images of Item
+        \'<xliff:g example="Bat" id="item_name">%1$s</xliff:g>\'
+        with Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g>
+    </string>
+    <string name="product_config_update_category_error">
+        <!-- Output will be like 'Item SKU #A11223445 Update: Failed to insert Category for Sports' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> Update: Failed to insert Category for <xliff:g example="Sports" id="category_name">%1$s</xliff:g>
+    </string>
+    <string name="product_config_update_item_error">
+        <!-- Output will be like 'Item SKU #A11223445 Update: Failed to update Item data' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> Update: Failed to update Item data
+    </string>
+    <string name="product_config_update_item_inconsistent_error">
+        <!-- Output will be like 'Item SKU #A11223445 Update: More than one record of Item was updated. Data may be inconsistent.' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> Update: More than one record of Item was updated. Data may be inconsistent.
+    </string>
+    <string name="product_config_update_item_addtnl_dtls_error">
+        <!-- Output will be like 'Item SKU #A11223445 Update: Failed to insert the Attributes and/or Images of Item.' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> Update: Failed to insert the Attributes and/or Images of Item.
+    </string>
+    <string name="product_config_update_item_images_error">
+        <!-- Output will be like 'Item SKU #A11223445 Update: Failed to insert/erase the Images of Item.' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> Update: Failed to insert/erase the Images of Item.
+    </string>
+    <string name="product_config_update_item_images_success">
+        <!-- Output will be like 'Item SKU #A11223445 Update: Image(s) of Item were successfully updated/erased.' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> Update: Image(s) of Item were successfully updated/erased.
+    </string>
+    <string name="product_config_delete_item_error">
+        <!-- Output will be like 'Failed to delete the Item Id 101' -->
+        Failed to delete the Item Id <xliff:g example="101" id="item_id">%1$d</xliff:g>
+    </string>
+    <string name="product_config_delete_product_confirm_dialog_message">Delete Product?</string>
+    <string name="product_config_sku_invalid_error">Product SKU needs to be Unique.\nTry a different one.</string>
+    <string name="product_config_sku_empty_error">Product SKU is a mandatory field.</string>
+    <string name="product_config_unsaved_changes_dialog_message">Unsaved changes found?</string>
+    <string name="product_config_unsaved_changes_dialog_positive_text">Save</string>
+    <string name="product_config_unsaved_changes_dialog_negative_text">Discard</string>
+    <string name="product_config_unsaved_changes_dialog_neutral_text">Keep Editing</string>
+    <string name="product_config_status_loading_existing_product">Loading Product details…</string>
+    <string name="product_config_status_saving">Saving Product details…</string>
+    <string name="product_config_status_deleting">Deleting Product…</string>
+
+    <!-- =============================================== -->
+    <!-- STRINGS USED IN PRODUCT IMAGE ACTIVITY/FRAGMENT -->
+    <!-- =============================================== -->
+    <string name="product_image_title">Product Images</string>
+    <string name="product_image_save_error">Failed to save the image taken.</string>
+    <string name="product_image_disk_not_mounted_save_error">Cannot save any image when the external storage is unmounted. Disconnect from PC and try again.</string>
+    <string name="product_image_no_camera_hardware_error">Device does not have Camera hardware to take a picture.</string>
+    <string name="product_image_picker_chooser_title">Select Image(s) for the Product</string>
+    <string name="product_image_already_picked_message">One of the Image(s) picked is already present in the list</string>
+    <string name="product_image_action_select">Select</string>
+    <string name="product_image_contextual_action_delete_title">Delete images</string>
+    <string name="product_image_contextual_action_delete_live_count">
+        <!-- Output will be like '10 selected' -->
+        <xliff:g example="10" id="image_count">%1$d</xliff:g> selected
+    </string>
+    <string name="product_image_delete_error">Some image files could not be deleted. This will include the files NOT created by the app. Please delete them manually later.</string>
+    <string name="product_image_delete_success">Selected Product Images deleted successfully.</string>
+    <string name="product_image_unsaved_changes_dialog_message">Save selected image as Default?</string>
+    <string name="product_image_unsaved_changes_dialog_positive_text">Save</string>
+    <string name="product_image_unsaved_changes_dialog_negative_text">Ignore</string>
+    <string name="product_image_status_loading_picked_single">Loading Image picked…</string>
+    <string name="product_image_status_loading_picked_multiple">Loading Image(s) picked…</string>
+    <string name="product_image_status_saving_capture">Saving Image captured…</string>
+    <string name="product_image_status_deleting">Deleting Image(s)…</string>
+    <string name="product_image_empty_text">Tap the \"+\" button below to add the Images for the Product.</string>
+
+    <!-- ==================================================== -->
+    <!-- STRINGS USED IN PRODUCT IMAGE PICKER DIALOG FRAGMENT -->
+    <!-- ==================================================== -->
+    <string name="product_image_picker_label_camera">Take\nPhoto</string>
+    <string name="product_image_picker_label_gallery">Pick from\nGallery</string>
+    <string name="product_image_picker_action_close">Close</string>
+
+    <!-- ===================================== -->
+    <!-- STRINGS USED IN PRODUCT LIST FRAGMENT -->
+    <!-- ===================================== -->
+    <string name="product_list_item_add_success">
+        <!-- Output will be like 'New Item with SKU #A11223445 added successfully.' -->
+        New Item with SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> added successfully.
+    </string>
+    <string name="product_list_item_update_success">
+        <!-- Output will be like 'Item SKU #A11223445 updated successfully.' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> updated successfully.
+    </string>
+    <string name="product_list_item_delete_success">
+        <!-- Output will be like 'Item SKU #A11223445 deleted successfully.' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> deleted successfully.
+    </string>
+    <string name="product_list_load_error">Error while loading Products.</string>
+    <string name="product_list_empty_text">Tap the \"+\" button below to record the Products in your Store.</string>
+
+    <!-- ================================================= -->
+    <!-- STRINGS USED IN SUPPLIER CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ================================================= -->
+    <string name="supplier_config_label_name">Name</string>
+    <string name="supplier_config_label_code">Code</string>
+    <string name="supplier_config_title_phone_section">Contact Details : Phone</string>
+    <string name="supplier_config_title_email_section">Contact Details : Email</string>
+    <string name="supplier_config_title_items_section">Supplier Items</string>
+    <string name="supplier_config_btn_label_add_phone">Add Phone</string>
+    <string name="supplier_config_btn_label_add_email">Add Email</string>
+    <string name="supplier_config_btn_label_add_item">Add Item</string>
+    <string name="supplier_config_title_add_supplier">Add Supplier</string>
+    <string name="supplier_config_title_edit_supplier">Edit Supplier</string>
+    <!-- For the Supplier Contact Items -->
+    <string name="supplier_config_item_contact_label_default">Default</string>
+    <string name="supplier_config_status_loading_existing_supplier">Loading Supplier details…</string>
+    <string name="supplier_config_code_invalid_error">Supplier Code needs to be Unique.\nTry a different one.</string>
+    <string name="supplier_config_no_supplier_found_error">
+        <!-- Output will be like 'No Supplier Found for Supplier Id 101' -->
+        No Supplier Found for Supplier Id <xliff:g example="101" id="supplier_id">%1$d</xliff:g>
+    </string>
+    <string name="supplier_config_code_empty_error">Supplier Code is a mandatory field.</string>
+    <string name="supplier_config_item_contact_duplicate_error">Duplicate Contacts are not allowed.</string>
+    <string name="supplier_config_item_contact_hint_phone">Phone Number</string>
+    <string name="supplier_config_item_product_label_price">
+        <!-- Output will be like 'Selling Price:($)' -->
+        Selling Price:(<xliff:g example="$" id="currency_symbol">%1$s</xliff:g>)
+    </string>
+    <string name="supplier_config_status_saving">Saving Supplier details…</string>
+    <string name="supplier_config_status_deleting">Deleting Supplier…</string>
+    <string name="supplier_config_empty_fields_validation_error">
+        No field can be left empty. Please fill and then click on \'Save\'.
+    </string>
+    <string name="supplier_config_phone_contact_conflict_error">
+        <!-- Output will be like 'Contact Phone '9898900001' has been defined more than once. Remove the duplicate.' -->
+        Contact Phone \'<xliff:g example="9898900001" id="phone_number">%1$s</xliff:g>\' has been defined more than once. Remove the duplicate.
+    </string>
+    <string name="supplier_config_email_contact_conflict_error">
+        <!-- Output will be like 'Contact Email 'xyz@supplier.com' has been defined more than once. Remove the duplicate.' -->
+        Contact Email \'<xliff:g example="xyz@supplier.com" id="email_id">%1$s</xliff:g>\' has been defined more than once. Remove the duplicate.
+    </string>
+    <string name="supplier_config_empty_contacts_error">No Contacts found for the Supplier. Minimum one Contact needs to be configured.</string>
+    <string name="supplier_config_phone_contacts_invalid_error">Some Phone Contacts are still invalid. Please correct and then click save.</string>
+    <string name="supplier_config_email_contacts_invalid_error">Some Email Contacts are still invalid. Please correct and then click save.</string>
+    <string name="supplier_config_insert_supplier_error">
+        <!-- Output will be like 'Failed to insert Supplier record for Frontline Inc.' -->
+        Failed to insert Supplier record for <xliff:g example="Frontline Inc." id="supplier_name">%1$s</xliff:g>
+    </string>
+    <string name="supplier_config_insert_supplier_addtnl_dtls_error">
+        <!-- Output will be like 'Failed to insert Supplier's Contacts and Items with their Price Info for the Supplier
+        'Frontline Inc.' with Code #126227' -->
+        Failed to insert Supplier's Contacts and Items with their Price Info for the Supplier
+        \'<xliff:g example="Frontline Inc." id="supplier_name">%1$s</xliff:g>\'
+        with Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g>
+    </string>
+    <string name="supplier_config_update_supplier_error">
+        <!-- Output will be like 'Supplier Code #126227 Update: Failed to update Supplier data' -->
+        Supplier Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g> Update: Failed to update Supplier data
+    </string>
+    <string name="supplier_config_update_supplier_inconsistent_error">
+        <!-- Output will be like 'Supplier Code #126227 Update: More than one record of Supplier was updated. Data may be inconsistent.' -->
+        Supplier Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g> Update: More than one record of Supplier was updated. Data may be inconsistent.
+    </string>
+    <string name="supplier_config_update_supplier_addtnl_dtls_error">
+        <!-- Output will be like 'Supplier Code #126227 Update: Failed to insert/delete Supplier's Contacts and Items with their Price Info.' -->
+        Supplier Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g> Update: Failed to insert/delete Supplier's Contacts and Items with their Price Info.
+    </string>
+    <string name="supplier_config_delete_supplier_error">
+        <!-- Output will be like 'Failed to delete the Supplier Id 101' -->
+        Failed to delete the Supplier Id <xliff:g example="101" id="supplier_id">%1$d</xliff:g>
+    </string>
+    <string name="supplier_config_delete_supplier_confirm_dialog_message">Delete Supplier?</string>
+    <string name="supplier_config_unsaved_changes_dialog_message">Unsaved changes found?</string>
+    <string name="supplier_config_unsaved_changes_dialog_positive_text">Save</string>
+    <string name="supplier_config_unsaved_changes_dialog_negative_text">Discard</string>
+    <string name="supplier_config_unsaved_changes_dialog_neutral_text">Keep Editing</string>
+    <string name="supplier_config_product_swipe_action_success">
+        <!-- Output will be like 'Item SKU #A11223445 has been removed from the Supplier.' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> has been removed from the Supplier.
+    </string>
+    <string name="supplier_config_product_swipe_action_undo_success">
+        <!-- Output will be like 'Item SKU #A11223445 has been restored for the Supplier.' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> has been restored for the Supplier.
+    </string>
+    <string name="supplier_config_phone_number_invalid_error">
+        <!-- Output will be like 'Phone Number is invalid. Ensure that it has 4-15 digits.' -->
+        Phone Number is invalid. Ensure that it has <xliff:g example="4" id="min_length">%1$d</xliff:g>-<xliff:g example="15" id="max_length">%2$d</xliff:g> digits.
+    </string>
+    <string name="supplier_config_email_invalid_error">Email is invalid.</string>
+
+    <!-- ========================================================= -->
+    <!-- STRINGS USED IN SUPPLIER PRODUCT PICKER ACTIVITY/FRAGMENT -->
+    <!-- ========================================================= -->
+    <string name="supplier_product_picker_title">Product Picker</string>
+    <string name="supplier_product_picker_search_hint">Product Name/SKU/Category</string>
+    <string name="supplier_product_picker_list_empty_all_picked">All available Products are already picked.</string>
+    <string name="supplier_product_picker_list_empty_no_product">No product seems to be configured. Please setup the Products first.</string>
+    <string name="supplier_product_picker_empty_search_result">
+        <!-- Output will be like 'Could not find any Product with Name/SKU/Category containing A11223445. Try another search.' -->
+        Could not find any Product with Name/SKU/Category containing \'<xliff:g example="A11223445" id="item_name_sku_category">%1$s</xliff:g>\'. Try another search.
+    </string>
+    <string name="supplier_product_picker_status_loading_products">Loading Products\navailable to pick…</string>
+    <string name="supplier_product_picker_action_pick_live_count">
+        <!-- Output will be like '10 selected' -->
+        <xliff:g example="10" id="product_count">%1$d</xliff:g> selected
+    </string>
+    <string name="supplier_product_picker_unsaved_changes_dialog_message">Unsaved changes found?</string>
+    <string name="supplier_product_picker_unsaved_changes_dialog_positive_text">Save</string>
+    <string name="supplier_product_picker_unsaved_changes_dialog_negative_text">Discard</string>
+    <string name="supplier_product_picker_unsaved_changes_dialog_neutral_text">Stay Here</string>
+
+    <!-- ====================================== -->
+    <!-- STRINGS USED IN SUPPLIER LIST FRAGMENT -->
+    <!-- ====================================== -->
+    <string name="supplier_list_item_products_count_desc">
+        <!-- Output will be like 'Sells 22 items' -->
+        Sells <xliff:g example="22" id="item_count">%1$d</xliff:g> items
+    </string>
+    <string name="supplier_list_empty_text">Tap the \"+\" button below to record the Suppliers for your Store.</string>
+    <string name="supplier_list_load_error">Error while loading Suppliers.</string>
+    <string name="supplier_list_item_add_success">
+        <!-- Output will be like 'New Supplier with Code #126227 added successfully.' -->
+        New Supplier with Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g> added successfully.
+    </string>
+    <string name="supplier_list_item_update_success">
+        <!-- Output will be like 'Supplier Code #126227 updated successfully.' -->
+        Supplier Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g> updated successfully.
+    </string>
+    <string name="supplier_list_item_delete_success">
+        <!-- Output will be like 'Supplier Code #126227 deleted successfully.' -->
+        Supplier Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g> deleted successfully.
+    </string>
+
+    <!-- =================================== -->
+    <!-- STRINGS USED IN SALES LIST FRAGMENT -->
+    <!-- =================================== -->
+    <string name="sales_list_item_total_available">
+        <!-- Output will be like 'Total Available Quantity : 22' -->
+        Total Available Quantity : &lt;b&gt;<xliff:g example="22" id="quantity">%1$d</xliff:g>&lt;/b&gt;
+    </string>
+    <string name="sales_list_item_supplier_name_code_format">
+        <!-- Output will be like 'Frontline Inc. (126227)' -->
+        <xliff:g example="Frontline Inc." id="supplier_name">%1$s</xliff:g> (<xliff:g example="126227" id="supplier_code">%2$s</xliff:g>)
+    </string>
+    <string name="sales_list_item_supplier_selling_price">
+        <!-- Output will be like 'Sells at 270.55 INR' -->
+        Sells at <xliff:g example="270.55 INR" id="selling_price">%1$s</xliff:g>
+    </string>
+    <string name="sales_list_item_top_supplier_title">Top Supplier</string>
+    <string name="sales_list_item_action_delete_product">Delete Product</string>
+    <string name="sales_list_item_action_sell">Sell 1</string>
+    <string name="sales_list_empty_text">No Products to Sell!?\nConfigure the Products first and then its Suppliers to start selling the Products here.</string>
+    <string name="sales_list_item_out_of_stock">Out of Stock !</string>
+    <string name="sales_list_load_error">Error while loading Products with Sales data.</string>
+    <string name="sales_list_item_decrease_availability_error">
+        <!-- Output will be like 'Failed to decrease the quantity of the Product #A11223445 sold by the Supplier #126227.' -->
+        Failed to decrease the quantity of the Product #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> sold by the Supplier #<xliff:g example="126227" id="supplier_code">%2$s</xliff:g>.
+    </string>
+    <string name="sales_list_item_sell_success">
+        <!-- Output will be like 'One quantity of the Product #A11223445 sold successfully by the Supplier #126227.' -->
+        One quantity of the Product #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> sold successfully by the Supplier #<xliff:g example="126227" id="supplier_code">%2$s</xliff:g>.
+    </string>
+    <string name="sales_list_item_label_available">available</string>
+    <string name="sales_list_item_update_inventory_success">
+        <!-- Output will be like 'Item SKU #A11223445 updated with inventory successfully.' -->
+        Item SKU #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g> updated with inventory successfully.
+    </string>
+
+    <!-- ============================================== -->
+    <!-- STRINGS USED IN SALES CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ============================================== -->
+    <string name="sales_config_title_edit_sales">Edit Sales</string>
+    <string name="sales_config_item_supplier_selling_price">
+        <!-- Output will be like 'Sells at 270.55 INR' -->
+        Sells at <xliff:g example="270.55 INR" id="selling_price">%1$s</xliff:g>
+    </string>
+    <string name="sales_config_title_suppliers_section">Suppliers</string>
+    <string name="sales_config_title_total_available">Total Available</string>
+    <string name="sales_config_item_supplier_action_procure">Procure</string>
+    <string name="sales_config_status_loading_suppliers">Loading Suppliers\nwith sales details…</string>
+    <string name="sales_config_status_saving">Saving Product\'s Inventory data…</string>
+    <string name="sales_config_supplier_swipe_action_success">
+        <!-- Output will be like 'Supplier Code #126227 has been removed from the Product. -->
+        Supplier Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g> has been removed from the Product.
+    </string>
+    <string name="sales_config_supplier_swipe_action_undo_success">
+        <!-- Output will be like 'Supplier Code #126227 has been restored for the Product. -->
+        Supplier Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g> has been restored for the Product.
+    </string>
+    <string name="sales_config_inventory_update_error">
+        <!-- Output will be like 'Failed to update the inventory of the Product #A11223445.' -->
+        Failed to update the inventory of the Product #<xliff:g example="A11223445" id="item_sku">%1$s</xliff:g>.
+    </string>
+    <string name="sales_config_unsaved_changes_dialog_message">Unsaved changes found?</string>
+    <string name="sales_config_unsaved_changes_dialog_positive_text">Save</string>
+    <string name="sales_config_unsaved_changes_dialog_negative_text">Discard</string>
+    <string name="sales_config_unsaved_changes_dialog_neutral_text">Keep Editing</string>
+    <string name="sales_config_delete_product_confirm_dialog_message">Delete Product?</string>
+
+    <!-- =================================================== -->
+    <!-- STRINGS USED IN SALES PROCUREMENT ACTIVITY/FRAGMENT -->
+    <!-- =================================================== -->
+    <string name="sales_procurement_title">Procure Product</string>
+    <string name="sales_procurement_title_product_supplier">
+        <!-- Output will be like 'Procuring Product1 (A11223445) from Supplier Frontline Inc. (126227)' -->
+        Procuring\n<xliff:g example="Product1" id="product_name">%1$s</xliff:g> (<xliff:g example="A11223445" id="item_sku">%2$s</xliff:g>)\nfrom Supplier\n<xliff:g example="Frontline Inc." id="supplier_name">%3$s</xliff:g> (<xliff:g example="126227" id="supplier_code">%4$s</xliff:g>)
+    </string>
+    <string name="sales_procurement_title_availability">Quantity Available at Supplier</string>
+    <string name="sales_procurement_title_phone">Procure via Phone Call</string>
+    <string name="sales_procurement_title_email">Procure via Email</string>
+    <string name="sales_procurement_hint_reqd_product_qty">Required Quantity</string>
+    <string name="sales_procurement_status_loading_contacts">Loading Supplier\'s Contacts…</string>
+    <string name="sales_procurement_no_contacts">No contacts available for Product Procurement!</string>
+    <string name="sales_procurement_email_subject">
+        <!-- Output will be like 'Need 100 quantity of the Product "Product1 (A11223445)"' -->
+        Need <xliff:g example="100" id="quantity">%1$s</xliff:g> quantity of the Product \"<xliff:g example="Product1" id="product_name">%2$s</xliff:g> (<xliff:g example="A11223445" id="item_sku">%3$s</xliff:g>)\"
+    </string>
+    <string name="sales_procurement_email_body">
+        To Supplier &lt;b&gt;\"<xliff:g example="Frontline Inc." id="supplier_name">%1$s</xliff:g> (<xliff:g example="126227" id="supplier_code">%2$s</xliff:g>)\"&lt;/b&gt;,&lt;br/&gt;
+        Currently we have &lt;b&gt;<xliff:g example="100" id="quantity">%3$s</xliff:g>&lt;/b&gt; quantity of the Product &lt;b&gt;\"<xliff:g example="Product1" id="product_name">%4$s</xliff:g> (<xliff:g example="A11223445" id="item_sku">%5$s</xliff:g>)\"&lt;/b&gt;. We are in need of &lt;b&gt;<xliff:g example="100" id="quantity">%6$s</xliff:g>&lt;/b&gt; quantity to meet the demand. Please expedite the request at the earliest.&lt;br/&gt;&lt;br/&gt;
+        Regards,&lt;br/&gt;
+        {Store Name and address}
+    </string>
+
+    <!-- ============================== -->
+    <!-- STRINGS USED IN ABOUT ACTIVITY -->
+    <!-- ============================== -->
+    <string name="about_title">About</string>
+    <!-- For the introductory text about the App -->
+    <string name="text_about_content_intro">App designed and developed by &lt;b&gt;Kaushik N Sanji&lt;/b&gt; as part of the project coursework done for the &lt;b&gt;Android Basics Nanodegree&lt;/b&gt; course offered by &lt;b&gt;Udacity&lt;/b&gt;.</string>
+    <!-- For the brief description text about the App -->
+    <string name="text_about_content_desc">
+        App is structured as an Inventory App that allows a Store to keep track of its product inventory and record sales. It allows to store every information of a Product along with its pictures and Suppliers information with their price and available-to-sell quantity. It also features Product procurement from Suppliers via the supplied Contact information of Suppliers recorded.
+&lt;br/&gt;&lt;br/&gt;Camera and Album icons used are made by &lt;a href=&quot;https://www.flaticon.com/authors/pixel-perfect&quot; title=&quot;pixel-perfect&quot;&gt;Pixel-Perfect&lt;/a&gt; from &lt;a href=&quot;https://www.flaticon.com/&quot; title=&quot;Flaticon&quot;&gt;www.flaticon.com&lt;/a&gt; is licensed by &lt;a href=&quot;http://creativecommons.org/licenses/by/3.0/&quot; title=&quot;Creative Commons BY 3.0&quot; target=&quot;_blank&quot;&gt;CC 3.0 BY&lt;/a&gt;.&lt;br/&gt;
+    </string>
+    <!-- Link to the course -->
+    <string name="about_link_udacity_course" translatable="false">https://in.udacity.com/course/android-basics-nanodegree-by-google--nd803</string>
+    <!-- Link to the developer's portfolio -->
+    <string name="about_link_github_profile" translatable="false">https://github.com/kaushiknsanji</string>
+    <!-- Link to the developer's bio -->
+    <string name="about_link_linkedin_profile" translatable="false">https://www.linkedin.com/in/kaushiknsanji</string>
+
+
+</resources>

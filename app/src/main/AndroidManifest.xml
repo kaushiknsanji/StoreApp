@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.kaushiknsanji.storeapp">
+
+    <!-- Uses Camera to take pictures of the Products -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <!-- Access to private external storage required for reading/saving the images -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <application
+        android:name=".ui.StoreApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- File Provider for the Images -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <!-- Content Provider for the Database in the App -->
+        <provider
+            android:name=".data.local.StoreContentProvider"
+            android:authorities="com.example.kaushiknsanji.storeapp.provider"
+            android:exported="false" />
+
+        <!-- The Main Activity that displays all the Products, Suppliers and the Sales information -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/AppTheme.Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- The Product Config Activity that allows to register a Product into the catalog -->
+        <activity
+            android:name=".ui.products.config.ProductConfigActivity"
+            android:label="@string/product_config_title_add_product"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- The Product Image Activity that allows to save/manage the images of the Product -->
+        <activity
+            android:name=".ui.products.image.ProductImageActivity"
+            android:label="@string/product_image_title"
+            android:parentActivityName=".ui.products.config.ProductConfigActivity"
+            android:theme="@style/AppTheme.ProductImage"
+            tools:targetApi="jelly_bean">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kaushiknsanji.storeapp.ui.products.config.ProductConfigActivity" />
+        </activity>
+
+        <!-- The Supplier Config Activity that allows to configure a Supplier -->
+        <activity
+            android:name=".ui.suppliers.config.SupplierConfigActivity"
+            android:label="@string/supplier_config_title_add_supplier"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- The Supplier Product Picker Activity that allows to search and pick the Products to be sold by the Supplier -->
+        <activity
+            android:name=".ui.suppliers.product.SupplierProductPickerActivity"
+            android:label="@string/supplier_product_picker_title"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- The Sales Config Activity that allows to update the inventory of the Product across its Suppliers -->
+        <activity
+            android:name=".ui.inventory.config.SalesConfigActivity"
+            android:label="@string/sales_config_title_edit_sales"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- The Sales Procurement Activity that allows to place product procurement request with the Supplier -->
+        <activity
+            android:name=".ui.inventory.procure.SalesProcurementActivity"
+            android:label="@string/sales_procurement_title"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- The About Activity of the App -->
+        <activity
+            android:name=".ui.about.AboutActivity"
+            android:theme="@style/AppTheme" />
+
+        <!-- Preloaded Fonts used in the App -->
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+    </application>
+
+</manifest>

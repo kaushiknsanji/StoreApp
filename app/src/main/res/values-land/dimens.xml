@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ======================================== -->
+    <!-- FOR THE PRODUCT CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ======================================== -->
+    <dimen name="guideline_product_config_horizontal_keyline">24dp</dimen>
+
+    <!-- ======================================= -->
+    <!-- FOR THE PRODUCT IMAGE ACTIVITY/FRAGMENT -->
+    <!-- ======================================= -->
+    <dimen name="text_product_image_empty_grid_margin">24dp</dimen>
+    <dimen name="recyclerview_product_image_photo_grid_horizontal_margin">24dp</dimen>
+
+    <!-- ============================================ -->
+    <!-- FOR THE PRODUCT IMAGE PICKER DIALOG FRAGMENT -->
+    <!-- ============================================ -->
+    <dimen name="image_picker_gallery_margin_right">16dp</dimen>
+    <dimen name="image_picker_camera_margin_left">16dp</dimen>
+    <dimen name="picker_options_half_spacing">8dp</dimen>
+    <dimen name="text_image_picker_margin_top">8dp</dimen>
+
+    <!-- ============================ -->
+    <!-- FOR THE COMMON TAB FRAGMENTS -->
+    <!-- ============================ -->
+    <dimen name="guideline_content_page_horizontal_keyline">24dp</dimen>
+    <dimen name="image_content_page_step_number_size">112dp</dimen>
+
+    <!-- ========================================= -->
+    <!-- FOR THE SUPPLIER CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ========================================= -->
+    <dimen name="guideline_supplier_config_horizontal_keyline">24dp</dimen>
+
+    <!-- ================================================= -->
+    <!-- FOR THE SUPPLIER PRODUCT PICKER ACTIVITY/FRAGMENT -->
+    <!-- ================================================= -->
+    <dimen name="text_supplier_product_picker_empty_list_horizontal_margin">24dp</dimen>
+    <dimen name="recyclerview_supplier_product_picker_horizontal_margin">24dp</dimen>
+
+    <!-- ====================================== -->
+    <!-- FOR THE SALES CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ====================================== -->
+    <dimen name="guideline_sales_config_horizontal_keyline">24dp</dimen>
+
+    <!-- =========================================== -->
+    <!-- FOR THE SALES PROCUREMENT ACTIVITY/FRAGMENT -->
+    <!-- =========================================== -->
+    <dimen name="guideline_sales_procurement_horizontal_keyline">24dp</dimen>
+
+    <!-- ====================== -->
+    <!-- FOR THE ABOUT ACTIVITY -->
+    <!-- ====================== -->
+    <dimen name="scrollview_about_content_padding">24dp</dimen>
+
+</resources>

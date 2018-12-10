@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- For the Cache in Primary Storage area -->
+    <external-cache-path
+        name="private_primary_cache"
+        path="." />
+
+    <!-- For the Files in Primary Storage area -->
+    <external-files-path
+        name="private_primary_images"
+        path="." />
+
+    <!-- For the Cache/Files in Secondary Storage area (Encapsulates only the root) -->
+    <!--suppress AndroidElementNotAllowed -->
+    <root-path
+        name="private_external_images1"
+        path="/storage/" />
+
+    <!-- For the Cache/Files in Secondary Storage area (More specific version when applicable) -->
+    <!--suppress AndroidElementNotAllowed -->
+    <root-path
+        name="private_external_images2"
+        path="/storage/sdcard1/Android/data/com.example.kaushiknsanji.storeapp/" />
+</paths>

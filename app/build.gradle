@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    //Constants defined for use with buildConfigField
+    def BOOLEAN = "boolean"
+    def TRUE = "true"
+    def FALSE = "false"
+    def LOG_CURSOR_QUERIES = "LOG_CURSOR_QUERIES"
+    def LOG_STETHO = "LOG_STETHO"
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.example.kaushiknsanji.storeapp"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            //Enable Cursor Queries logging in Debug
+            buildConfigField BOOLEAN, LOG_CURSOR_QUERIES, TRUE
+            //Enable Stetho logging in Debug
+            buildConfigField BOOLEAN, LOG_STETHO, TRUE
+        }
+
+        release {
+            //Disable Cursor Queries logging in Debug
+            buildConfigField BOOLEAN, LOG_CURSOR_QUERIES, FALSE
+            //Disable Stetho logging in Debug
+            buildConfigField BOOLEAN, LOG_STETHO, FALSE
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //Using Java8
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Support Library dependencies
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:exifinterface:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+
+    //ConstraintLayout Library dependency
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
+
+    //Test dependencies
+    testImplementation "junit:junit:$rootProject.ext.jUnitVersion"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.ext.testRunnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoCoreVersion"
+
+    //Stetho Test dependency
+    implementation "com.facebook.stetho:stetho:$rootProject.ext.stethoVersion"
+}

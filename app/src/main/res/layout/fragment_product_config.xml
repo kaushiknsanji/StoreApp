@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/productConfigBackgroundColor"
+    android:fillViewport="true"
+    tools:context="com.example.kaushiknsanji.storeapp.ui.products.config.ProductConfigActivityFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_product_config_left_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/guideline_product_config_horizontal_keyline" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_product_config_right_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/guideline_product_config_horizontal_keyline" />
+
+        <TextView
+            android:id="@+id/text_product_config_name_label"
+            style="@style/ProductConfigTextLabelStyle"
+            android:text="@string/product_config_label_name"
+            app:layout_constraintBaseline_toBaselineOf="@+id/edittext_product_config_name"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_product_config_left_vertical" />
+
+        <EditText
+            android:id="@+id/edittext_product_config_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/product_config_inner_content_margin"
+            android:layout_marginStart="@dimen/product_config_inner_content_margin"
+            android:layout_marginTop="@dimen/product_config_outer_content_margin"
+            android:background="@drawable/shape_product_config_edit_box"
+            android:inputType="text|textAutoComplete|textCapSentences"
+            android:theme="@style/ProductConfigTextInputTheme"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_product_config_right_vertical"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@+id/barrier_product_config_left_labels"
+            app:layout_constraintRight_toRightOf="@+id/guideline_product_config_right_vertical"
+            app:layout_constraintStart_toEndOf="@+id/barrier_product_config_left_labels"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_product_config_sku_label"
+            style="@style/ProductConfigTextLabelStyle"
+            android:text="@string/product_config_label_sku"
+            app:layout_constraintBottom_toBottomOf="@+id/textinput_product_config_sku"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintTop_toTopOf="@+id/textinput_product_config_sku" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textinput_product_config_sku"
+            style="@style/ProductConfigTextInputStyle"
+            android:layout_marginLeft="@dimen/product_config_inner_content_margin"
+            android:layout_marginStart="@dimen/product_config_inner_content_margin"
+            android:layout_marginTop="@dimen/product_config_outer_content_margin"
+            android:theme="@style/ProductConfigTextInputTheme"
+            app:counterEnabled="true"
+            app:counterMaxLength="@integer/product_config_sku_max_length"
+            app:errorEnabled="true"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_product_config_right_vertical"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@+id/barrier_product_config_left_labels"
+            app:layout_constraintRight_toRightOf="@+id/guideline_product_config_right_vertical"
+            app:layout_constraintStart_toEndOf="@+id/barrier_product_config_left_labels"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_product_config_name">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edittext_product_config_sku"
+                style="@style/ProductConfigTextInputEditTextStyle"
+                android:inputType="text|textNoSuggestions"
+                android:maxLength="@integer/product_config_sku_max_length" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.constraint.Barrier
+            android:id="@+id/barrier_product_config_left_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="text_product_config_name_label,text_product_config_sku_label" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textinput_product_config_description"
+            style="@style/ProductConfigTextInputStyle"
+            android:layout_marginTop="@dimen/product_config_outer_content_margin"
+            android:theme="@style/ProductConfigTextInputTheme"
+            app:layout_constraintEnd_toEndOf="@id/guideline_product_config_right_vertical"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintRight_toRightOf="@id/guideline_product_config_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/textinput_product_config_sku">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edittext_product_config_description"
+                style="@style/ProductConfigTextInputEditTextStyle"
+                android:hint="@string/product_config_hint_description"
+                android:inputType="text|textMultiLine|textCapSentences"
+                android:maxLines="3" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_product_config_category_label"
+            style="@style/ProductConfigTextLabelStyle"
+            android:layout_marginTop="@dimen/product_config_outer_content_margin"
+            android:text="@string/product_config_label_category"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/textinput_product_config_description" />
+
+        <Spinner
+            android:id="@+id/spinner_product_config_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/product_config_inner_content_margin"
+            android:background="@drawable/shape_product_config_edit_box"
+            android:maxWidth="@dimen/spinner_product_config_category_max_width"
+            android:minWidth="@dimen/spinner_product_config_category_min_width"
+            android:prompt="@string/product_config_spinner_category_prompt"
+            android:spinnerMode="dropdown"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/text_product_config_category_label" />
+
+        <EditText
+            android:id="@+id/edittext_product_config_category_other"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/match_constraint_0dp"
+            android:layout_marginLeft="@dimen/edittext_product_config_category_margin_left"
+            android:layout_marginStart="@dimen/edittext_product_config_category_margin_left"
+            android:background="@drawable/shape_product_config_edit_box"
+            android:ems="12"
+            android:inputType="text|textAutoComplete|textCapWords"
+            android:theme="@style/ProductConfigTextInputTheme"
+            android:visibility="invisible"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_product_config_category"
+            app:layout_constraintEnd_toEndOf="@id/guideline_product_config_right_vertical"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@+id/spinner_product_config_category"
+            app:layout_constraintRight_toRightOf="@id/guideline_product_config_right_vertical"
+            app:layout_constraintStart_toEndOf="@+id/spinner_product_config_category"
+            app:layout_constraintTop_toTopOf="@+id/spinner_product_config_category"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/text_product_config_attrs_label"
+            style="@style/ProductConfigTextLabelStyle"
+            android:layout_marginTop="@dimen/text_product_config_attrs_label_margin_top"
+            android:text="@string/product_config_label_attrs"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_product_config_category" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_product_config_attrs"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/product_config_inner_content_margin"
+            android:clipToPadding="false"
+            app:layout_constraintEnd_toEndOf="@id/guideline_product_config_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintRight_toRightOf="@id/guideline_product_config_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/text_product_config_attrs_label"
+            tools:listitem="@layout/item_product_config_attr" />
+
+        <Button
+            android:id="@+id/btn_product_config_add_attrs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/product_config_outer_content_margin"
+            android:layout_marginTop="@dimen/product_config_inner_content_margin"
+            android:background="@drawable/state_product_config_add_btn_bg"
+            android:text="@string/product_config_btn_label_add_more_attrs"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_product_config_right_vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintRight_toRightOf="@id/guideline_product_config_right_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_product_config_left_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerview_product_config_attrs" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>
+

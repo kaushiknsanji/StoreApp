@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/BaseCardLightStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground">
+
+        <include
+            android:id="@+id/include_all_product_item"
+            style="@style/ConstraintTopCenterHorizontalStyle"
+            layout="@layout/layout_all_product_item" />
+
+        <View
+            android:id="@+id/divider_product_list_item_action_buttons"
+            style="@style/ConstraintCenterHorizontalStyle"
+            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_height="@dimen/divider_product_list_item_action_buttons_height"
+            android:background="@color/productListItemDividerColor"
+            app:layout_constraintTop_toBottomOf="@+id/include_all_product_item" />
+
+        <Button
+            android:id="@+id/btn_product_list_item_delete"
+            style="@style/MaterialLabelButtonStyle"
+            android:layout_marginTop="@dimen/product_list_item_action_buttons_vertical_margin"
+            android:text="@string/action_delete"
+            android:textColor="@color/productListItemButtonLabelDeleteColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_product_list_item_action_buttons" />
+
+        <Button
+            android:id="@+id/btn_product_list_item_edit"
+            style="@style/MaterialLabelButtonStyle"
+            android:layout_marginLeft="@dimen/product_list_item_action_buttons_horizontal_margin"
+            android:layout_marginStart="@dimen/product_list_item_action_buttons_horizontal_margin"
+            android:layout_marginTop="@dimen/product_list_item_action_buttons_vertical_margin"
+            android:text="@string/action_edit"
+            android:textColor="@color/productListItemButtonLabelEditColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/btn_product_list_item_delete"
+            app:layout_constraintStart_toEndOf="@+id/btn_product_list_item_delete"
+            app:layout_constraintTop_toBottomOf="@+id/divider_product_list_item_action_buttons" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

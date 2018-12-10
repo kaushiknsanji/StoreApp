@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/text_sales_procurement_item_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_all_phone"
+        android:drawablePadding="@dimen/sales_procurement_item_phone_drawable_padding"
+        android:drawableStart="@drawable/ic_all_phone"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toStartOf="@+id/image_sales_procurement_item_contact_default"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/image_sales_procurement_item_contact_default"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="9529294444" />
+
+    <ImageView
+        android:id="@+id/image_sales_procurement_item_contact_default"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/match_constraint_0dp"
+        android:layout_marginLeft="@dimen/sales_procurement_item_contact_default_margin_left"
+        android:layout_marginStart="@dimen/sales_procurement_item_contact_default_margin_left"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sales_procurement_item_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/text_sales_procurement_item_phone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_sales_procurement_item_phone"
+        app:layout_constraintTop_toTopOf="@+id/text_sales_procurement_item_phone"
+        app:srcCompat="@drawable/ic_all_select_circle" />
+
+</android.support.constraint.ConstraintLayout>

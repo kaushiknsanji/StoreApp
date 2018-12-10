@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/imgbtn_supplier_config_item_contact_remove"
+        style="@style/RemoveCircleImageButtonStyle"
+        app:layout_constraintBottom_toBottomOf="@+id/textinput_supplier_config_item_contact"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textinput_supplier_config_item_contact" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textinput_supplier_config_item_contact"
+        style="@style/SupplierConfigTextInputStyle"
+        android:layout_margin="@dimen/textinput_supplier_config_item_contact_margin"
+        android:theme="@style/SupplierConfigTextInputTheme"
+        app:hintEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/image_supplier_config_item_contact_default"
+        app:layout_constraintLeft_toRightOf="@+id/imgbtn_supplier_config_item_contact_remove"
+        app:layout_constraintRight_toLeftOf="@+id/image_supplier_config_item_contact_default"
+        app:layout_constraintStart_toEndOf="@+id/imgbtn_supplier_config_item_contact_remove"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edittext_supplier_config_item_contact"
+            style="@style/SupplierConfigTextInputEditTextStyle"
+            android:maxLines="1" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/image_supplier_config_item_contact_default"
+        android:layout_width="@dimen/btn_material_size"
+        android:layout_height="@dimen/btn_material_size"
+        android:src="@drawable/state_all_select_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/textinput_supplier_config_item_contact"
+        app:layout_constraintEnd_toStartOf="@+id/text_supplier_config_item_contact_default_label"
+        app:layout_constraintLeft_toRightOf="@+id/textinput_supplier_config_item_contact"
+        app:layout_constraintRight_toLeftOf="@+id/text_supplier_config_item_contact_default_label"
+        app:layout_constraintStart_toEndOf="@+id/textinput_supplier_config_item_contact"
+        app:layout_constraintTop_toTopOf="@+id/textinput_supplier_config_item_contact" />
+
+    <TextView
+        android:id="@+id/text_supplier_config_item_contact_default_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/text_supplier_config_item_contact_default_label_horizontal_margin"
+        android:layout_marginLeft="@dimen/text_supplier_config_item_contact_default_label_horizontal_margin"
+        android:layout_marginRight="@dimen/text_supplier_config_item_contact_default_label_horizontal_margin"
+        android:layout_marginStart="@dimen/text_supplier_config_item_contact_default_label_horizontal_margin"
+        android:text="@string/supplier_config_item_contact_label_default"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textStyle="italic"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/image_supplier_config_item_contact_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image_supplier_config_item_contact_default"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_supplier_config_item_contact_default"
+        app:layout_constraintTop_toTopOf="@+id/image_supplier_config_item_contact_default"
+        tools:visibility="visible" />
+
+</android.support.constraint.ConstraintLayout>

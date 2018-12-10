@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MATCH CONSTRAINT Dimension used for ConstraintLayouts -->
+    <dimen name="match_constraint_0dp">0dp</dimen>
+
+    <!-- Dimension used for LinearLayouts -->
+    <dimen name="size_by_weight_0dp">0dp</dimen>
+
+    <!-- ========================= -->
+    <!-- FOR ALL DESIGN COMPONENTS -->
+    <!-- ========================= -->
+    <dimen name="btn_material_size">48dp</dimen>
+    <dimen name="fab_material_margin">16dp</dimen>
+    <dimen name="fab_material_normal_size">56dp</dimen>
+    <dimen name="app_bar_no_elevation">0dp</dimen>
+    <dimen name="dialog_material_elevation">24dp</dimen>
+
+    <!-- For All Label Buttons -->
+    <dimen name="btn_label_material_height">36dp</dimen>
+    <dimen name="btn_label_material_min_width">64dp</dimen>
+    <dimen name="btn_label_material_padding_left">8dp</dimen>
+    <dimen name="btn_label_material_padding_right">8dp</dimen>
+
+    <!-- For the Common Card used in the app -->
+    <dimen name="card_all_corner_radius">4dp</dimen>
+    <dimen name="card_all_inner_padding">8dp</dimen>
+
+    <!-- ============================== -->
+    <!-- FOR THE MAIN ACTIVITY/FRAGMENT -->
+    <!-- ============================== -->
+    <!-- Indicator height of the selected Tab in TabLayout -->
+    <dimen name="tab_main_indicator_height">4dp</dimen>
+    <!-- For the custom Tabs in TabLayout -->
+    <dimen name="image_main_tab_icon_margin_right">6dp</dimen>
+    <dimen name="text_main_tab_title_size">16sp</dimen>
+
+    <!-- ======================================== -->
+    <!-- FOR THE PRODUCT CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ======================================== -->
+    <dimen name="guideline_product_config_horizontal_keyline">16dp</dimen>
+    <dimen name="image_product_config_item_photo_height">200dp</dimen>
+    <dimen name="image_product_config_add_photo_padding">8dp</dimen>
+    <dimen name="product_config_outer_content_margin">16dp</dimen>
+    <dimen name="product_config_inner_content_margin">8dp</dimen>
+    <dimen name="spinner_product_config_category_min_width">72dp</dimen>
+    <dimen name="spinner_product_config_category_max_width">120dp</dimen>
+    <dimen name="spinner_product_config_category_item_padding">8dp</dimen>
+    <dimen name="edittext_product_config_category_margin_left">16dp</dimen>
+    <dimen name="text_product_config_attrs_label_margin_top">24dp</dimen>
+    <!-- For the Additional Attribute Items -->
+    <dimen name="item_product_config_attr_inner_margin">4dp</dimen>
+
+    <!-- ======================================= -->
+    <!-- FOR THE PRODUCT IMAGE ACTIVITY/FRAGMENT -->
+    <!-- ======================================= -->
+    <dimen name="image_product_selected_item_photo_height">200dp</dimen>
+    <dimen name="image_item_product_action_overlay_size">24dp</dimen>
+    <dimen name="image_item_product_action_overlay_margin">8dp</dimen>
+    <dimen name="image_item_photo_grid_spacing">8dp</dimen>
+    <dimen name="text_product_image_empty_grid_margin">16dp</dimen>
+    <dimen name="recyclerview_product_image_photo_grid_horizontal_margin">8dp</dimen>
+    <dimen name="product_image_vertical_padding">16dp</dimen>
+    <dimen name="image_item_product_photo_padding">6dp</dimen>
+
+    <!-- ============================================ -->
+    <!-- FOR THE PRODUCT IMAGE PICKER DIALOG FRAGMENT -->
+    <!-- ============================================ -->
+    <dimen name="image_picker_icons_size">72dp</dimen>
+    <dimen name="text_image_picker_size">18sp</dimen>
+    <dimen name="btn_image_picker_action_margin_right">16dp</dimen>
+    <dimen name="btn_image_picker_action_margin_bottom">8dp</dimen>
+    <dimen name="btn_image_picker_action_margin_top">32dp</dimen>
+    <dimen name="text_image_picker_content_margin">8dp</dimen>
+    <dimen name="card_image_picker_corner_radius">8dp</dimen>
+
+    <!-- ================================ -->
+    <!-- FOR THE PROGRESS DIALOG FRAGMENT -->
+    <!-- ================================ -->
+    <dimen name="card_progress_bar_corner_radius">8dp</dimen>
+    <dimen name="card_progress_bar_content_padding">16dp</dimen>
+    <dimen name="text_progress_status_margin_top">4dp</dimen>
+
+    <!-- ============================ -->
+    <!-- FOR THE COMMON TAB FRAGMENTS -->
+    <!-- ============================ -->
+    <dimen name="guideline_content_page_horizontal_keyline">8dp</dimen>
+    <dimen name="text_content_page_empty_list_margin_top">4dp</dimen>
+    <dimen name="text_content_page_empty_list_size">20sp</dimen>
+    <dimen name="image_content_page_step_number_size">96dp</dimen>
+
+    <!-- ============================= -->
+    <!-- FOR THE PRODUCT LIST FRAGMENT -->
+    <!-- ============================= -->
+    <dimen name="product_list_item_action_buttons_vertical_margin">8dp</dimen>
+    <dimen name="product_list_item_action_buttons_horizontal_margin">8dp</dimen>
+    <dimen name="divider_product_list_item_action_buttons_height">1dp</dimen>
+    <dimen name="product_list_items_spacing">4dp</dimen>
+
+    <!-- ================================== -->
+    <!-- FOR THE COMMON PRODUCT LAYOUT ITEM -->
+    <!-- ================================== -->
+    <dimen name="product_item_vertical_margin">8dp</dimen>
+    <dimen name="product_item_horizontal_margin">8dp</dimen>
+    <dimen name="text_product_item_sku_size">36sp</dimen>
+
+    <!-- ========================================= -->
+    <!-- FOR THE SUPPLIER CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ========================================= -->
+    <dimen name="guideline_supplier_config_horizontal_keyline">16dp</dimen>
+    <dimen name="supplier_config_vertical_margin">16dp</dimen>
+    <dimen name="edittext_supplier_config_name_margin_left">8dp</dimen>
+    <dimen name="divider_supplier_config_height">2dp</dimen>
+    <dimen name="divider2_supplier_config_margin_top">4dp</dimen>
+    <dimen name="supplier_config_same_section_vertical_margin">8dp</dimen>
+    <!-- For the Supplier Contact Items -->
+    <dimen name="textinput_supplier_config_item_contact_margin">4dp</dimen>
+    <dimen name="text_supplier_config_item_contact_default_label_horizontal_margin">4dp</dimen>
+    <dimen name="edittext_supplier_config_item_product_price_margin_top">8dp</dimen>
+    <dimen name="edittext_supplier_config_item_product_price_margin_right">8dp</dimen>
+    <dimen name="text_supplier_config_item_product_price_label_margin_right">4dp</dimen>
+
+    <!-- ================================================= -->
+    <!-- FOR THE SUPPLIER PRODUCT PICKER ACTIVITY/FRAGMENT -->
+    <!-- ================================================= -->
+    <dimen name="text_supplier_product_picker_empty_list_horizontal_margin">16dp</dimen>
+    <dimen name="recyclerview_supplier_product_picker_horizontal_margin">8dp</dimen>
+    <dimen name="supplier_product_list_items_spacing">@dimen/product_list_items_spacing</dimen>
+    <dimen name="frame_supplier_product_picker_search_margin_bottom">2dp</dimen>
+
+    <!-- ============================== -->
+    <!-- FOR THE SUPPLIER LIST FRAGMENT -->
+    <!-- ============================== -->
+    <dimen name="divider_supplier_list_item_action_buttons_height">1dp</dimen>
+    <dimen name="supplier_list_item_action_buttons_vertical_margin">8dp</dimen>
+    <dimen name="supplier_list_item_action_buttons_horizontal_margin">8dp</dimen>
+    <dimen name="supplier_list_items_spacing">4dp</dimen>
+    <dimen name="btn_supplier_list_item_contact_drawable_padding">2dp</dimen>
+    <dimen name="supplier_list_item_vertical_margin">4dp</dimen>
+    <dimen name="supplier_list_item_horizontal_margin">8dp</dimen>
+
+    <!-- =========================== -->
+    <!-- FOR THE SALES LIST FRAGMENT -->
+    <!-- =========================== -->
+    <dimen name="divider_sales_list_item_section_height">1dp</dimen>
+    <dimen name="sales_list_item_vertical_margin">4dp</dimen>
+    <dimen name="text_sales_list_item_total_available_size">18sp</dimen>
+    <dimen name="text_sales_list_item_supplier_name_code_margin">4dp</dimen>
+    <dimen name="text_sales_list_item_supplier_name_code_size">18sp</dimen>
+    <dimen name="text_sales_list_item_supplier_availability_margin">4dp</dimen>
+    <dimen name="sales_list_item_action_buttons_vertical_margin">8dp</dimen>
+    <dimen name="sales_list_item_action_buttons_horizontal_margin">8dp</dimen>
+    <dimen name="sales_list_item_action_buttons_drawable_padding">4dp</dimen>
+    <dimen name="sales_list_item_top_supplier_title_drawable_padding">4dp</dimen>
+    <dimen name="sales_list_items_spacing">4dp</dimen>
+
+    <!-- ====================================== -->
+    <!-- FOR THE SALES CONFIG ACTIVITY/FRAGMENT -->
+    <!-- ====================================== -->
+    <dimen name="image_sales_config_item_photo_height">200dp</dimen>
+    <dimen name="guideline_sales_config_horizontal_keyline">16dp</dimen>
+    <dimen name="divider_sales_config_height">2dp</dimen>
+    <dimen name="divider2_sales_config_margin_top">4dp</dimen>
+    <dimen name="sales_config_vertical_margin">16dp</dimen>
+    <dimen name="sales_config_vertical_padding">16dp</dimen>
+    <dimen name="sales_config_same_section_vertical_margin">8dp</dimen>
+    <dimen name="sales_config_item_action_buttons_drawable_padding">4dp</dimen>
+    <dimen name="text_sales_config_product_name_margin_right">8dp</dimen>
+    <dimen name="text_sales_config_product_sku_size">@dimen/text_product_item_sku_size</dimen>
+    <dimen name="text_sales_config_product_desc_horizontal_margin">12dp</dimen>
+    <dimen name="text_sales_config_item_supplier_name_code_margin_left">8dp</dimen>
+    <dimen name="text_sales_config_item_supplier_selling_price_margin_top">4dp</dimen>
+    <dimen name="edittext_sales_config_item_supplier_qty_horizontal_margin">4dp</dimen>
+    <dimen name="sales_config_item_supplier_action_buttons_vertical_margin">8dp</dimen>
+    <dimen name="sales_config_item_supplier_action_buttons_horizontal_margin">8dp</dimen>
+    <dimen name="tablelayout_sales_config_product_attrs_cell_padding">8dp</dimen>
+
+    <!-- =========================================== -->
+    <!-- FOR THE SALES PROCUREMENT ACTIVITY/FRAGMENT -->
+    <!-- =========================================== -->
+    <dimen name="image_sales_procurement_item_photo_height">200dp</dimen>
+    <dimen name="guideline_sales_procurement_horizontal_keyline">16dp</dimen>
+    <dimen name="divider_sales_procurement_height">1dp</dimen>
+    <dimen name="sales_procurement_vertical_padding">16dp</dimen>
+    <dimen name="sales_procurement_vertical_margin">16dp</dimen>
+    <dimen name="sales_procurement_same_section_vertical_margin">8dp</dimen>
+    <dimen name="text_sales_procurement_supplier_availability_total_margin_top">4dp</dimen>
+    <dimen name="divider_sales_procurement_phone_title_list_margin_top">4dp</dimen>
+    <dimen name="divider_sales_procurement_email_title_list_margin_top">4dp</dimen>
+    <dimen name="imgbtn_sales_procurement_send_mail_margin_left">8dp</dimen>
+    <dimen name="sales_procurement_item_phone_drawable_padding">4dp</dimen>
+    <dimen name="sales_procurement_item_contact_default_margin_left">24dp</dimen>
+    <dimen name="text_sales_procurement_no_contacts_padding">8dp</dimen>
+    <dimen name="sales_procurement_item_phone_vertical_spacing">8dp</dimen>
+
+    <!-- ====================== -->
+    <!-- FOR THE ABOUT ACTIVITY -->
+    <!-- ====================== -->
+    <dimen name="card_about_info_corner_radius">8dp</dimen>
+    <dimen name="card_about_info_elevation">6dp</dimen>
+    <dimen name="scrollview_about_content_padding">12dp</dimen>
+    <dimen name="card_about_internal_content_margin">12dp</dimen>
+    <dimen name="text_about_content_title_size">32sp</dimen>
+    <dimen name="text_about_content_size">16sp</dimen>
+    <dimen name="image_about_bio_size">56dp</dimen>
+
+</resources>

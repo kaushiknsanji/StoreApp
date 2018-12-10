@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@android:color/transparent" />
+            <padding
+                android:bottom="1dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <corners android:radius="10dp" />
+            <stroke
+                android:width="1dp"
+                android:color="@android:color/holo_red_dark"
+                android:dashGap="2dp"
+                android:dashWidth="4dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="6dp"
+        android:drawable="@drawable/ic_sales_config_edit"
+        android:gravity="center"
+        android:left="6dp"
+        android:right="6dp"
+        android:top="6dp" />
+</layer-list>

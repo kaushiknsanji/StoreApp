@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ================ -->
+    <!-- APP THEME COLORS -->
+    <!-- ================ -->
+    <color name="colorPrimary">#373B59</color>
+    <color name="colorPrimaryDark">#222742</color>
+    <color name="colorAccent">#FF4081</color>
+    <!-- Default Background color used in the App -->
+    <color name="mainBackgroundColor">#EDEEF0</color>
+
+    <!-- ================= -->
+    <!-- COMMON APP COLORS -->
+    <!-- ================= -->
+    <color name="textInputErrorColor">#d50000</color>
+    <color name="textInputCounterColor">#FF3D00</color>
+    <color name="textInputHintColor">#696969</color>
+
+    <!-- ================================== -->
+    <!-- MAIN ACTIVITY VIEWPAGER TAB COLORS -->
+    <!-- ================================== -->
+    <color name="mainTabIndicatorColor">#FF9800</color>
+    <color name="mainTabTitleTextColor">#FF9800</color>
+    <color name="mainTabIconDefaultColor">#7486A8</color>
+    <color name="mainTabIconSelectedColor">@color/mainTabTitleTextColor</color>
+    <color name="mainProductListFabColor">#a7ffeb</color>
+    <color name="mainSupplierListFabColor">#82b1ff</color>
+
+    <!-- ======================================= -->
+    <!-- PRODUCT CONFIG ACTIVITY/FRAGMENT COLORS -->
+    <!-- ======================================= -->
+    <color name="productConfigBackgroundColor">#b2dfdb</color>
+    <color name="productConfigTextInputActivatedColor">#2962ff</color>
+    <color name="productConfigInputFieldsBackgroundColor">#E5F0CF</color>
+    <color name="productConfigSpinnerCategoryDropdownItemBackgroundColor">#FCFFF5</color>
+
+    <!-- =========================================== -->
+    <!-- PRODUCT IMAGE PICKER DIALOG FRAGMENT COLORS -->
+    <!-- =========================================== -->
+    <color name="productImagePickerBackgroundColor">#303F46</color>
+    <color name="productImageButtonLabelCloseColor">#FFD740</color>
+
+    <!-- ====================================== -->
+    <!-- PRODUCT IMAGE ACTIVITY/FRAGMENT COLORS -->
+    <!-- ====================================== -->
+    <color name="productImageItemPhotoBackgroundDefaultColor">#E5F0CF</color>
+    <color name="productImageItemPhotoBackgroundSelectColor">#38b137</color>
+    <color name="productImageItemPhotoBackgroundDeleteColor">#fa3913</color>
+    <color name="productImageFabColor">#FFAB40</color>
+
+    <!-- ============================ -->
+    <!-- PRODUCT LIST FRAGMENT COLORS -->
+    <!-- ============================ -->
+    <color name="productListItemDividerColor">#757575</color>
+    <color name="productListItemButtonLabelDeleteColor">#fa3913</color>
+    <color name="productListItemButtonLabelEditColor">#356ac3</color>
+
+    <!-- ======================================== -->
+    <!-- SUPPLIER CONFIG ACTIVITY/FRAGMENT COLORS -->
+    <!-- ======================================== -->
+    <color name="supplierConfigBackgroundColor">#64b5f6</color>
+    <color name="supplierConfigInputFieldsBackgroundColor">#b3e5fc</color>
+    <color name="supplierConfigTextInputActivatedColor">#2962ff</color>
+    <color name="supplierConfigSectionDividerColor">#0d47a1</color>
+
+    <!-- ============================= -->
+    <!-- SUPPLIER LIST FRAGMENT COLORS -->
+    <!-- ============================= -->
+    <color name="supplierListItemDividerColor">#757575</color>
+    <color name="supplierListItemButtonLabelDeleteColor">#fa3913</color>
+    <color name="supplierListItemButtonLabelEditColor">#356ac3</color>
+
+    <!-- ========================== -->
+    <!-- SALES LIST FRAGMENT COLORS -->
+    <!-- ========================== -->
+    <color name="salesListItemDividerColor">#757575</color>
+    <color name="salesListItemButtonLabelDeleteColor">#fa3913</color>
+    <color name="salesListItemButtonLabelSellColor">#38b137</color>
+    <color name="salesListItemOutOfStockColor">#fa3913</color>
+    <color name="salesListItemSupplierAvailabilityColor">#673ab7</color>
+    <color name="salesListItemTotalAvailableColor">#009688</color>
+
+    <!-- ===================================== -->
+    <!-- SALES CONFIG ACTIVITY/FRAGMENT COLORS -->
+    <!-- ===================================== -->
+    <color name="salesConfigBackgroundColor">#4db6ac</color>
+    <color name="salesConfigSectionDividerColor">#004d40</color>
+    <color name="salesConfigInputFieldsBackgroundColor">#b2dfdb</color>
+    <color name="salesConfigTextInputActivatedColor">#00796b</color>
+    <color name="salesConfigItemSupplierButtonLabelEditColor">#356ac3</color>
+    <color name="salesConfigItemSupplierButtonLabelProcureColor">#aa00ff</color>
+
+    <!-- ========================================== -->
+    <!-- SALES PROCUREMENT ACTIVITY/FRAGMENT COLORS -->
+    <!-- ========================================== -->
+    <color name="salesProcurementSectionDividerColor">#757575</color>
+    <color name="salesProcurementNoContactsColor">#fa3913</color>
+
+</resources>

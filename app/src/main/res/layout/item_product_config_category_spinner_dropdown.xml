@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/text1"
+    style="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/productConfigSpinnerCategoryDropdownItemBackgroundColor"
+    android:ellipsize="marquee"
+    android:padding="@dimen/spinner_product_config_category_item_padding"
+    android:singleLine="true"
+    android:textColor="@android:color/black"
+    tools:text="@tools:sample/full_names" />
