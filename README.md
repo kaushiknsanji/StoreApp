@@ -294,7 +294,7 @@ The Main Activity displays a Tab Layout with three tabs -
 		* Stores the Supplier's available to sell quantity for a Product.
 		
 * The Queries executed for retrieving the required information in each Fragment/Activity are provided by the Utility class [QueryArgsUtility](/app/src/main/java/com/example/kaushiknsanji/storeapp/data/local/utils/QueryArgsUtility.java). Each of the queries executed are documented in this class.
-* For more information on the Database Schema, read the [Store Database Schema Wiki]().
+* For more information on the Database Schema, read the [Store Database Schema Wiki](https://github.com/kaushiknsanji/StoreApp/wiki/Database-Setup).
 		
 ---
 
