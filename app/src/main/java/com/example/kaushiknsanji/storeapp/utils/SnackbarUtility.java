@@ -16,13 +16,6 @@ public class SnackbarUtility {
     private Snackbar mSnackbar;
 
     /**
-     * Empty Private Constructor to avoid instantiating {@link SnackbarUtility}
-     * without the {@link Snackbar} instance
-     */
-    private SnackbarUtility() {
-    }
-
-    /**
      * Constructor of {@link SnackbarUtility}
      *
      * @param snackbar Instance of {@link Snackbar}
