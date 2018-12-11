@@ -303,3 +303,6 @@ The Main Activity displays a Tab Layout with three tabs -
 Camera and Album icons used are made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="pixel-perfect">Pixel-Perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>.
 
 ---
+## Review from the Reviewer (Udacity)
+
+![review](https://user-images.githubusercontent.com/26028981/49814663-1c7ef380-fd90-11e8-9984-6bd8395789f6.PNG)
