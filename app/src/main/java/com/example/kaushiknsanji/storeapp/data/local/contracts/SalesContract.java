@@ -19,8 +19,12 @@ public class SalesContract implements StoreContract {
     //Identifier for the table 'item_supplier_inventory' associated with the Base URI
     public static final String PATH_ITEM_SUPPLIER_INVENTORY = "salesinventory";
 
-    //Private Constructor to avoid instantiating the Contract
+    /**
+     * Private Constructor to avoid instantiating the {@link SalesContract}
+     */
     private SalesContract() {
+        //Suppressing with an error to enforce noninstantiability
+        throw new AssertionError("No " + this.getClass().getCanonicalName() + " instances for you!");
     }
 
     /**

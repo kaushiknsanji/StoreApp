@@ -43,6 +43,14 @@ import static com.example.kaushiknsanji.storeapp.data.local.utils.SqliteUtility.
 public class QueryArgsUtility {
 
     /**
+     * Private Constructor to prevent direct instantiation of {@link QueryArgsUtility}
+     */
+    private QueryArgsUtility() {
+        //Suppressing with an error to enforce noninstantiability
+        throw new AssertionError("No " + this.getClass().getCanonicalName() + " instances for you!");
+    }
+
+    /**
      * Class that provides all the necessities
      * for building the query to retrieve the Item's Attributes
      * <p>

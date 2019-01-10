@@ -60,6 +60,8 @@ public class SqliteUtility {
      * Private Constructor to prevent instantiation of {@link SqliteUtility}
      */
     private SqliteUtility() {
+        //Suppressing with an error to enforce noninstantiability
+        throw new AssertionError("No " + this.getClass().getCanonicalName() + " instances for you!");
     }
 
     /**

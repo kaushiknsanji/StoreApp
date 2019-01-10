@@ -16,6 +16,8 @@ public class OrientationUtility {
      * Private constructor to avoid instantiating {@link OrientationUtility}
      */
     private OrientationUtility() {
+        //Suppressing with an error to enforce noninstantiability
+        throw new AssertionError("No " + this.getClass().getCanonicalName() + " instances for you!");
     }
 
     /**

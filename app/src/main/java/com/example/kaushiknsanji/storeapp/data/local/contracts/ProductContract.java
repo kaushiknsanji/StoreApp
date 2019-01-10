@@ -24,8 +24,12 @@ public class ProductContract implements StoreContract {
     //Identifier for the table 'item_attr' associated with the Base URI
     public static final String PATH_ITEM_ATTR = "attr";
 
-    //Private Constructor to avoid instantiating the Contract
+    /**
+     * Private Constructor to avoid instantiating the {@link ProductContract}
+     */
     private ProductContract() {
+        //Suppressing with an error to enforce noninstantiability
+        throw new AssertionError("No " + this.getClass().getCanonicalName() + " instances for you!");
     }
 
     /**

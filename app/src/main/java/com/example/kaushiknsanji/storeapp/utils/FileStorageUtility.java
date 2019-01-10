@@ -25,6 +25,8 @@ public class FileStorageUtility {
      * Private Constructor to avoid direct instantiation of {@link FileStorageUtility}
      */
     private FileStorageUtility() {
+        //Suppressing with an error to enforce noninstantiability
+        throw new AssertionError("No " + this.getClass().getCanonicalName() + " instances for you!");
     }
 
     /**

@@ -16,6 +16,8 @@ public class WindowDimensionsUtility {
      * Private constructor to avoid instantiating {@link WindowDimensionsUtility}
      */
     private WindowDimensionsUtility() {
+        //Suppressing with an error to enforce noninstantiability
+        throw new AssertionError("No " + this.getClass().getCanonicalName() + " instances for you!");
     }
 
     /**

@@ -18,6 +18,8 @@ public class TextAppearanceUtility {
      * Private constructor to avoid instantiating {@link TextAppearanceUtility}
      */
     private TextAppearanceUtility() {
+        //Suppressing with an error to enforce noninstantiability
+        throw new AssertionError("No " + this.getClass().getCanonicalName() + " instances for you!");
     }
 
     /**

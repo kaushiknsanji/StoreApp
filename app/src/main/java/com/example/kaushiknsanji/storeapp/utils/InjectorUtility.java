@@ -17,6 +17,8 @@ public class InjectorUtility {
      * Private Constructor to avoid instantiating {@link InjectorUtility}
      */
     private InjectorUtility() {
+        //Suppressing with an error to enforce noninstantiability
+        throw new AssertionError("No " + this.getClass().getCanonicalName() + " instances for you!");
     }
 
     /**
