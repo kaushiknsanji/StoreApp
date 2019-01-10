@@ -23,9 +23,9 @@ public class ColorUtility {
      * Method that reads the Typed Array {@code colorArrayRes} and returns an Integer Array of Colors read.
      *
      * @param context         The {@link Context} to use for reading the {@link TypedArray}
-     *                        and retrieving the Colors from Color Resource @{@link ColorRes}
+     *                        and retrieving the Colors from Color Resource {@link ColorRes}
      * @param colorArrayRes   The {@link TypedArray} resource of Colors to be read
-     * @param defaultColorRes The Integer value of the Color Resource @{@link ColorRes} to use as a default Color
+     * @param defaultColorRes The Integer value of the Color Resource {@link ColorRes} to use as a default Color
      *                        in case when an attribute cannot be read from TypedArray or is not a defined resource.
      * @return Integer array of the Colors read from the {@link TypedArray}
      */
