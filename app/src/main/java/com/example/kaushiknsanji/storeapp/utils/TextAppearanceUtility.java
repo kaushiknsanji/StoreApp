@@ -1,6 +1,7 @@
 package com.example.kaushiknsanji.storeapp.utils;
 
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -46,6 +47,7 @@ public class TextAppearanceUtility {
      * @param textWithHtmlContent The Text that contains Html Markups which needs to be formatted for Html
      * @return String containing the Html formatted text of {@code textWithHtmlContent}
      */
+    @NonNull
     public static String getHtmlFormattedText(String textWithHtmlContent) {
         //Initializing a SpannableStringBuilder to build the text
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
