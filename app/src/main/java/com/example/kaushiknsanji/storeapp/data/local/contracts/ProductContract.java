@@ -3,6 +3,7 @@ package com.example.kaushiknsanji.storeapp.data.local.contracts;
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.provider.BaseColumns;
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
 /**
@@ -132,6 +133,7 @@ public class ProductContract implements StoreContract {
          * @return String containing the Fully qualified Column Name with its Table Name
          * in the format TableName.ColumnName
          */
+        @NonNull
         public static String getQualifiedColumnName(String columnNameStr) {
             return TextUtils.concat(TABLE_NAME, ".", columnNameStr).toString();
         }
@@ -204,6 +206,7 @@ public class ProductContract implements StoreContract {
          * @return String containing the Fully qualified Column Name with its Table Name
          * in the format TableName.ColumnName
          */
+        @NonNull
         public static String getQualifiedColumnName(String columnNameStr) {
             return TextUtils.concat(TABLE_NAME, ".", columnNameStr).toString();
         }
@@ -283,6 +286,7 @@ public class ProductContract implements StoreContract {
          * @return String containing the Fully qualified Column Name with its Table Name
          * in the format TableName.ColumnName
          */
+        @NonNull
         public static String getQualifiedColumnName(String columnNameStr) {
             return TextUtils.concat(TABLE_NAME, ".", columnNameStr).toString();
         }
@@ -346,6 +350,7 @@ public class ProductContract implements StoreContract {
          * @return String containing the Fully qualified Column Name with its Table Name
          * in the format TableName.ColumnName
          */
+        @NonNull
         public static String getQualifiedColumnName(String columnNameStr) {
             return TextUtils.concat(TABLE_NAME, ".", columnNameStr).toString();
         }
