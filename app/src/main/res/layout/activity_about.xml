@@ -87,7 +87,7 @@
                         app:layout_constraintRight_toRightOf="@+id/text_about_content_title"
                         app:layout_constraintStart_toStartOf="@+id/text_about_content_title"
                         app:layout_constraintTop_toBottomOf="@+id/text_about_content_title"
-                        tools:text="@string/text_about_content_intro" />
+                        tools:text="@string/about_content_intro" />
 
                     <!-- For the description text -->
                     <TextView
@@ -99,7 +99,7 @@
                         app:layout_constraintRight_toRightOf="@+id/text_about_content_intro"
                         app:layout_constraintStart_toStartOf="@+id/text_about_content_intro"
                         app:layout_constraintTop_toBottomOf="@+id/text_about_content_intro"
-                        tools:text="@string/text_about_content_desc" />
+                        tools:text="@string/about_content_desc" />
 
                     <!-- ImageView linking to the course -->
                     <ImageView

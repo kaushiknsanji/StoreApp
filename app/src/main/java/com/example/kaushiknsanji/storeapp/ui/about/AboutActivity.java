@@ -91,7 +91,7 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         //Finding the TextView
         TextView textViewContentIntro = findViewById(R.id.text_about_content_intro);
         //Setting the Html Content
-        TextAppearanceUtility.setHtmlText(textViewContentIntro, getString(R.string.text_about_content_intro));
+        TextAppearanceUtility.setHtmlText(textViewContentIntro, getString(R.string.about_content_intro));
         //Setting the Typeface
         textViewContentIntro.setTypeface(ResourcesCompat.getFont(this, R.font.caudex));
     }
@@ -104,7 +104,7 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         //Finding the TextView
         TextView textViewContentDescription = findViewById(R.id.text_about_content_desc);
         //Setting the Html Content
-        TextAppearanceUtility.setHtmlText(textViewContentDescription, getString(R.string.text_about_content_desc));
+        TextAppearanceUtility.setHtmlText(textViewContentDescription, getString(R.string.about_content_desc));
         //Making the embedded links clickable
         textViewContentDescription.setMovementMethod(LinkMovementMethod.getInstance());
         //Setting the Typeface
