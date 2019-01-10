@@ -201,6 +201,6 @@
     <dimen name="card_about_internal_content_margin">12dp</dimen>
     <dimen name="text_about_content_title_size">32sp</dimen>
     <dimen name="text_about_content_size">16sp</dimen>
-    <dimen name="image_about_bio_size">56dp</dimen>
+    <dimen name="image_about_bio_icon_size">56dp</dimen>
 
 </resources>

@@ -306,9 +306,9 @@
         <item name="cardBackgroundColor">@color/supplierConfigInputFieldsBackgroundColor</item>
     </style>
 
-    <!-- ====================================== -->
-    <!-- STYLES USED FOR SUPPLIER LIST FRAGMENT -->
-    <!-- ====================================== -->
+    <!-- =================================== -->
+    <!-- STYLES USED FOR SALES LIST FRAGMENT -->
+    <!-- =================================== -->
     <!-- Style for Divider -->
     <style name="SalesListItemDividerStyle" parent="ConstraintCenterHorizontalStyle">
         <item name="android:layout_width">@dimen/match_constraint_0dp</item>
@@ -404,8 +404,8 @@
 
     <!-- Style for the Clickable ImageViews shown in the About Activity -->
     <style name="AboutClickableImageViewStyle">
-        <item name="android:layout_width">@dimen/image_about_bio_size</item>
-        <item name="android:layout_height">@dimen/image_about_bio_size</item>
+        <item name="android:layout_width">@dimen/image_about_bio_icon_size</item>
+        <item name="android:layout_height">@dimen/image_about_bio_icon_size</item>
         <item name="android:background">?android:attr/selectableItemBackground</item>
     </style>
 
