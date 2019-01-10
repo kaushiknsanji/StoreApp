@@ -151,7 +151,7 @@ public class ImageStorageUtility {
         InputStream decodeBoundsInputStream = contentResolver.openInputStream(fileContentUri);
         try {
             //Decoding the dimensions of the original bitmap from the stream
-            BitmapFactory.decodeStream(contentResolver.openInputStream(fileContentUri), null, bitmapOptions);
+            BitmapFactory.decodeStream(decodeBoundsInputStream, null, bitmapOptions);
         } finally {
             if (decodeBoundsInputStream != null) {
                 //Closing the Stream when done
@@ -179,7 +179,7 @@ public class ImageStorageUtility {
             //When the stream is opened
             try {
                 //Decoding into Bitmap with the scaled down dimensions
-                optimizedBitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(fileContentUri), null, bitmapOptions);
+                optimizedBitmap = BitmapFactory.decodeStream(decodeBitmapInputStream, null, bitmapOptions);
             } finally {
                 //Closing the stream when done
                 decodeBitmapInputStream.close();
