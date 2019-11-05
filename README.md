@@ -1,5 +1,8 @@
 # StoreApp - The Store Inventory App
 
+![GitHub](https://img.shields.io/github/license/kaushiknsanji/StoreApp)  ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kaushiknsanji/StoreApp)  ![GitHub repo size](https://img.shields.io/github/repo-size/kaushiknsanji/StoreApp)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/kaushiknsanji/StoreApp)  ![GitHub All Releases](https://img.shields.io/github/downloads/kaushiknsanji/StoreApp/total) ![GitHub search hit counter](https://img.shields.io/github/search/kaushiknsanji/StoreApp/Inventory%20App) ![Minimum API level](https://img.shields.io/badge/API-15+-yellow)
+
 This App has been developed as part of the **Udacity Android Basics Nanodegree Course** for the Exercise Project **"Inventory App"**. This App allows a Store to keep track of the inventory of its Products across the listed Suppliers of Products, along with their Price and Pictures of the Product.
 
 ---
@@ -24,6 +27,29 @@ Android device running with Android OS 4.0.4 (API Level 15) or above. Best exper
 	* Contain a button to order more from the Supplier.
 	* Contain a button to delete the Product entirely.
 * When there are no Products in the database, layout should display a TextView with instructions on how to populate the database.
+
+---
+
+### Things explored/developed in addition to the above defined Rubric
+
+* Storing required information in a `SQLite` database.
+* Designing and developing the Database Schema with relationships between Product, Supplier, Selling Price, Inventory, Images, Additional Product information and Supplier Contact Information to enable -
+	* Multiple Seller registration per Product with their own Selling Price, Availability and Contact information.
+	* Multiple Contacts per Seller, supporting different Contact Types like Phone and Email.
+	* Multiple Product Photos.
+	* Additional Attibutes that further defines the Product.
+* Integrating Android’s File storage systems into the database for Images. Images are persisted by saving the Image files' Content URI in the database instead of storing the entire BLOB of the Image.
+* Communicating with and managing the Database through a Content Provider.
+* Communicating with the File Storage through a File Provider for saving and accessing the Images of a Product.
+* Presenting information from Files and SQLite databases to users.
+* Designing layouts with `TextInputLayout` and `TextInputEditText` to capture User input, validating the captured information to display the required error, and updating the database with the information.
+* Creating intents to other apps such as the File Picker App for selecting images and the Image Capture App for taking pictures, using stored information.
+	* Capturing Images is accomplished using `ACTION_IMAGE_CAPTURE` Intent, and processing the Image for storage is done using a custom [ImageStorageUtility](/app/src/main/java/com/example/kaushiknsanji/storeapp/utils/ImageStorageUtility.java) in a Disk thread provided by [AppExecutors](/app/src/main/java/com/example/kaushiknsanji/storeapp/utils/AppExecutors.java).
+	* Selecting Images is accomplished using `ACTION_GET_CONTENT`/`ACTION_OPEN_DOCUMENT` Intent, based on the Android system version.
+* Promoting the separation of concerns using the [MVP Architecture with Content Providers](https://github.com/googlesamples/android-architecture/tree/deprecated-todo-mvp-contentproviders/) along with Repository pattern for Datasource that includes local files and database storage. Dependency injection is accomplished using a static [InjectorUtility](/app/src/main/java/com/example/kaushiknsanji/storeapp/utils/InjectorUtility.java).
+* Designing layouts using `CoordinatorLayout` and `ConstraintLayout`.
+* Designing Item Views using `CardView`.
+* Loading of Images using a custom Headless [Fragment](/app/src/main/java/com/example/kaushiknsanji/storeapp/workers/ImageDownloaderFragment.java) through an [AsyncTaskLoader](/app/src/main/java/com/example/kaushiknsanji/storeapp/workers/ImageDownloader.java) and caching recently loaded images using [BitmapImageCache](/app/src/main/java/com/example/kaushiknsanji/storeapp/cache/BitmapImageCache.java) that internally uses `android.util.LruCache`.
 
 ---
 
@@ -190,7 +216,7 @@ The Main Activity displays a Tab Layout with three tabs -
 * Allows to pick Products for a Supplier to sell.
 * Prior to displaying the list, it filters the already registered list of Products to sell and shows only the remaining products which are available to sell. Hence, this avoids picking already picked products.
 * Allows to pick multiple products at once.
-* Provides a SearchView which can filter the list for Product Name/SKU/Category.
+* Provides a SearchView which can filter the list by Product Name/SKU/Category.
 
 ### Sales Tab - [SalesListFragment](/app/src/main/java/com/example/kaushiknsanji/storeapp/ui/inventory/SalesListFragment.java)
 
@@ -298,11 +324,34 @@ The Main Activity displays a Tab Layout with three tabs -
 		
 ---
 
-## Icon credits
+## Icon and Image credits
 
-Camera and Album icons used are made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="pixel-perfect">Pixel-Perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>.
+* Camera and Album icons used are made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="pixel-perfect">Pixel-Perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>.
+* App Icon is from [Icons8](https://icons8.com).
+* Other Icons used are from [Icons8](https://icons8.com), from [Material Design Icons](https://materialdesignicons.com/) and from [Material IO Icons](https://material.io/resources/icons).
 
 ---
+
 ## Review from the Reviewer (Udacity)
 
 ![review](https://user-images.githubusercontent.com/26028981/49814663-1c7ef380-fd90-11e8-9984-6bd8395789f6.PNG)
+
+---
+
+## License
+
+```
+Copyright 2018 Kaushik N. Sanji
+
+Licensed under the Apache License, Version 2.0 (the "License"); 
+you may not use this file except in compliance with the License. 
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+   
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
