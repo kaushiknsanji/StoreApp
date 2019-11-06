@@ -32,7 +32,7 @@ import java.util.concurrent.Executors;
  *
  * @author Kaushik N Sanji
  */
-public class AppExecutors {
+public final class AppExecutors {
 
     //Singleton instance
     private static volatile AppExecutors INSTANCE;

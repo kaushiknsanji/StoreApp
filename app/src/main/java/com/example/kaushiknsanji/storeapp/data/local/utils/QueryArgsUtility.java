@@ -56,7 +56,7 @@ import static com.example.kaushiknsanji.storeapp.data.local.utils.SqliteUtility.
  *
  * @author Kaushik N Sanji
  */
-public class QueryArgsUtility {
+public final class QueryArgsUtility {
 
     /**
      * Private Constructor to prevent direct instantiation of {@link QueryArgsUtility}

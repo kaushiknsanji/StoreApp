@@ -26,7 +26,7 @@ import android.support.v4.app.FragmentActivity;
  *
  * @author Kaushik N Sanji
  */
-public class OrientationUtility {
+public final class OrientationUtility {
 
     /**
      * Private constructor to avoid instantiating {@link OrientationUtility}

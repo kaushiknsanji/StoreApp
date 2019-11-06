@@ -450,9 +450,9 @@ public class StoreContentProvider extends ContentProvider {
                 readableDatabase,
                 projection,
                 //Where Clause
-                selectionPairs.first,
+                selectionPairs != null ? selectionPairs.first : null,
                 //The value in Where Clause
-                selectionPairs.second,
+                selectionPairs != null ? selectionPairs.second : null,
                 null,
                 null,
                 sortOrder
@@ -827,9 +827,9 @@ public class StoreContentProvider extends ContentProvider {
                 readableDatabase,
                 projection,
                 //Where Clause
-                selectionPairs.first,
+                selectionPairs != null ? selectionPairs.first : null,
                 //The value in Where Clause
-                selectionPairs.second,
+                selectionPairs != null ? selectionPairs.second : null,
                 null,
                 null,
                 sortOrder
@@ -1443,8 +1443,8 @@ public class StoreContentProvider extends ContentProvider {
                     //Executing delete
                     noOfRecordsDeleted = writableDatabase.delete(
                             SupplierContract.SupplierContact.TABLE_NAME,
-                            selectionPairs.first,
-                            selectionPairs.second
+                            selectionPairs != null ? selectionPairs.first : null,
+                            selectionPairs != null ? selectionPairs.second : null
                     );
                     //Marking the transaction as successful
                     writableDatabase.setTransactionSuccessful();
@@ -1475,8 +1475,8 @@ public class StoreContentProvider extends ContentProvider {
                     //Executing delete
                     noOfRecordsDeleted = writableDatabase.delete(
                             SalesContract.ProductSupplierInfo.TABLE_NAME,
-                            selectionPairs.first,
-                            selectionPairs.second
+                            selectionPairs != null ? selectionPairs.first : null,
+                            selectionPairs != null ? selectionPairs.second : null
                     );
                     //Marking the transaction as successful
                     writableDatabase.setTransactionSuccessful();
@@ -1507,8 +1507,8 @@ public class StoreContentProvider extends ContentProvider {
                     //Executing delete
                     noOfRecordsDeleted = writableDatabase.delete(
                             SalesContract.ProductSupplierInfo.TABLE_NAME,
-                            selectionPairs.first,
-                            selectionPairs.second
+                            selectionPairs != null ? selectionPairs.first : null,
+                            selectionPairs != null ? selectionPairs.second : null
                     );
                     //Marking the transaction as successful
                     writableDatabase.setTransactionSuccessful();
@@ -1539,8 +1539,8 @@ public class StoreContentProvider extends ContentProvider {
                     //Executing delete
                     noOfRecordsDeleted = writableDatabase.delete(
                             SalesContract.ProductSupplierInventory.TABLE_NAME,
-                            selectionPairs.first,
-                            selectionPairs.second
+                            selectionPairs != null ? selectionPairs.first : null,
+                            selectionPairs != null ? selectionPairs.second : null
                     );
                     //Marking the transaction as successful
                     writableDatabase.setTransactionSuccessful();
@@ -1571,8 +1571,8 @@ public class StoreContentProvider extends ContentProvider {
                     //Executing delete
                     noOfRecordsDeleted = writableDatabase.delete(
                             SalesContract.ProductSupplierInventory.TABLE_NAME,
-                            selectionPairs.first,
-                            selectionPairs.second
+                            selectionPairs != null ? selectionPairs.first : null,
+                            selectionPairs != null ? selectionPairs.second : null
                     );
                     //Marking the transaction as successful
                     writableDatabase.setTransactionSuccessful();
@@ -1696,8 +1696,8 @@ public class StoreContentProvider extends ContentProvider {
                     noOfRecordsUpdated = writableDatabase.update(
                             SalesContract.ProductSupplierInventory.TABLE_NAME,
                             values,
-                            selectionPairs.first,
-                            selectionPairs.second
+                            selectionPairs != null ? selectionPairs.first : null,
+                            selectionPairs != null ? selectionPairs.second : null
                     );
                     //Marking the transaction as successful
                     writableDatabase.setTransactionSuccessful();
@@ -1729,8 +1729,8 @@ public class StoreContentProvider extends ContentProvider {
                     noOfRecordsUpdated = writableDatabase.update(
                             SalesContract.ProductSupplierInventory.TABLE_NAME,
                             values,
-                            selectionPairs.first,
-                            selectionPairs.second
+                            selectionPairs != null ? selectionPairs.first : null,
+                            selectionPairs != null ? selectionPairs.second : null
                     );
                     //Marking the transaction as successful
                     writableDatabase.setTransactionSuccessful();

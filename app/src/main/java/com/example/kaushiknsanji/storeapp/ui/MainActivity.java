@@ -323,11 +323,11 @@ public class MainActivity extends AppCompatActivity
             //When we have a Fragment
 
             //Get the Presenter for the Pager Fragment
-            Object presenter = ((PagerView) pagerFragment).getPresenter();
+            PagerPresenter presenter = ((PagerView) pagerFragment).getPresenter();
 
             if (presenter != null) {
                 //When we have the Presenter, initiate the FAB click action via the interface method
-                ((PagerPresenter) presenter).onFabAddClicked();
+                presenter.onFabAddClicked();
             }
         }
     }
@@ -343,11 +343,11 @@ public class MainActivity extends AppCompatActivity
             //When we have a Fragment
 
             //Get the Presenter for the Pager Fragment
-            Object presenter = ((PagerView) pagerFragment).getPresenter();
+            PagerPresenter presenter = ((PagerView) pagerFragment).getPresenter();
 
             if (presenter != null) {
                 //When we have the Presenter, initiate the Refresh Menu action via the interface method
-                ((PagerPresenter) presenter).onRefreshMenuClicked();
+                presenter.onRefreshMenuClicked();
             }
         }
     }

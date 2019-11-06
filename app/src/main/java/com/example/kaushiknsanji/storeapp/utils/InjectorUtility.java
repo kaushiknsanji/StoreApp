@@ -27,7 +27,7 @@ import com.example.kaushiknsanji.storeapp.data.local.StoreLocalRepository;
  *
  * @author Kaushik N Sanji
  */
-public class InjectorUtility {
+public final class InjectorUtility {
 
     /**
      * Private Constructor to avoid instantiating {@link InjectorUtility}

@@ -162,7 +162,7 @@ public class ImageDownloaderFragment extends Fragment
     private ImageDownloader getImageDownloader(int loaderId, LoaderManager loaderManager) {
         //Getting the loader at the loaderId
         Loader<Bitmap> loader = loaderManager.getLoader(loaderId);
-        if (loader != null && loader instanceof ImageDownloader) {
+        if (loader instanceof ImageDownloader) {
             //Returning the ImageDownloader instance
             return (ImageDownloader) loader;
         } else {

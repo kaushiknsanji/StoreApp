@@ -23,7 +23,15 @@ import com.example.kaushiknsanji.storeapp.BuildConfig;
  *
  * @author Kaushik N Sanji
  */
-public class AppConstants {
+public final class AppConstants {
+
+    /**
+     * Private Constructor to avoid direct instantiation of {@link AppConstants}
+     */
+    private AppConstants() {
+        //Suppressing with an error to enforce noninstantiability
+        throw new AssertionError("No " + this.getClass().getCanonicalName() + " instances for you!");
+    }
 
     //Constant for Application ID
     public static final String APPLICATION_ID = BuildConfig.APPLICATION_ID;

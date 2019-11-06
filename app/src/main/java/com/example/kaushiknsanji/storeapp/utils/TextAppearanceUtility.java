@@ -28,7 +28,7 @@ import android.widget.TextView;
  *
  * @author Kaushik N Sanji
  */
-public class TextAppearanceUtility {
+public final class TextAppearanceUtility {
 
     /**
      * Private constructor to avoid instantiating {@link TextAppearanceUtility}

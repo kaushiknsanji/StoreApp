@@ -28,7 +28,7 @@ import android.util.Patterns;
  *
  * @author Kaushik N Sanji
  */
-public class ContactUtility {
+public final class ContactUtility {
 
     //Constants for the Minimum and Maximum length of Phone Number
     //(as per the standards read from Internet at the time of writing)

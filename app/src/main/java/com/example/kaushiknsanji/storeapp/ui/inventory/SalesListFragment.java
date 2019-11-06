@@ -398,7 +398,9 @@ public class SalesListFragment extends Fragment
      */
     @Override
     public void showDeleteSuccess(String productSku) {
-        Snackbar.make(getView(), getString(R.string.product_list_item_delete_success, productSku), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.product_list_item_delete_success, productSku), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -410,7 +412,9 @@ public class SalesListFragment extends Fragment
      */
     @Override
     public void showSellQuantitySuccess(String productSku, String supplierCode) {
-        Snackbar.make(getView(), getString(R.string.sales_list_item_sell_success, productSku, supplierCode), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.sales_list_item_sell_success, productSku, supplierCode), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -421,7 +425,9 @@ public class SalesListFragment extends Fragment
      */
     @Override
     public void showUpdateInventorySuccess(String productSku) {
-        Snackbar.make(getView(), getString(R.string.sales_list_item_update_inventory_success, productSku), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.sales_list_item_update_inventory_success, productSku), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**

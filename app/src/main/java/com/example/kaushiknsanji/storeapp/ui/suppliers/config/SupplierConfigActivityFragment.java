@@ -866,20 +866,22 @@ public class SupplierConfigActivityFragment extends Fragment
      */
     @Override
     public void showSupplierProductSwiped(String productSku) {
-        new SnackbarUtility(Snackbar.make(getView(),
-                getString(R.string.supplier_config_product_swipe_action_success,
-                        productSku), Snackbar.LENGTH_LONG))
-                .revealCompleteMessage()
-                .setAction(R.string.snackbar_action_undo, (view) -> {
-                    //Try and Restore the Adapter data when UNDO is clicked
-                    if (mSupplierProductsAdapter.restoreLastRemovedProduct()) {
-                        //On Success, show a Snackbar message
-                        Snackbar.make(getView(),
-                                getString(R.string.supplier_config_product_swipe_action_undo_success, productSku),
-                                Snackbar.LENGTH_LONG).show();
-                    }
-                })
-                .showSnack();
+        if (getView() != null) {
+            new SnackbarUtility(Snackbar.make(getView(),
+                    getString(R.string.supplier_config_product_swipe_action_success,
+                            productSku), Snackbar.LENGTH_LONG))
+                    .revealCompleteMessage()
+                    .setAction(R.string.snackbar_action_undo, (view) -> {
+                        //Try and Restore the Adapter data when UNDO is clicked
+                        if (mSupplierProductsAdapter.restoreLastRemovedProduct()) {
+                            //On Success, show a Snackbar message
+                            Snackbar.make(getView(),
+                                    getString(R.string.supplier_config_product_swipe_action_undo_success, productSku),
+                                    Snackbar.LENGTH_LONG).show();
+                        }
+                    })
+                    .showSnack();
+        }
     }
 
     /**
@@ -889,7 +891,9 @@ public class SupplierConfigActivityFragment extends Fragment
      */
     @Override
     public void showUpdateSuccess(String productSku) {
-        Snackbar.make(getView(), getString(R.string.product_list_item_update_success, productSku), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.product_list_item_update_success, productSku), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -899,7 +903,9 @@ public class SupplierConfigActivityFragment extends Fragment
      */
     @Override
     public void showDeleteSuccess(String productSku) {
-        Snackbar.make(getView(), getString(R.string.product_list_item_delete_success, productSku), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.product_list_item_delete_success, productSku), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -1829,9 +1835,7 @@ public class SupplierConfigActivityFragment extends Fragment
         @Override
         public void submitList(List<ProductSupplierInfo> submittedList) {
             //Creating a new list to hold the new data passed
-            ArrayList<ProductSupplierInfo> productSupplierInfoList = new ArrayList<>();
-            //Add the new data to this list
-            productSupplierInfoList.addAll(submittedList);
+            ArrayList<ProductSupplierInfo> productSupplierInfoList = new ArrayList<>(submittedList);
             //Propagating the new list to super
             super.submitList(productSupplierInfoList);
         }

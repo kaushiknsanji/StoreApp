@@ -26,7 +26,7 @@ import android.view.WindowManager;
  *
  * @author Kaushik N Sanji
  */
-public class WindowDimensionsUtility {
+public final class WindowDimensionsUtility {
 
     /**
      * Private constructor to avoid instantiating {@link WindowDimensionsUtility}

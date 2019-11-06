@@ -27,7 +27,7 @@ import android.support.v4.content.ContextCompat;
  *
  * @author Kaushik N Sanji
  */
-public class ColorUtility {
+public final class ColorUtility {
 
     /**
      * Private Constructor to avoid direct instantiation of {@link ColorUtility}

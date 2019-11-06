@@ -419,7 +419,9 @@ public class SupplierListFragment extends Fragment
      */
     @Override
     public void showAddSuccess(String supplierCode) {
-        Snackbar.make(getView(), getString(R.string.supplier_list_item_add_success, supplierCode), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.supplier_list_item_add_success, supplierCode), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -429,7 +431,9 @@ public class SupplierListFragment extends Fragment
      */
     @Override
     public void showUpdateSuccess(String supplierCode) {
-        Snackbar.make(getView(), getString(R.string.supplier_list_item_update_success, supplierCode), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.supplier_list_item_update_success, supplierCode), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -439,7 +443,9 @@ public class SupplierListFragment extends Fragment
      */
     @Override
     public void showDeleteSuccess(String supplierCode) {
-        Snackbar.make(getView(), getString(R.string.supplier_list_item_delete_success, supplierCode), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.supplier_list_item_delete_success, supplierCode), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**

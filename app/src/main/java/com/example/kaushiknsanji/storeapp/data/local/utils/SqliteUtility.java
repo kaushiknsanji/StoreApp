@@ -33,7 +33,7 @@ import java.util.List;
  *
  * @author Kaushik N Sanji
  */
-public class SqliteUtility {
+public final class SqliteUtility {
 
     //Query construction related constants
     public static final String AND = " AND ";
@@ -181,7 +181,7 @@ public class SqliteUtility {
                 }
 
                 //Generating the selection arguments array from the selection arguments list
-                String[] selectionArgs = selectionArgsList.toArray(new String[selectionArgsList.size()]);
+                String[] selectionArgs = selectionArgsList.toArray(new String[0]);
 
                 //Returning the Pair of combined selection clause with its arguments
                 return Pair.create(selectionClause, selectionArgs);

@@ -364,7 +364,9 @@ public class ProductListFragment extends Fragment
      */
     @Override
     public void showAddSuccess(String productSku) {
-        Snackbar.make(getView(), getString(R.string.product_list_item_add_success, productSku), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.product_list_item_add_success, productSku), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -374,7 +376,9 @@ public class ProductListFragment extends Fragment
      */
     @Override
     public void showUpdateSuccess(String productSku) {
-        Snackbar.make(getView(), getString(R.string.product_list_item_update_success, productSku), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.product_list_item_update_success, productSku), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -384,7 +388,9 @@ public class ProductListFragment extends Fragment
      */
     @Override
     public void showDeleteSuccess(String productSku) {
-        Snackbar.make(getView(), getString(R.string.product_list_item_delete_success, productSku), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.product_list_item_delete_success, productSku), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**

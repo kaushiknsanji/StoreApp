@@ -35,7 +35,7 @@ import java.io.IOException;
  *
  * @author Kaushik N Sanji
  */
-public class FileStorageUtility {
+public final class FileStorageUtility {
 
     /**
      * Private Constructor to avoid direct instantiation of {@link FileStorageUtility}
@@ -91,7 +91,7 @@ public class FileStorageUtility {
             }
         }
 
-        if (!createDirectoryIfNotExists(preferredStorageDir)) {
+        if (preferredStorageDir == null || !createDirectoryIfNotExists(preferredStorageDir)) {
             //When the directory could not created or accessed, throw an exception
             throw new IOException(preferredStorageDir + " could not be created or accessed");
         }
@@ -130,7 +130,7 @@ public class FileStorageUtility {
             }
         }
 
-        if (!createDirectoryIfNotExists(preferredStorageDir)) {
+        if (preferredStorageDir == null || !createDirectoryIfNotExists(preferredStorageDir)) {
             //When the directory could not created or accessed, throw an exception
             throw new IOException(preferredStorageDir + " could not be created or accessed");
         }
@@ -212,7 +212,7 @@ public class FileStorageUtility {
      * @param context        A {@link Context} to get the {@link ContentResolver} to query for
      *                       the Name of the File (or the last segment of the URI).
      * @param fileContentUri The Content URI of a file whose {@link File} instance needs to be retrieved.
-     * @return A {@link File} that represents the given Content URI.
+     * @return A {@link File} that represents the given Content URI. Can be {@code null}.
      */
     @Nullable
     public static File getFileForContentUri(Context context, Uri fileContentUri) {
@@ -234,8 +234,9 @@ public class FileStorageUtility {
                 String displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
                 //Retrieving the File for the "Display Name"
                 File contentUriFile = context.getFileStreamPath(displayName);
-                //Returning the File representation of the Content URI
-                return new File(Uri.fromFile(contentUriFile).getPath());
+                //Returning the File representation of the Content URI if present
+                String filePath = Uri.fromFile(contentUriFile).getPath();
+                return filePath != null ? new File(filePath) : null;
             }
 
         } finally {
@@ -265,7 +266,7 @@ public class FileStorageUtility {
                                      ContentResolver contentResolver, String fileProviderAuthority) {
         //Stores the Number of files deleted successfully
         int deleteResult = 0;
-        if (fileContentUri.getAuthority().contains(fileProviderAuthority)) {
+        if (fileContentUri.getAuthority() != null && fileContentUri.getAuthority().contains(fileProviderAuthority)) {
             //Deleting files created only by the app
             deleteResult = contentResolver.delete(fileContentUri, null, null);
         }

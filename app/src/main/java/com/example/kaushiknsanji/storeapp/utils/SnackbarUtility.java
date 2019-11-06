@@ -26,7 +26,7 @@ import android.widget.TextView;
  *
  * @author Kaushik N Sanji
  */
-public class SnackbarUtility {
+public final class SnackbarUtility {
 
     //Instance of the Snackbar injected
     private Snackbar mSnackbar;

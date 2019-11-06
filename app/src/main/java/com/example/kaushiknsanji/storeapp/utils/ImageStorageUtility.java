@@ -42,7 +42,7 @@ import java.util.Locale;
  *
  * @author Kaushik N Sanji
  */
-public class ImageStorageUtility {
+public final class ImageStorageUtility {
 
     //Constant for the Image File Provider
     private static final String IMAGE_FILE_PROVIDER_AUTHORITY
@@ -166,15 +166,9 @@ public class ImageStorageUtility {
         bitmapOptions.inJustDecodeBounds = true; //Decoding for Bounds only
 
         //Retrieving the Stream to the file's Content URI
-        InputStream decodeBoundsInputStream = contentResolver.openInputStream(fileContentUri);
-        try {
+        try (InputStream decodeBoundsInputStream = contentResolver.openInputStream(fileContentUri)) {
             //Decoding the dimensions of the original bitmap from the stream
             BitmapFactory.decodeStream(decodeBoundsInputStream, null, bitmapOptions);
-        } finally {
-            if (decodeBoundsInputStream != null) {
-                //Closing the Stream when done
-                decodeBoundsInputStream.close();
-            }
         }
 
         //Reading the bitmap's original dimensions
@@ -241,14 +235,12 @@ public class ImageStorageUtility {
         if (bitmap != null) {
             //Save the Image
 
-            //For writing the decoded Image to a File
-            FileOutputStream fileOutputStream = null;
             //Stores the success of the write operation
             boolean writeSuccess;
 
-            try {
+            //For writing the decoded Image to a File
+            try (FileOutputStream fileOutputStream = new FileOutputStream(outputImageFile)) {
                 //Opening the Output Stream to the Output Image File
-                fileOutputStream = new FileOutputStream(outputImageFile);
                 //Writing the Image to the file with 100% quality
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
                 //Marking the operation as successful
@@ -256,11 +248,6 @@ public class ImageStorageUtility {
             } catch (Exception e) {
                 //Marking the operation as failure on Exception
                 writeSuccess = false;
-            } finally {
-                if (fileOutputStream != null) {
-                    //Closing the Output Stream when done
-                    fileOutputStream.close();
-                }
             }
 
             //When the Bitmap was written successfully to a File
@@ -353,7 +340,7 @@ public class ImageStorageUtility {
         //Creating a New Image Matrix
         Matrix matrix = new Matrix();
         //Rotating the Image about its center by the degrees mentioned
-        matrix.setRotate(degrees, bitmap.getWidth() / 2, bitmap.getHeight() / 2);
+        matrix.setRotate(degrees, (float) bitmap.getWidth() / (float) 2, (float) bitmap.getHeight() / (float) 2);
         //Creating a new Rotated Bitmap Image using the Matrix created
         Bitmap bitmapRotated = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
         //Purging the temporary input bitmap image

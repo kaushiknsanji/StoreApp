@@ -457,9 +457,11 @@ public class ProductConfigActivityFragment extends Fragment
      */
     @Override
     public void showUpdateImagesSuccess() {
-        Snackbar.make(getView(),
-                getString(R.string.product_config_update_item_images_success, mEditTextProductSku.getText()),
-                Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(),
+                    getString(R.string.product_config_update_item_images_success, mEditTextProductSku.getText()),
+                    Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**

@@ -1490,9 +1490,8 @@ public class StoreLocalRepository implements DataRepository {
             ArrayList<SupplierContact> newSupplierContacts = newSupplier.getContacts();
 
             //Evaluating for the Supplier Contacts that were removed in order to issue delete
-            ArrayList<SupplierContact> removedSupplierContacts = new ArrayList<>();
             //Adding all existing first
-            removedSupplierContacts.addAll(existingSupplierContacts);
+            ArrayList<SupplierContact> removedSupplierContacts = new ArrayList<>(existingSupplierContacts);
             //Removing what is present in the new list
             removeSimilarSupplierContacts(removedSupplierContacts, newSupplierContacts);
 
@@ -1519,9 +1518,8 @@ public class StoreLocalRepository implements DataRepository {
             ArrayList<ProductSupplierInfo> newProductSupplierInfoList = newSupplier.getProductSupplierInfoList();
 
             //Evaluating the Supplier Items that were removed in order to issue delete
-            ArrayList<ProductSupplierInfo> removedProductSupplierInfoList = new ArrayList<>();
             //Adding all existing Supplier Items first
-            removedProductSupplierInfoList.addAll(existingProductSupplierInfoList);
+            ArrayList<ProductSupplierInfo> removedProductSupplierInfoList = new ArrayList<>(existingProductSupplierInfoList);
             //Removing what is present in the new list
             removeSimilarProductSupplierInfo(removedProductSupplierInfoList, newProductSupplierInfoList);
 
@@ -1541,9 +1539,8 @@ public class StoreLocalRepository implements DataRepository {
             }
 
             //Evaluating the Supplier Items that were newly added in order to insert Zero Inventory record
-            ArrayList<ProductSupplierInfo> addedProductSupplierInfoList = new ArrayList<>();
             //Adding all new Supplier Items first
-            addedProductSupplierInfoList.addAll(newProductSupplierInfoList);
+            ArrayList<ProductSupplierInfo> addedProductSupplierInfoList = new ArrayList<>(newProductSupplierInfoList);
             //Removing what is present in the existing list
             removeSimilarProductSupplierInfo(addedProductSupplierInfoList, existingProductSupplierInfoList);
 
@@ -2037,9 +2034,8 @@ public class StoreLocalRepository implements DataRepository {
         mAppExecutors.getDiskIO().execute(() -> {
             //Evaluating the Item's Suppliers that were removed in order to
             //unlink the Item from the Supplier and also its Price and Inventory details
-            ArrayList<ProductSupplierSales> removedProductSupplierSalesList = new ArrayList<>();
             //Adding the existing list first
-            removedProductSupplierSalesList.addAll(existingProductSupplierSales);
+            ArrayList<ProductSupplierSales> removedProductSupplierSalesList = new ArrayList<>(existingProductSupplierSales);
             //Removing what is present in the new updated list to find the Suppliers unlinked from the Item
             removeSimilarProductSupplierSales(removedProductSupplierSalesList, updatedProductSupplierSales);
 

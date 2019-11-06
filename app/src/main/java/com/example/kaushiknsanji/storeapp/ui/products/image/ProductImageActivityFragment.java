@@ -455,7 +455,9 @@ public class ProductImageActivityFragment extends Fragment
      */
     @Override
     public void showDeleteSuccess() {
-        Snackbar.make(getView(), R.string.product_image_delete_success, Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), R.string.product_image_delete_success, Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -536,7 +538,9 @@ public class ProductImageActivityFragment extends Fragment
      */
     @Override
     public void showImageAlreadyPicked() {
-        Snackbar.make(getView(), R.string.product_image_already_picked_message, Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), R.string.product_image_already_picked_message, Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**

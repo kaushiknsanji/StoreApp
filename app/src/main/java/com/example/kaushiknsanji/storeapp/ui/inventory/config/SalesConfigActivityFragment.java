@@ -740,20 +740,22 @@ public class SalesConfigActivityFragment extends Fragment implements SalesConfig
      */
     @Override
     public void showProductSupplierSwiped(String supplierCode) {
-        new SnackbarUtility(Snackbar.make(getView(),
-                getString(R.string.sales_config_supplier_swipe_action_success,
-                        supplierCode), Snackbar.LENGTH_LONG))
-                .revealCompleteMessage()
-                .setAction(R.string.snackbar_action_undo, (view) -> {
-                    //Try and Restore the Adapter data when UNDO is clicked
-                    if (mProductSuppliersAdapter.restoreLastRemovedProductSupplierSales()) {
-                        //On Success, show a Snackbar message
-                        Snackbar.make(getView(),
-                                getString(R.string.sales_config_supplier_swipe_action_undo_success, supplierCode),
-                                Snackbar.LENGTH_LONG).show();
-                    }
-                })
-                .showSnack();
+        if (getView() != null) {
+            new SnackbarUtility(Snackbar.make(getView(),
+                    getString(R.string.sales_config_supplier_swipe_action_success,
+                            supplierCode), Snackbar.LENGTH_LONG))
+                    .revealCompleteMessage()
+                    .setAction(R.string.snackbar_action_undo, (view) -> {
+                        //Try and Restore the Adapter data when UNDO is clicked
+                        if (mProductSuppliersAdapter.restoreLastRemovedProductSupplierSales()) {
+                            //On Success, show a Snackbar message
+                            Snackbar.make(getView(),
+                                    getString(R.string.sales_config_supplier_swipe_action_undo_success, supplierCode),
+                                    Snackbar.LENGTH_LONG).show();
+                        }
+                    })
+                    .showSnack();
+        }
     }
 
     /**
@@ -763,7 +765,9 @@ public class SalesConfigActivityFragment extends Fragment implements SalesConfig
      */
     @Override
     public void showUpdateProductSuccess(String productSku) {
-        Snackbar.make(getView(), getString(R.string.product_list_item_update_success, productSku), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.product_list_item_update_success, productSku), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -773,7 +777,9 @@ public class SalesConfigActivityFragment extends Fragment implements SalesConfig
      */
     @Override
     public void showUpdateSupplierSuccess(String supplierCode) {
-        Snackbar.make(getView(), getString(R.string.supplier_list_item_update_success, supplierCode), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.supplier_list_item_update_success, supplierCode), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -783,7 +789,9 @@ public class SalesConfigActivityFragment extends Fragment implements SalesConfig
      */
     @Override
     public void showDeleteSupplierSuccess(String supplierCode) {
-        Snackbar.make(getView(), getString(R.string.supplier_list_item_delete_success, supplierCode), Snackbar.LENGTH_LONG).show();
+        if (getView() != null) {
+            Snackbar.make(getView(), getString(R.string.supplier_list_item_delete_success, supplierCode), Snackbar.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -1017,9 +1025,7 @@ public class SalesConfigActivityFragment extends Fragment implements SalesConfig
             mActionsListener.onUpdatedAvailability(totalAvailableQuantity);
 
             //Creating a new list to publish the new data passed
-            ArrayList<ProductSupplierSales> newProductSupplierSalesList = new ArrayList<>();
-            //Add the new data to this list
-            newProductSupplierSalesList.addAll(submittedList);
+            ArrayList<ProductSupplierSales> newProductSupplierSalesList = new ArrayList<>(submittedList);
             //Propagating the new list to super
             super.submitList(newProductSupplierSalesList);
         }

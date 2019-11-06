@@ -231,7 +231,7 @@
     <string name="supplier_config_insert_supplier_addtnl_dtls_error">
         <!-- Output will be like 'Failed to insert Supplier's Contacts and Items with their Price Info for the Supplier
         'Frontline Inc.' with Code #126227' -->
-        Failed to insert Supplier's Contacts and Items with their Price Info for the Supplier
+        Failed to insert Supplier\'s Contacts and Items with their Price Info for the Supplier
         \'<xliff:g example="Frontline Inc." id="supplier_name">%1$s</xliff:g>\'
         with Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g>
     </string>
@@ -245,7 +245,7 @@
     </string>
     <string name="supplier_config_update_supplier_addtnl_dtls_error">
         <!-- Output will be like 'Supplier Code #126227 Update: Failed to insert/delete Supplier's Contacts and Items with their Price Info.' -->
-        Supplier Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g> Update: Failed to insert/delete Supplier's Contacts and Items with their Price Info.
+        Supplier Code #<xliff:g example="126227" id="supplier_code">%1$s</xliff:g> Update: Failed to insert/delete Supplier\'s Contacts and Items with their Price Info.
     </string>
     <string name="supplier_config_delete_supplier_error">
         <!-- Output will be like 'Failed to delete the Supplier Id 101' -->
