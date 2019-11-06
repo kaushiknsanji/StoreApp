@@ -70,12 +70,13 @@
 
                 <TextView
                     android:id="@+id/text_sales_config_product_name"
-                    android:layout_width="@dimen/match_constraint_0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/text_sales_config_product_name_margin_right"
                     android:layout_marginRight="@dimen/text_sales_config_product_name_margin_right"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     app:layout_constrainedWidth="true"
+                    app:layout_constraintHorizontal_bias="0"
                     app:layout_constraintEnd_toStartOf="@+id/imgbtn_sales_config_product_edit"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toLeftOf="@+id/imgbtn_sales_config_product_edit"
@@ -91,10 +92,10 @@
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/text_sales_config_product_sku_size"
                     app:layout_constrainedWidth="true"
-                    app:layout_constraintEnd_toEndOf="@+id/text_sales_config_product_name"
+                    app:layout_constraintEnd_toStartOf="@+id/imgbtn_sales_config_product_edit"
                     app:layout_constraintHorizontal_bias="0"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="@+id/text_sales_config_product_name"
+                    app:layout_constraintRight_toLeftOf="@+id/imgbtn_sales_config_product_edit"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/text_sales_config_product_name"
                     tools:text="A12233455" />
@@ -166,8 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sales_config_title_total_available"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    app:layout_constrainedWidth="true" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                 <TextView
                     android:id="@+id/text_sales_config_total_available_quantity"
@@ -211,7 +211,6 @@
             android:gravity="center"
             android:text="@string/sales_config_title_suppliers_section"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toEndOf="@+id/guideline_sales_config_right_vertical"
             app:layout_constraintLeft_toLeftOf="@+id/guideline_sales_config_left_vertical"
             app:layout_constraintRight_toRightOf="@+id/guideline_sales_config_right_vertical"

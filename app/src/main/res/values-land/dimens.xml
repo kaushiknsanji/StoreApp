@@ -33,6 +33,7 @@
     <dimen name="image_picker_camera_margin_left">16dp</dimen>
     <dimen name="picker_options_half_spacing">8dp</dimen>
     <dimen name="text_image_picker_margin_top">8dp</dimen>
+    <dimen name="btn_image_picker_action_margin_top">16dp</dimen>
 
     <!-- ============================ -->
     <!-- FOR THE COMMON TAB FRAGMENTS -->

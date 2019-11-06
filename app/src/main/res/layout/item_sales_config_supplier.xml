@@ -28,11 +28,12 @@
         <TextView
             android:id="@+id/text_sales_config_item_supplier_name_code"
             style="@style/ConstraintTopCenterHorizontalStyle"
-            android:layout_width="@dimen/match_constraint_0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/text_sales_config_item_supplier_name_code_margin_left"
             android:layout_marginStart="@dimen/text_sales_config_item_supplier_name_code_margin_left"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constrainedWidth="true"
             tools:text="@string/sales_list_item_supplier_name_code_format" />
 
@@ -43,9 +44,13 @@
             android:layout_marginTop="@dimen/text_sales_config_item_supplier_selling_price_margin_top"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textStyle="italic"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="@+id/text_sales_config_item_supplier_name_code"
             app:layout_constraintStart_toStartOf="@+id/text_sales_config_item_supplier_name_code"
             app:layout_constraintTop_toBottomOf="@+id/text_sales_config_item_supplier_name_code"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintRight_toRightOf="parent"
             tools:text="@string/sales_config_item_supplier_selling_price" />
 
         <EditText
