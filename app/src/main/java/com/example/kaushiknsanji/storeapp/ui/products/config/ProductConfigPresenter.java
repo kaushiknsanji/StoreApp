@@ -798,13 +798,11 @@ public class ProductConfigPresenter implements ProductConfigContract.Presenter {
     private void onExtraProductImagesReceived() {
         //If this was received for an Existing Product, update it immediately
         //without the user's command
-        if (mProductId != ProductConfigContract.NEW_PRODUCT_INT) {
-            int noOfExistingProductImages = mExistingProduct.getProductImages().size();
-            int noOfProductImagesReceived = mProductImages.size();
+        if (mProductId > ProductConfigContract.NEW_PRODUCT_INT) {
 
-            if (!(noOfExistingProductImages == 0 && noOfProductImagesReceived == noOfExistingProductImages)) {
-                //Updating the Images to the Database via the Repository when both are not 0
-                //This check avoids unnecessary updates when both are 0.
+            if (!mProductImages.equals(mExistingProduct.getProductImages())) {
+                //Updating the Images to the Database via the Repository when
+                //there is a mismatch between the list of existing and updated product images
 
                 //Saving Product Images via the repository
                 mStoreRepository.saveProductImages(mExistingProduct, mProductImages, new DataRepository.DataOperationsCallback() {
