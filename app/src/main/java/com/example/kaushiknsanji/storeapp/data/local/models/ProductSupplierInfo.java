@@ -152,6 +152,38 @@ public class ProductSupplierInfo implements Parcelable, Cloneable {
     }
 
     /**
+     * Indicates whether some other object is "equal to" this one.
+     *
+     * @param o The reference object with which to compare.
+     * @return <b>TRUE</b> if this object is the same as the {@code o}
+     * argument; <b>FALSE</b> otherwise.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ProductSupplierInfo that = (ProductSupplierInfo) o;
+
+        if (mItemId != that.mItemId) return false;
+        if (mSupplierId != that.mSupplierId) return false;
+        return Float.compare(that.mUnitPrice, mUnitPrice) == 0;
+    }
+
+    /**
+     * Returns a hash code value for the object.
+     *
+     * @return A hash code value for this object.
+     */
+    @Override
+    public int hashCode() {
+        int result = mItemId;
+        result = 31 * result + mSupplierId;
+        result = 31 * result + (mUnitPrice != +0.0f ? Float.floatToIntBits(mUnitPrice) : 0);
+        return result;
+    }
+
+    /**
      * Creates and returns a copy of this object.
      *
      * @return a clone of this instance.

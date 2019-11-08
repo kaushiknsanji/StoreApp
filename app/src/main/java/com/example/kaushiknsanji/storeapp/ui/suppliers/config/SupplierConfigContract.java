@@ -227,6 +227,13 @@ public interface SupplierConfigContract {
          * @param invalidMessageResId The String resource of the error message to be shown.
          */
         void showSupplierContactsInvalidError(@StringRes int invalidMessageResId);
+
+        /**
+         * Method invoked when the user clicks on the android home/up button
+         * or the back key is pressed, to extract the current modifications on the Existing Supplier,
+         * in order to display the Discard Dialog if required.
+         */
+        void readExistingSupplierDetails();
     }
 
     /**
@@ -356,6 +363,24 @@ public interface SupplierConfigContract {
          * or the back key is pressed
          */
         void onUpOrBackAction();
+
+        /**
+         * Method invoked only for an Existing Supplier, when the user clicks on the
+         * android home/up button or the back key is pressed. This looks for any changes done on
+         * the Existing Supplier in order to display the Discard Dialog, to see
+         * if the user wants to keep/discard the changes.
+         *
+         * @param supplierName            The Name given to the Supplier
+         * @param supplierCode            The Code of the Supplier
+         * @param phoneContacts           List of Phone Contacts {@link SupplierContact} of the Supplier
+         * @param emailContacts           List of Email Contacts {@link SupplierContact} of the Supplier
+         * @param productSupplierInfoList List of Products sold by the Supplier with their Selling Price {@link ProductSupplierInfo}
+         */
+        void checkForModifications(String supplierName,
+                                   String supplierCode,
+                                   ArrayList<SupplierContact> phoneContacts,
+                                   ArrayList<SupplierContact> emailContacts,
+                                   ArrayList<ProductSupplierInfo> productSupplierInfoList);
 
         /**
          * Method invoked when the user decides to exit without entering/saving any data

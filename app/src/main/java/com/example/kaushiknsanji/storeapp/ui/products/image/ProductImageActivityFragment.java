@@ -544,6 +544,19 @@ public class ProductImageActivityFragment extends Fragment
     }
 
     /**
+     * Method invoked when the user clicks on the android home/up button
+     * or the back key is pressed, to extract the original/existing list of Product Images,
+     * in order to display the Discard Dialog in case of some changes.
+     */
+    @Override
+    public void readExistingProductImages() {
+        if (getArguments() != null) {
+            //Delegating to the Presenter, to check for any changes
+            mPresenter.checkForModifications(getArguments().getParcelableArrayList(ARGUMENT_LIST_PRODUCT_IMAGES));
+        }
+    }
+
+    /**
      * Callback method of {@link ProductImagePickerDialogFragment}
      * invoked when the user chooses the "Take Photo" option in the dialog.
      * This method should launch a Camera Activity that takes a Photo and saves it.

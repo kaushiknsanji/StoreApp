@@ -130,7 +130,7 @@ public class SupplierConfigPresenter implements SupplierConfigContract.Presenter
      * to update the view components with Supplier data.
      */
     private void loadExistingSupplier() {
-        if (mSupplierId != SupplierConfigContract.NEW_SUPPLIER_INT) {
+        if (mSupplierId > SupplierConfigContract.NEW_SUPPLIER_INT) {
             //When it is an Edit request
 
             //Display progress indicator
@@ -809,14 +809,15 @@ public class SupplierConfigPresenter implements SupplierConfigContract.Presenter
                                              ArrayList<ProductSupplierInfo> productSupplierInfoList) {
 
         //Adding all emailContacts to phoneContacts since they belong to the same table
-        phoneContacts.addAll(emailContacts);
+        ArrayList<SupplierContact> allContacts = new ArrayList<>(phoneContacts);
+        allContacts.addAll(emailContacts);
 
         //Building and returning the Supplier built with the details
         return new Supplier.Builder()
                 .setId(mSupplierId)
                 .setName(supplierName)
                 .setCode(supplierCode)
-                .setContacts(phoneContacts)
+                .setContacts(allContacts)
                 .setProductSupplierInfoList(productSupplierInfoList)
                 .createSupplier();
     }
@@ -957,14 +958,51 @@ public class SupplierConfigPresenter implements SupplierConfigContract.Presenter
     @Override
     public void onUpOrBackAction() {
         if (mIsSupplierNameEntered) {
-            //When the User has entered the Supplier Name, then we have some unsaved changes
+            //When the User has entered the Supplier Name
 
-            //Show the discard dialog to see if the user wants to keep editing/discard the changes
-            mSupplierConfigView.showDiscardDialog();
+            //If this is an Existing Supplier, then extract the updated details
+            //to see if we have some unsaved changes
+            if (mSupplierId > SupplierConfigContract.NEW_SUPPLIER_INT) {
+                mSupplierConfigView.readExistingSupplierDetails();
+            }
+
         } else {
             //When the User has not yet entered the Supplier Name, then silently close the Activity
             finishActivity();
         }
+    }
+
+    /**
+     * Method invoked only for an Existing Supplier, when the user clicks on the
+     * android home/up button or the back key is pressed. This looks for any changes done on
+     * the Existing Supplier in order to display the Discard Dialog, to see
+     * if the user wants to keep/discard the changes.
+     *
+     * @param supplierName            The Name given to the Supplier
+     * @param supplierCode            The Code of the Supplier
+     * @param phoneContacts           List of Phone Contacts {@link SupplierContact} of the Supplier
+     * @param emailContacts           List of Email Contacts {@link SupplierContact} of the Supplier
+     * @param productSupplierInfoList List of Products sold by the Supplier with their Selling Price {@link ProductSupplierInfo}
+     */
+    @Override
+    public void checkForModifications(String supplierName, String supplierCode,
+                                      ArrayList<SupplierContact> phoneContacts,
+                                      ArrayList<SupplierContact> emailContacts,
+                                      ArrayList<ProductSupplierInfo> productSupplierInfoList) {
+
+        //Create the Updated Supplier
+        Supplier updatedSupplier = createSupplierForUpdate(supplierName, supplierCode,
+                phoneContacts, emailContacts, productSupplierInfoList);
+
+        if (!updatedSupplier.equals(mExistingSupplier)) {
+            //Display the discard dialog when there is a mismatch between the
+            //details of the Existing and Updated Supplier
+            mSupplierConfigView.showDiscardDialog();
+        } else {
+            //When there is no change in the Supplier details, silently close the Activity
+            finishActivity();
+        }
+
     }
 
     /**

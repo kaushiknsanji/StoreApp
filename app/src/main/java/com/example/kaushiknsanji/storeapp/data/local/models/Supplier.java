@@ -212,6 +212,42 @@ public class Supplier implements Parcelable {
     }
 
     /**
+     * Indicates whether some other object is "equal to" this one.
+     *
+     * @param o The reference object with which to compare.
+     * @return <b>TRUE</b> if this object is the same as the {@code o}
+     * argument; <b>FALSE</b> otherwise.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Supplier supplier = (Supplier) o;
+
+        if (mId != supplier.mId) return false;
+        if (!mName.equals(supplier.mName)) return false;
+        if (!mCode.equals(supplier.mCode)) return false;
+        if (!mContacts.equals(supplier.mContacts)) return false;
+        return mProductSupplierInfoList.equals(supplier.mProductSupplierInfoList);
+    }
+
+    /**
+     * Returns a hash code value for the object.
+     *
+     * @return A hash code value for this object.
+     */
+    @Override
+    public int hashCode() {
+        int result = mId;
+        result = 31 * result + mName.hashCode();
+        result = 31 * result + mCode.hashCode();
+        result = 31 * result + mContacts.hashCode();
+        result = 31 * result + mProductSupplierInfoList.hashCode();
+        return result;
+    }
+
+    /**
      * Static Builder class that constructs {@link Supplier}
      */
     public static class Builder {

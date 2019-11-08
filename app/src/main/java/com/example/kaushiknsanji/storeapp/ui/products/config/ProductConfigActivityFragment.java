@@ -465,6 +465,35 @@ public class ProductConfigActivityFragment extends Fragment
     }
 
     /**
+     * Method invoked when the user clicks on the android home/up button
+     * or the back key is pressed, to extract the current modifications on the Existing Product,
+     * in order to display the Discard Dialog if required.
+     */
+    @Override
+    public void readExistingProductDetails() {
+        //Delegating to the Presenter to trigger focus loss on listener registered Views,
+        //in order to persist their data
+        mPresenter.triggerFocusLost();
+
+        //Retrieving the data from the views and the adapter
+        String productName = mEditTextProductName.getText().toString().trim();
+        String productSku = mEditTextProductSku.getText().toString().trim();
+        String productDescription = mEditTextProductDescription.getText().toString().trim();
+        ArrayList<ProductAttribute> productAttributes = mProductAttributesAdapter.getProductAttributes();
+        mCategoryOtherText = mEditTextProductCategoryOther.getText().toString().trim();
+
+        //Delegating to the Presenter, to check for any changes
+        mPresenter.checkForModifications(
+                productName,
+                productSku,
+                productDescription,
+                mCategoryLastSelected,
+                mCategoryOtherText,
+                productAttributes
+        );
+    }
+
+    /**
      * Method that displays the EditText Field associated with the 'Other' Category
      * selected by the user.
      */

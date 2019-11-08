@@ -933,6 +933,34 @@ public class SupplierConfigActivityFragment extends Fragment
     }
 
     /**
+     * Method invoked when the user clicks on the android home/up button
+     * or the back key is pressed, to extract the current modifications on the Existing Supplier,
+     * in order to display the Discard Dialog if required.
+     */
+    @Override
+    public void readExistingSupplierDetails() {
+        //Delegating to the Presenter to trigger focus loss on listener registered View,
+        //in order to persist their data
+        mPresenter.triggerFocusLost();
+
+        //Retrieving the data from the views and the adapter
+        String supplierName = mEditTextSupplierName.getText().toString().trim();
+        String supplierCode = mEditTextSupplierCode.getText().toString().trim();
+        ArrayList<SupplierContact> phoneContacts = mPhoneContactsAdapter.getSupplierContacts();
+        ArrayList<SupplierContact> emailContacts = mEmailContactsAdapter.getSupplierContacts();
+        ArrayList<ProductSupplierInfo> productSupplierInfoList = mSupplierProductsAdapter.getProductSupplierInfoList();
+
+        //Delegating to the Presenter, to check for any changes
+        mPresenter.checkForModifications(
+                supplierName,
+                supplierCode,
+                phoneContacts,
+                emailContacts,
+                productSupplierInfoList
+        );
+    }
+
+    /**
      * Method that initializes the RecyclerView 'R.id.recyclerview_supplier_config_phone' and its Adapter.
      */
     private void setupContactPhonesRecyclerView() {

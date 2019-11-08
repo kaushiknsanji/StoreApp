@@ -842,14 +842,53 @@ public class ProductConfigPresenter implements ProductConfigContract.Presenter {
     @Override
     public void onUpOrBackAction() {
         if (mIsProductNameEntered) {
-            //When the User has entered the Product Name, then we have some unsaved changes
+            //When the User has entered the Product Name
 
-            //Show the discard dialog to see if the user wants to keep editing/discard the changes
-            mProductConfigView.showDiscardDialog();
+            //If this is an Existing Product, then extract the updated details
+            //to see if we have some unsaved changes
+            if (mProductId > ProductConfigContract.NEW_PRODUCT_INT) {
+                mProductConfigView.readExistingProductDetails();
+            }
+
         } else {
             //When the User has not yet entered the Product Name, then silently close the Activity
             finishActivity();
         }
+    }
+
+    /**
+     * Method invoked only for an Existing Product, when the user clicks on the
+     * android home/up button or the back key is pressed. This looks for any changes done on
+     * the Existing Product in order to display the Discard Dialog, to see
+     * if the user wants to keep/discard the changes.
+     *
+     * @param productName        The Name of the Product entered by the User
+     * @param productSku         The SKU of the Product entered by the User
+     * @param productDescription The Description of the Product entered by the User
+     * @param categorySelected   The Category selected for the Product
+     * @param categoryOtherText  The Custom Category entered by the User when not found in
+     *                           predefined Categories
+     * @param productAttributes  The Attributes describing the Product, which are optional
+     */
+    @Override
+    public void checkForModifications(String productName, String productSku,
+                                      String productDescription, String categorySelected,
+                                      String categoryOtherText,
+                                      ArrayList<ProductAttribute> productAttributes) {
+
+        //Create the Updated Product
+        Product updatedProduct = createProductForUpdate(productName, productSku, productDescription,
+                categorySelected, categoryOtherText, productAttributes, mProductImages);
+
+        if (!updatedProduct.equals(mExistingProduct)) {
+            //Display the discard dialog when there is a mismatch between the
+            //details of the Existing and Updated Product
+            mProductConfigView.showDiscardDialog();
+        } else {
+            //When there is no change in the Product details, silently close the Activity
+            finishActivity();
+        }
+
     }
 
     /**

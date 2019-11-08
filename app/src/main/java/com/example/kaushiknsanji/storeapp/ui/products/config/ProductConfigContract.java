@@ -222,6 +222,13 @@ public interface ProductConfigContract {
          * the {@link com.example.kaushiknsanji.storeapp.ui.products.image.ProductImageActivity}
          */
         void showUpdateImagesSuccess();
+
+        /**
+         * Method invoked when the user clicks on the android home/up button
+         * or the back key is pressed, to extract the current modifications on the Existing Product,
+         * in order to display the Discard Dialog if required.
+         */
+        void readExistingProductDetails();
     }
 
     /**
@@ -354,6 +361,24 @@ public interface ProductConfigContract {
          * or the back key is pressed
          */
         void onUpOrBackAction();
+
+        /**
+         * Method invoked only for an Existing Product, when the user clicks on the
+         * android home/up button or the back key is pressed. This looks for any changes done on
+         * the Existing Product in order to display the Discard Dialog, to see
+         * if the user wants to keep/discard the changes.
+         *
+         * @param productName        The Name of the Product entered by the User
+         * @param productSku         The SKU of the Product entered by the User
+         * @param productDescription The Description of the Product entered by the User
+         * @param categorySelected   The Category selected for the Product
+         * @param categoryOtherText  The Custom Category entered by the User when not found in
+         *                           predefined Categories
+         * @param productAttributes  The Attributes describing the Product, which are optional
+         */
+        void checkForModifications(String productName, String productSku, String productDescription,
+                                   String categorySelected, String categoryOtherText,
+                                   ArrayList<ProductAttribute> productAttributes);
 
         /**
          * Method invoked when the user decides to exit without entering/saving any data

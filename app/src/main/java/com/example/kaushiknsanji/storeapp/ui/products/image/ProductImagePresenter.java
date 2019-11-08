@@ -872,8 +872,8 @@ public class ProductImagePresenter implements ProductImageContract.Presenter {
      */
     @Override
     public void restoreProductImages(ArrayList<ProductImage> productImages) {
-        //Save the list in the Presenter
-        mProductImages = productImages;
+        //Save the copy of the list in the Presenter
+        mProductImages = deepCopyProductImages(productImages);
 
         //Send the list to the RecyclerView's Adapter to display
         submitListToAdapter(mProductImages);
@@ -1134,12 +1134,56 @@ public class ProductImagePresenter implements ProductImageContract.Presenter {
         if (mLastChosenProductImage != null) {
             //When we have an Image that was last chosen to be shown as selected
 
-            //Show the discard dialog to see if the user wants to keep/discard the changes
-            mProductImageView.showDiscardDialog();
+            //Extract the Existing list of Product Images to see if we have some unsaved changes
+            mProductImageView.readExistingProductImages();
+
         } else {
             //When we do not have an Image that was last chosen to be shown as selected
 
             //Make a call to the Navigator's doSetResult() to pass the information back to the parent activity
+            doSetResult();
+        }
+    }
+
+    /**
+     * Method invoked when the user clicks on the android home/up button
+     * or the back key is pressed. This looks for any changes done to the existing list
+     * of {@link ProductImage} objects, in order to display the Discard Dialog, to see
+     * if the user wants to keep/discard the changes.
+     *
+     * @param existingProductImages Existing list of {@link ProductImage}, each of which holds
+     *                              the URI information of the Image File.
+     */
+    @Override
+    public void checkForModifications(ArrayList<ProductImage> existingProductImages) {
+        //Creating a new list to load and apply the unsaved changes to the updated copy
+        //list of Product Images
+        ArrayList<ProductImage> updatedProductImages = new ArrayList<>();
+
+        //Iterating over the updated list of Product Images to copy, apply any unsaved changes
+        //and load them to the new list
+        for (ProductImage productImage : mProductImages) {
+            //Create a copy of the current Product Image
+            ProductImage newProductImage = (ProductImage) productImage.clone();
+            if (newProductImage.getImageUri().equals(mLastChosenProductImage.getImageUri())) {
+                //When the current Product Image is the last chosen Product Image,
+                //update it as the default and load it to the new list
+                newProductImage.setDefault(true);
+                updatedProductImages.add(newProductImage);
+            } else {
+                //When the current Product Image is NOT the last chosen Product Image,
+                //load it to the new list AS-IS
+                updatedProductImages.add(newProductImage);
+            }
+        }
+
+        if (!existingProductImages.equals(updatedProductImages)) {
+            //Display the discard dialog when there is a mismatch between the
+            //Existing list and Updated list of Product Images
+            mProductImageView.showDiscardDialog();
+        } else {
+            //When there is no change in the list of Product Images, call to the
+            //Navigator's doSetResult() to pass the information back to the parent activity
             doSetResult();
         }
     }

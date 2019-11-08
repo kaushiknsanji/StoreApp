@@ -258,6 +258,46 @@ public class Product implements Parcelable {
     }
 
     /**
+     * Indicates whether some other object is "equal to" this one.
+     *
+     * @param o The reference object with which to compare.
+     * @return <b>TRUE</b> if this object is the same as the {@code o}
+     * argument; <b>FALSE</b> otherwise.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Product product = (Product) o;
+
+        if (mId != product.mId) return false;
+        if (!mName.equals(product.mName)) return false;
+        if (!mSku.equals(product.mSku)) return false;
+        if (!mDescription.equals(product.mDescription)) return false;
+        if (!mCategory.equals(product.mCategory)) return false;
+        if (!mProductImages.equals(product.mProductImages)) return false;
+        return mProductAttributes.equals(product.mProductAttributes);
+    }
+
+    /**
+     * Returns a hash code value for the object.
+     *
+     * @return A hash code value for this object.
+     */
+    @Override
+    public int hashCode() {
+        int result = mId;
+        result = 31 * result + mName.hashCode();
+        result = 31 * result + mSku.hashCode();
+        result = 31 * result + mDescription.hashCode();
+        result = 31 * result + mCategory.hashCode();
+        result = 31 * result + mProductImages.hashCode();
+        result = 31 * result + mProductAttributes.hashCode();
+        return result;
+    }
+
+    /**
      * Static Builder class that constructs {@link Product}
      */
     public static class Builder {

@@ -150,6 +150,13 @@ public interface ProductImageContract {
          * was already picked and present in the list.
          */
         void showImageAlreadyPicked();
+
+        /**
+         * Method invoked when the user clicks on the android home/up button
+         * or the back key is pressed, to extract the original/existing list of Product Images,
+         * in order to display the Discard Dialog in case of some changes.
+         */
+        void readExistingProductImages();
     }
 
     /**
@@ -251,7 +258,6 @@ public interface ProductImageContract {
          */
         void restoreSelectionTrackers(ArrayList<ImageSelectionTracker> imageSelectionTrackers);
 
-
         /**
          * Method invoked by the View when the activity was started/restored, to restore the list of
          * {@link ProductImage} objects.
@@ -286,6 +292,17 @@ public interface ProductImageContract {
          * or the back key is pressed
          */
         void onUpOrBackAction();
+
+        /**
+         * Method invoked when the user clicks on the android home/up button
+         * or the back key is pressed. This looks for any changes done to the existing list
+         * of {@link ProductImage} objects, in order to display the Discard Dialog, to see
+         * if the user wants to keep/discard the changes.
+         *
+         * @param existingProductImages Existing list of {@link ProductImage}, each of which holds
+         *                              the URI information of the Image File.
+         */
+        void checkForModifications(ArrayList<ProductImage> existingProductImages);
 
         /**
          * Method that sets the result and passes the information back to the calling Parent Activity
