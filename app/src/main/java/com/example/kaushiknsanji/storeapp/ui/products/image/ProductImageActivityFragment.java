@@ -147,6 +147,23 @@ public class ProductImageActivityFragment extends Fragment
     };
 
     /**
+     * The {@link AlertDialog} Cancel Listener for the Unsaved changes dialog
+     */
+    private DialogInterface.OnCancelListener mDialogOnCancelListener = new DialogInterface.OnCancelListener() {
+        /**
+         * This method will be invoked when the dialog is canceled.
+         *
+         * @param dialog the dialog that was canceled will be passed into the
+         *               method
+         */
+        @Override
+        public void onCancel(DialogInterface dialog) {
+            //Unlock orientation
+            OrientationUtility.unlockScreenOrientation(requireActivity());
+        }
+    };
+
+    /**
      * Mandatory Empty Constructor of {@link ProductImageActivityFragment}
      * This is required by the {@link android.support.v4.app.FragmentManager} to instantiate
      * the fragment (e.g. upon screen orientation changes).
@@ -526,6 +543,8 @@ public class ProductImageActivityFragment extends Fragment
         builder.setPositiveButton(R.string.product_image_unsaved_changes_dialog_positive_text, mUnsavedDialogOnClickListener);
         //Set the Negative Button and its listener
         builder.setNegativeButton(R.string.product_image_unsaved_changes_dialog_negative_text, mUnsavedDialogOnClickListener);
+        //Set the Dialog Cancel listener to release orientation lock on cancel
+        builder.setOnCancelListener(mDialogOnCancelListener);
         //Lock the Orientation
         OrientationUtility.lockCurrentScreenOrientation(requireActivity());
         //Create and display the AlertDialog

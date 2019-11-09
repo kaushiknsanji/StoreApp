@@ -205,6 +205,23 @@ public class ProductConfigActivityFragment extends Fragment
     };
 
     /**
+     * The {@link AlertDialog} Cancel Listener for the Product Delete and Unsaved changes dialog
+     */
+    private DialogInterface.OnCancelListener mDialogOnCancelListener = new DialogInterface.OnCancelListener() {
+        /**
+         * This method will be invoked when the dialog is canceled.
+         *
+         * @param dialog the dialog that was canceled will be passed into the
+         *               method
+         */
+        @Override
+        public void onCancel(DialogInterface dialog) {
+            //Unlock orientation
+            OrientationUtility.unlockScreenOrientation(requireActivity());
+        }
+    };
+
+    /**
      * Mandatory Empty Constructor of {@link ProductConfigActivityFragment}.
      * This is required by the {@link android.support.v4.app.FragmentManager} to instantiate
      * the fragment (e.g. upon screen orientation changes).
@@ -730,6 +747,8 @@ public class ProductConfigActivityFragment extends Fragment
         builder.setNegativeButton(R.string.product_config_unsaved_changes_dialog_negative_text, mUnsavedDialogOnClickListener);
         //Set the Neutral Button and its listener
         builder.setNeutralButton(R.string.product_config_unsaved_changes_dialog_neutral_text, mUnsavedDialogOnClickListener);
+        //Set the Dialog Cancel listener to release orientation lock on cancel
+        builder.setOnCancelListener(mDialogOnCancelListener);
         //Lock the Orientation
         OrientationUtility.lockCurrentScreenOrientation(requireActivity());
         //Create and display the AlertDialog
@@ -751,6 +770,8 @@ public class ProductConfigActivityFragment extends Fragment
         builder.setPositiveButton(android.R.string.yes, mProductDeleteDialogOnClickListener);
         //Set the Negative Button and its listener
         builder.setNegativeButton(android.R.string.no, mProductDeleteDialogOnClickListener);
+        //Set the Dialog Cancel listener to release orientation lock on cancel
+        builder.setOnCancelListener(mDialogOnCancelListener);
         //Lock the Orientation
         OrientationUtility.lockCurrentScreenOrientation(requireActivity());
         //Create and display the AlertDialog
