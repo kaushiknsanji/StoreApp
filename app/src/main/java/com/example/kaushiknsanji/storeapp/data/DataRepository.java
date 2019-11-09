@@ -66,6 +66,14 @@ public interface DataRepository {
     void getProductDetailsById(int productId, @NonNull GetQueryCallback<Product> queryCallback);
 
     /**
+     * Method that retrieves the list of {@link ProductImage}s for the Product identified by its Id.
+     *
+     * @param productId     The Integer Id of the Product to lookup for.
+     * @param queryCallback The Callback to be implemented by the caller to receive the result.
+     */
+    void getProductImagesById(int productId, @NonNull GetQueryCallback<ArrayList<ProductImage>> queryCallback);
+
+    /**
      * Method that checks and validates the uniqueness of the Product SKU {@code productSku} passed.
      *
      * @param productSku    The Product SKU of the Product to lookup for.
@@ -96,7 +104,8 @@ public interface DataRepository {
 
     /**
      * Method that deletes a Product identified by its Id.
-     * This also deletes any relationship data with the Product.
+     * This also deletes any relationship data with the Product,
+     * including the Image files of the Product captured.
      *
      * @param productId          The Product Id of the Product to be deleted.
      * @param operationsCallback The Callback to be implemented by the caller to

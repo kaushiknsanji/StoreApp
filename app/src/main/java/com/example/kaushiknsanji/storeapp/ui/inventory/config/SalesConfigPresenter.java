@@ -672,14 +672,6 @@ public class SalesConfigPresenter implements SalesConfigContract.Presenter {
         //Display the Progress Indicator
         mSalesConfigView.showProgressIndicator(R.string.product_config_status_deleting);
 
-        //For building the list of Image File URIs to be deleted
-        ArrayList<String> fileContentUriList = new ArrayList<>();
-
-        //Reading the Product Images list and adding it to the list of URIs to be deleted
-        for (ProductImage productImage : mProductImages) {
-            fileContentUriList.add(productImage.getImageUri());
-        }
-
         //Executing Product Deletion via the Repository
         mStoreRepository.deleteProductById(mProductId, new DataRepository.DataOperationsCallback() {
             /**
@@ -690,12 +682,6 @@ public class SalesConfigPresenter implements SalesConfigContract.Presenter {
             public void onSuccess() {
                 //Hide Progress Indicator
                 mSalesConfigView.hideProgressIndicator();
-
-                //Deleting Image files if any
-                if (fileContentUriList.size() > 0) {
-                    //Executing the delete operation silently on the URIs via the repository
-                    mStoreRepository.deleteImageFilesSilently(fileContentUriList);
-                }
 
                 //Set the result and finish on successful delete
                 doSetResult(ProductConfigActivity.RESULT_DELETE_PRODUCT, mProductId, mProductSku);

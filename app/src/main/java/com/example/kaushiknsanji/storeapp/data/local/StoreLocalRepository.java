@@ -288,6 +288,33 @@ public class StoreLocalRepository implements DataRepository {
 
     /**
      * Method that retrieves the list of {@link ProductImage}s for the Product identified by its Id.
+     *
+     * @param productId     The Integer Id of the Product to lookup for.
+     * @param queryCallback The Callback to be implemented by the caller to receive the result.
+     */
+    @Override
+    public void getProductImagesById(int productId, @NonNull GetQueryCallback<ArrayList<ProductImage>> queryCallback) {
+        //Executing on Disk Thread
+        mAppExecutors.getDiskIO().execute(() -> {
+            //Retrieving the ProductImage for the Product ID passed
+            ArrayList<ProductImage> productImages = getProductImagesById(productId);
+
+            //Executing on the Main Thread
+            mAppExecutors.getMainThread().execute(() -> {
+                if (productImages.isEmpty()) {
+                    //When there are NO Product Images, pass the empty result to the callback
+                    queryCallback.onEmpty();
+                } else {
+                    //When we have Product Images, pass it to the callback
+                    queryCallback.onResults(productImages);
+                }
+            });
+
+        });
+    }
+
+    /**
+     * Method that retrieves the list of {@link ProductImage}s for the Product identified by its Id.
      * This is called on the Disk Thread.
      *
      * @param productId The Integer Id of the Product to lookup for.

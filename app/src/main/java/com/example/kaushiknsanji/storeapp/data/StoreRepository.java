@@ -119,6 +119,17 @@ public class StoreRepository implements DataRepository, FileRepository {
     }
 
     /**
+     * Method that retrieves the list of {@link ProductImage}s for the Product identified by its Id.
+     *
+     * @param productId     The Integer Id of the Product to lookup for.
+     * @param queryCallback The Callback to be implemented by the caller to receive the result.
+     */
+    @Override
+    public void getProductImagesById(int productId, @NonNull GetQueryCallback<ArrayList<ProductImage>> queryCallback) {
+        mLocalDataSource.getProductImagesById(productId, queryCallback);
+    }
+
+    /**
      * Method that checks and validates the uniqueness of the Product SKU {@code productSku} passed.
      *
      * @param productSku    The Product SKU of the Product to lookup for.
@@ -158,14 +169,96 @@ public class StoreRepository implements DataRepository, FileRepository {
 
     /**
      * Method that deletes a Product identified by its Id.
-     * This also deletes any relationship data with the Product.
+     * This also deletes any relationship data with the Product,
+     * including the Image files of the Product captured.
      *
      * @param productId          The Product Id of the Product to be deleted.
      * @param operationsCallback The Callback to be implemented by the caller to
      */
     @Override
     public void deleteProductById(int productId, @NonNull DataOperationsCallback operationsCallback) {
-        mLocalDataSource.deleteProductById(productId, operationsCallback);
+        //First, retrieve the list of Product Images
+        mLocalDataSource.getProductImagesById(productId, new GetQueryCallback<ArrayList<ProductImage>>() {
+            /**
+             * Method invoked when the results are obtained
+             * for the query executed.
+             *
+             * @param productImages List of {@link ProductImage}s of the Product
+             *                      returned for the query executed.
+             */
+            @Override
+            public void onResults(ArrayList<ProductImage> productImages) {
+                //Pass the list of Product Images to the final method
+                //that deletes the Product and its Images
+                proceedToDelete(productImages);
+            }
+
+            /**
+             * Method invoked when there are no results
+             * for the query executed.
+             */
+            @Override
+            public void onEmpty() {
+                //Pass an empty list to the final method that deletes the Product
+                proceedToDelete(new ArrayList<>());
+            }
+
+            /**
+             * Method that performs the deletion of the Product and its Images, identified by
+             * its {@code productId}.
+             *
+             * @param productImages List of {@link ProductImage}s of the Product
+             *                      returned for the query executed, which are to be deleted.
+             */
+            private void proceedToDelete(ArrayList<ProductImage> productImages) {
+                //Executing Product Deletion
+                mLocalDataSource.deleteProductById(productId, new DataOperationsCallback() {
+                    /**
+                     * Method invoked when the database operations like insert/update/delete
+                     * was successful.
+                     */
+                    @Override
+                    public void onSuccess() {
+                        //On Success of deleting the Product details from the database,
+                        //Delete the Image files first before passing the success result
+                        //to the callback
+
+                        //For building the list of Image File URIs to be deleted
+                        ArrayList<String> fileImageContentUriList = new ArrayList<>();
+
+                        //Reading the Product Images list and adding it to the list of URIs to be deleted
+                        for (ProductImage productImage : productImages) {
+                            fileImageContentUriList.add(productImage.getImageUri());
+                        }
+
+                        //Deleting Image files silently if any
+                        if (!fileImageContentUriList.isEmpty()) {
+                            deleteImageFilesSilently(fileImageContentUriList);
+                        }
+
+                        //Dispatch success to the Callback
+                        operationsCallback.onSuccess();
+                    }
+
+                    /**
+                     * Method invoked when the database operations like insert/update/delete
+                     * failed to complete.
+                     *
+                     * @param messageId The String resource of the error message
+                     *                  for the database operation failure
+                     * @param args      Variable number of arguments to replace the format specifiers
+                     *                  in the String resource if any
+                     */
+                    @Override
+                    public void onFailure(int messageId, @Nullable Object... args) {
+                        //On Failure of deleting the Product details from the database,
+                        //dispatch failure to the Callback
+                        operationsCallback.onFailure(messageId, args);
+                    }
+                });
+            }
+
+        });
     }
 
     /**
