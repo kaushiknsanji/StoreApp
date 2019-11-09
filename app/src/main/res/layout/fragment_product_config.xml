@@ -205,6 +205,7 @@
             android:background="@drawable/state_product_config_add_btn_bg"
             android:text="@string/product_config_btn_label_add_more_attrs"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
             app:layout_constraintEnd_toEndOf="@id/guideline_product_config_right_vertical"
             app:layout_constraintLeft_toLeftOf="@+id/guideline_product_config_left_vertical"
             app:layout_constraintRight_toRightOf="@id/guideline_product_config_right_vertical"
