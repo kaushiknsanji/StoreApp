@@ -21,7 +21,6 @@ import android.database.ContentObserver;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.example.kaushiknsanji.storeapp.data.local.models.Product;
 import com.example.kaushiknsanji.storeapp.data.local.models.ProductImage;
@@ -29,6 +28,7 @@ import com.example.kaushiknsanji.storeapp.data.local.models.ProductLite;
 import com.example.kaushiknsanji.storeapp.data.local.models.ProductSupplierSales;
 import com.example.kaushiknsanji.storeapp.data.local.models.Supplier;
 import com.example.kaushiknsanji.storeapp.data.local.models.SupplierContact;
+import com.example.kaushiknsanji.storeapp.utils.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -493,7 +493,7 @@ public class StoreRepository implements DataRepository, FileRepository {
             public void onSuccess(Boolean results) {
                 //no-op
                 //Just logging the result
-                Log.i(LOG_TAG, "onSuccess: deleteImageFilesSilently: All Image files deleted");
+                Logger.i(LOG_TAG, "onSuccess: deleteImageFilesSilently: All Image files deleted");
             }
 
             /**
@@ -507,7 +507,7 @@ public class StoreRepository implements DataRepository, FileRepository {
             public void onFailure(int messageId, @Nullable Object... args) {
                 //no-op
                 //Just logging the failure
-                Log.i(LOG_TAG, "onFailure: deleteImageFilesSilently: Some Image files were not deleted");
+                Logger.i(LOG_TAG, "onFailure: deleteImageFilesSilently: Some Image files were not deleted");
             }
         });
     }

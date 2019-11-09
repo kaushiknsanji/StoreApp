@@ -25,7 +25,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQuery;
 import android.os.Build;
-import android.util.Log;
 
 import com.example.kaushiknsanji.storeapp.data.local.contracts.ProductContract.Product;
 import com.example.kaushiknsanji.storeapp.data.local.contracts.ProductContract.ProductAttribute;
@@ -38,6 +37,7 @@ import com.example.kaushiknsanji.storeapp.data.local.contracts.SupplierContract.
 import com.example.kaushiknsanji.storeapp.data.local.contracts.SupplierContract.SupplierContactType;
 import com.example.kaushiknsanji.storeapp.utils.AppConstants;
 import com.example.kaushiknsanji.storeapp.utils.AppExecutors;
+import com.example.kaushiknsanji.storeapp.utils.Logger;
 
 import static com.example.kaushiknsanji.storeapp.data.local.utils.SqliteUtility.CLOSE_BRACE;
 import static com.example.kaushiknsanji.storeapp.data.local.utils.SqliteUtility.COMMA;
@@ -322,10 +322,10 @@ public class StoreDbHelper extends SQLiteOpenHelper {
                 if (noOfRecordsInserted == preloadedCategories.length) {
                     //When all categories are inserted successfully, mark the transaction as successful
                     writableDatabase.setTransactionSuccessful();
-                    Log.i(LOG_TAG, "insertPredefinedCategories: Predefined Categories inserted");
+                    Logger.i(LOG_TAG, "insertPredefinedCategories: Predefined Categories inserted");
                 } else {
                     //When NOT all categories are inserted, log the error
-                    Log.e(LOG_TAG, "insertPredefinedCategories: Predefined Categories failed to insert.");
+                    Logger.e(LOG_TAG, "insertPredefinedCategories: Predefined Categories failed to insert.");
                 }
 
                 //Releasing the lock in the end
@@ -387,10 +387,10 @@ public class StoreDbHelper extends SQLiteOpenHelper {
                 if (noOfRecordsInserted == noOfContactTypes) {
                     //When all contact types are inserted successfully, mark the transaction as successful
                     writableDatabase.setTransactionSuccessful();
-                    Log.i(LOG_TAG, "insertPredefinedContactTypes: Predefined Contact types inserted");
+                    Logger.i(LOG_TAG, "insertPredefinedContactTypes: Predefined Contact types inserted");
                 } else {
                     //When NOT all contact types are inserted, log the error
-                    Log.e(LOG_TAG, "insertPredefinedContactTypes: Predefined Contact types failed to insert.");
+                    Logger.e(LOG_TAG, "insertPredefinedContactTypes: Predefined Contact types failed to insert.");
                 }
 
                 //Releasing the lock in the end
@@ -498,8 +498,8 @@ public class StoreDbHelper extends SQLiteOpenHelper {
 
             //Log the Query when logging is enabled
             if (AppConstants.LOG_CURSOR_QUERIES) {
-                Log.i(LOG_TAG, "Table: " + editTable);
-                Log.i(LOG_TAG, "newCursor: " + query.toString());
+                Logger.i(LOG_TAG, "Table: " + editTable);
+                Logger.i(LOG_TAG, "newCursor: " + query.toString());
             }
 
             //Returning the SQLiteCursor instance for the query fired

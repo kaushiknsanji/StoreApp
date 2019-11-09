@@ -21,7 +21,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 
 import com.example.kaushiknsanji.storeapp.R;
 import com.example.kaushiknsanji.storeapp.data.DataRepository;
@@ -35,6 +34,7 @@ import com.example.kaushiknsanji.storeapp.ui.inventory.procure.SalesProcurementA
 import com.example.kaushiknsanji.storeapp.ui.products.config.DefaultPhotoChangeListener;
 import com.example.kaushiknsanji.storeapp.ui.products.config.ProductConfigActivity;
 import com.example.kaushiknsanji.storeapp.ui.suppliers.config.SupplierConfigActivity;
+import com.example.kaushiknsanji.storeapp.utils.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -339,7 +339,7 @@ public class SalesConfigPresenter implements SalesConfigContract.Presenter {
                 //This case should not occur, since at least one image needs to be selected.
 
                 //Logging the error
-                Log.e(LOG_TAG, "ERROR!!! updateProductImages: Product Images found but no default image");
+                Logger.e(LOG_TAG, "ERROR!!! updateProductImages: Product Images found but no default image");
 
                 //Delegating to the listener to show the Default Image
                 mDefaultPhotoChangeListener.showDefaultImage();

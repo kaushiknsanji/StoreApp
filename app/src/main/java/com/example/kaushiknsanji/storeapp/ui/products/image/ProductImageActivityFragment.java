@@ -42,7 +42,6 @@ import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -59,6 +58,7 @@ import com.example.kaushiknsanji.storeapp.data.local.models.ProductImage;
 import com.example.kaushiknsanji.storeapp.ui.common.ProgressDialogFragment;
 import com.example.kaushiknsanji.storeapp.utils.FileStorageUtility;
 import com.example.kaushiknsanji.storeapp.utils.ImageStorageUtility;
+import com.example.kaushiknsanji.storeapp.utils.Logger;
 import com.example.kaushiknsanji.storeapp.utils.OrientationUtility;
 import com.example.kaushiknsanji.storeapp.utils.SnackbarUtility;
 import com.example.kaushiknsanji.storeapp.workers.ImageDownloaderFragment;
@@ -644,7 +644,7 @@ public class ProductImageActivityFragment extends Fragment
             try {
                 tempPhotoFile = ImageStorageUtility.createTempImageFile(requireContext());
             } catch (IOException e) {
-                Log.e(LOG_TAG, "dispatchTakePictureIntent: Error occurred while creating a temp file ", e);
+                Logger.e(LOG_TAG, "dispatchTakePictureIntent: Error occurred while creating a temp file ", e);
             }
 
             //When the Temp file is created

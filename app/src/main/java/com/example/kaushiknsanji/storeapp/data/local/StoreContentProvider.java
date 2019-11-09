@@ -35,13 +35,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.util.Pair;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.example.kaushiknsanji.storeapp.data.local.contracts.ProductContract;
 import com.example.kaushiknsanji.storeapp.data.local.contracts.SalesContract;
 import com.example.kaushiknsanji.storeapp.data.local.contracts.StoreContract;
 import com.example.kaushiknsanji.storeapp.data.local.contracts.SupplierContract;
 import com.example.kaushiknsanji.storeapp.data.local.utils.QueryArgsUtility;
+import com.example.kaushiknsanji.storeapp.utils.Logger;
 
 import static com.example.kaushiknsanji.storeapp.data.local.utils.SqliteUtility.AND;
 import static com.example.kaushiknsanji.storeapp.data.local.utils.SqliteUtility.EQUALS;
@@ -965,7 +965,7 @@ public class StoreContentProvider extends ContentProvider {
             //Validating the operation
             if (recordId == -1) {
                 //Logging the error when insertion fails
-                Log.e(LOG_TAG, "insertWithConflictFail: " + tableName + ": Failed to insert row for " + uri);
+                Logger.e(LOG_TAG, "insertWithConflictFail: " + tableName + ": Failed to insert row for " + uri);
             } else {
                 //On success of inserting the record
 
@@ -981,11 +981,11 @@ public class StoreContentProvider extends ContentProvider {
             }
         } catch (SQLiteConstraintException e) {
             //Can occur if the inserted record already exists
-            Log.e(LOG_TAG, "insertWithConflictFail: " + tableName + ": Record already exists for " + uri, e);
+            Logger.e(LOG_TAG, "insertWithConflictFail: " + tableName + ": Record already exists for " + uri, e);
         } catch (SQLException e) {
             //For an error in SQL string or any other unknown causes
             //Logging the error
-            Log.e(LOG_TAG, "insertWithConflictFail: " + tableName + ": Failed to insert row for " + uri, e);
+            Logger.e(LOG_TAG, "insertWithConflictFail: " + tableName + ": Failed to insert row for " + uri, e);
         }
 
         //Returning the URI generated for the record inserted
@@ -1298,7 +1298,7 @@ public class StoreContentProvider extends ContentProvider {
         //Validating the operation
         if (recordId == -1) {
             //Logging the error when insertion fails
-            Log.e(LOG_TAG, "insertBulkRecord: " + tableName + ": Failed to insert row for " + uri);
+            Logger.e(LOG_TAG, "insertBulkRecord: " + tableName + ": Failed to insert row for " + uri);
             //Returning False on Failure
             return false;
         } else {

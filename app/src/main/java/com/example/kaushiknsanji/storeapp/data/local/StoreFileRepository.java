@@ -22,13 +22,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.example.kaushiknsanji.storeapp.R;
 import com.example.kaushiknsanji.storeapp.data.FileRepository;
 import com.example.kaushiknsanji.storeapp.utils.AppExecutors;
 import com.example.kaushiknsanji.storeapp.utils.FileStorageUtility;
 import com.example.kaushiknsanji.storeapp.utils.ImageStorageUtility;
+import com.example.kaushiknsanji.storeapp.utils.Logger;
 
 import java.io.IOException;
 import java.util.List;
@@ -107,7 +107,7 @@ public class StoreFileRepository implements FileRepository {
                     //Saving the Image to a file and retrieving its Content URI
                     savedImageFileUri = ImageStorageUtility.saveImage(context, fileContentUri);
                 } catch (IOException e) {
-                    Log.e(LOG_TAG, "saveImageToFile: Error occurred while saving the image " + fileContentUri, e);
+                    Logger.e(LOG_TAG, "saveImageToFile: Error occurred while saving the image " + fileContentUri, e);
                 }
 
                 //Saves the URI to pass the result to the callback

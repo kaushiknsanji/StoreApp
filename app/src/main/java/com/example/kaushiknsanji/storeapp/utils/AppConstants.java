@@ -50,4 +50,7 @@ public final class AppConstants {
 
     //Constant used for the CursorLoader to load the list of Products for Selling from the database
     public static final int SALES_LOADER = 3;
+
+    //Constant for the Debug Build Type flag
+    public static final boolean DEBUG = BuildConfig.DEBUG;
 }

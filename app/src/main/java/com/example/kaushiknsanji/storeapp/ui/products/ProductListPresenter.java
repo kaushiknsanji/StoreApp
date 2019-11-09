@@ -31,7 +31,6 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
-import android.util.Log;
 
 import com.example.kaushiknsanji.storeapp.R;
 import com.example.kaushiknsanji.storeapp.data.DataRepository;
@@ -42,6 +41,7 @@ import com.example.kaushiknsanji.storeapp.data.local.contracts.StoreContract;
 import com.example.kaushiknsanji.storeapp.data.local.models.ProductLite;
 import com.example.kaushiknsanji.storeapp.ui.products.config.ProductConfigActivity;
 import com.example.kaushiknsanji.storeapp.utils.AppConstants;
+import com.example.kaushiknsanji.storeapp.utils.Logger;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -578,7 +578,7 @@ public class ProductListPresenter
             if (mDeliveredNotification.compareAndSet(false, true)) {
                 //When notification was not delivered previously, dispatch the notification and set to TRUE
 
-                Log.i(LOG_TAG, "triggerNotification: Called for " + uri);
+                Logger.i(LOG_TAG, "triggerNotification: Called for " + uri);
 
                 //Posting notification on Main Thread
                 mMainThreadHandler.post(ProductListPresenter.this::onContentChange);
