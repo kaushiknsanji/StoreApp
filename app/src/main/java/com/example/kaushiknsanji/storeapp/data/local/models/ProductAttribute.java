@@ -24,7 +24,7 @@ import android.os.Parcelable;
  *
  * @author Kaushik N Sanji
  */
-public class ProductAttribute implements Parcelable {
+public class ProductAttribute implements Parcelable, Cloneable {
 
     /**
      * Implementation of {@link android.os.Parcelable.Creator} interface
@@ -170,6 +170,21 @@ public class ProductAttribute implements Parcelable {
         int result = mAttributeName.hashCode();
         result = 31 * result + mAttributeValue.hashCode();
         return result;
+    }
+
+    /**
+     * Creates and returns a copy of this object.
+     *
+     * @return a clone of this instance.
+     * @see Cloneable
+     */
+    @Override
+    public final Object clone() {
+        //Returning a new instance of ProductAttribute constructed using the Builder
+        return new Builder()
+                .setAttributeName(this.mAttributeName)
+                .setAttributeValue(this.mAttributeValue)
+                .createProductAttribute();
     }
 
     /**

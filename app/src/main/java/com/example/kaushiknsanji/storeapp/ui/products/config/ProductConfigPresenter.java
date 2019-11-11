@@ -426,7 +426,16 @@ public class ProductConfigPresenter implements ProductConfigContract.Presenter {
      */
     @Override
     public void updateProductAttributes(ArrayList<ProductAttribute> productAttributes) {
-        mProductConfigView.updateProductAttributes(productAttributes);
+        //List to store the deep copy of the list of Product Attributes passed
+        ArrayList<ProductAttribute> productAttributesCopyList = new ArrayList<>();
+        //Iterating over the list to build the copy
+        if (productAttributes != null && !productAttributes.isEmpty()) {
+            for (ProductAttribute productAttribute : productAttributes) {
+                productAttributesCopyList.add((ProductAttribute) productAttribute.clone());
+            }
+        }
+        //Updating the list of Product Attributes to the View
+        mProductConfigView.updateProductAttributes(productAttributesCopyList);
     }
 
     /**
