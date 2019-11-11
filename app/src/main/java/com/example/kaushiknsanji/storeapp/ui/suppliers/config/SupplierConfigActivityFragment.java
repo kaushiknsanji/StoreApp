@@ -1666,7 +1666,8 @@ public class SupplierConfigActivityFragment extends Fragment
                 int noOfTrackedContacts = mTrackerContactValuesSparseArray.size();
                 //Iterating over the SparseArray Tracker to check if the contact value is a duplicate
                 for (int index = 0; index < noOfTrackedContacts; index++) {
-                    if (mTrackerContactValuesSparseArray.valueAt(index).equals(contactValue)
+                    if (mTrackerContactValuesSparseArray.valueAt(index) != null
+                            && mTrackerContactValuesSparseArray.valueAt(index).equals(contactValue)
                             && mTrackerContactValuesSparseArray.keyAt(index) != position) {
                         //Returning true when the Contact value is duplicated
                         //and is not for the same item view position
