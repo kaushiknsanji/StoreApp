@@ -848,6 +848,11 @@ public class ProductConfigPresenter implements ProductConfigContract.Presenter {
             //to see if we have some unsaved changes
             if (mProductId > ProductConfigContract.NEW_PRODUCT_INT) {
                 mProductConfigView.readExistingProductDetails();
+            } else {
+                //If this is for a New Product entry and the details are not saved,
+                //then display the discard dialog to see if the user wants to keep editing/discard
+                //the changes
+                mProductConfigView.showDiscardDialog();
             }
 
         } else {

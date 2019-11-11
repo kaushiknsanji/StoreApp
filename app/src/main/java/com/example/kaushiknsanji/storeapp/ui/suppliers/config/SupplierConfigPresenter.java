@@ -964,6 +964,11 @@ public class SupplierConfigPresenter implements SupplierConfigContract.Presenter
             //to see if we have some unsaved changes
             if (mSupplierId > SupplierConfigContract.NEW_SUPPLIER_INT) {
                 mSupplierConfigView.readExistingSupplierDetails();
+            } else {
+                //If this for a New Supplier entry and the details are not saved,
+                //then display the discard dialog to see if the user wants to keep editing/discard
+                //the changes
+                mSupplierConfigView.showDiscardDialog();
             }
 
         } else {
