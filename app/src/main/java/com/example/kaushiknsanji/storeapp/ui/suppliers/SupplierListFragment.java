@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
@@ -174,14 +175,9 @@ public class SupplierListFragment extends Fragment
                 if (getChildCount() > 0 && itemCount == 1) {
                     //When there are some items visible and number of items added is 1
 
-                    if (positionStart == getItemCount() - 1 && getItemCount() > 1) {
-                        //When there are more than one Item View and the Item View
-                        //added is in the last position
-
-                        //Remove the previous Item View cache from RecyclerView to reload the Item View
-                        //with proper item decoration height
-                        removeView(findViewByPosition(positionStart - 1));
-                    }
+                    //Remove all the Item Views from RecyclerView to reload the Item Views
+                    //with proper item decoration height
+                    new Handler().postDelayed(this::removeAllViews, 2);
                 }
             }
 
@@ -195,18 +191,12 @@ public class SupplierListFragment extends Fragment
             @Override
             public void onItemsRemoved(RecyclerView recyclerView, int positionStart, int itemCount) {
                 if (getChildCount() > 0 && itemCount == 1) {
-                    //When there are some items visible and number of items added is 1
+                    //When there are some items visible and number of items removed is 1
 
-                    if (positionStart == getItemCount() && getItemCount() > 1) {
-                        //When there are more than one Item View and the Item View
-                        //removed is from the last position
-
-                        //Remove the previous Item View cache from RecyclerView to reload the Item View
-                        //with proper item decoration height
-                        removeView(findViewByPosition(positionStart - 1));
-                    }
+                    //Remove all the Item Views from RecyclerView to reload the Item Views
+                    //with proper item decoration height
+                    new Handler().postDelayed(this::removeAllViews, 2);
                 }
-
             }
         };
 

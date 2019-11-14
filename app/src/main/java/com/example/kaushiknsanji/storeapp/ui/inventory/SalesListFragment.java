@@ -34,8 +34,11 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.content.res.AppCompatResources;
+import android.support.v7.recyclerview.extensions.AsyncDifferConfig;
+import android.support.v7.recyclerview.extensions.AsyncListDiffer;
 import android.support.v7.recyclerview.extensions.ListAdapter;
 import android.support.v7.util.DiffUtil;
+import android.support.v7.util.ListUpdateCallback;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -166,39 +169,7 @@ public class SalesListFragment extends Fragment
     private void setupRecyclerView() {
         //Creating a Vertical Linear Layout Manager with the default layout order
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext(),
-                LinearLayoutManager.VERTICAL, false) {
-
-            /**
-             * Called when items have been added to the adapter. The LayoutManager may choose to
-             * requestLayout if the inserted items would require refreshing the currently visible set
-             * of child views. (e.g. currently empty space would be filled by appended items, etc.)
-             *
-             * @param recyclerView The {@link RecyclerView} this LayoutManager is bound to.
-             * @param positionStart The Start position from where the Items were added to the {@link RecyclerView}
-             * @param itemCount Number of Items added
-             */
-            @Override
-            public void onItemsAdded(RecyclerView recyclerView, int positionStart, int itemCount) {
-                if (getChildCount() > 0 && itemCount == 1) {
-                    //When there are some items visible and number of items added is 1
-
-                    //Getting the last item position in the RecyclerView
-                    int positionLast = getItemCount() - 1;
-                    if (positionLast > positionStart) {
-                        //When the last item position is more than the start position
-                        for (int index = positionStart; index <= positionLast; index++) {
-                            //Remove all the views from RecyclerView Cache till the last item position
-                            //so that the RecyclerView grows in size properly to accommodate the items
-                            //with proper item decoration height
-                            removeView(findViewByPosition(index));
-                        }
-                        //Auto Scroll to the item position in the end
-                        recyclerView.smoothScrollToPosition(positionStart);
-                    }
-                }
-
-            }
-        };
+                LinearLayoutManager.VERTICAL, false);
 
         //Setting the Layout Manager to use
         mRecyclerViewContentList.setLayoutManager(linearLayoutManager);
@@ -452,7 +423,7 @@ public class SalesListFragment extends Fragment
     /**
      * {@link ListAdapter} class for RecyclerView to load the list of Products for Selling.
      */
-    private static class SalesListAdapter extends ListAdapter<SalesLite, SalesListAdapter.ViewHolder> {
+    private static class SalesListAdapter extends RecyclerView.Adapter<SalesListAdapter.ViewHolder> {
 
         /**
          * {@link DiffUtil.ItemCallback} for calculating the difference between two {@link SalesLite} objects.
@@ -504,6 +475,11 @@ public class SalesListFragment extends Fragment
                 return oldItem.equals(newItem);
             }
         };
+
+        //For the RecyclerView instance
+        private RecyclerView mRecyclerView;
+        //AsyncListDiffer for computing the difference between two lists in a background thread
+        private AsyncListDiffer<SalesLite> mDiffer;
         //Stores the Typeface used for Product SKU text
         private Typeface mProductSkuTypeface;
         //Listener for User Actions on Product List items
@@ -517,11 +493,117 @@ public class SalesListFragment extends Fragment
          *                            to receive event callbacks for User Actions on Item Views
          */
         SalesListAdapter(Context context, SalesListUserActionsListener userActionsListener) {
-            super(DIFF_SALES);
             //Registering the User Actions Listener
             mActionsListener = userActionsListener;
             //Reading the Typeface for Product SKU
             mProductSkuTypeface = ResourcesCompat.getFont(context, R.font.libre_barcode_128_text_regular);
+        }
+
+        /**
+         * Called by RecyclerView when it starts observing this Adapter.
+         * <p>
+         * Keep in mind that same adapter may be observed by multiple RecyclerViews.
+         *
+         * @param recyclerView The RecyclerView instance which started observing this adapter.
+         */
+        @Override
+        public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+            super.onAttachedToRecyclerView(recyclerView);
+            //When the RecyclerView is attached to this adapter, save the reference
+            mRecyclerView = recyclerView;
+            //Initialize the differ
+            setupDiffer();
+        }
+
+        /**
+         * Called when the {@link RecyclerView} starts observing this Adapter.
+         * Initializes the {@code mDiffer} for computing the difference between
+         * two lists of {@link SalesLite} objects in a background thread.
+         */
+        private void setupDiffer() {
+            //Initialize with ListUpdateCallback and AsyncDifferConfig
+            mDiffer = new AsyncListDiffer<SalesLite>(new ListUpdateCallback() {
+                /**
+                 * Called when {@code count} number of items are inserted at the given position.
+                 *
+                 * @param position The position of the new item.
+                 * @param count    The number of items that have been added.
+                 */
+                @Override
+                public void onInserted(int position, int count) {
+                    //Notify the changes to the adapter
+                    notifyItemRangeInserted(position, count);
+                    //Rebuild item decorations on RecyclerView
+                    invalidateItemDecorations();
+                }
+
+                /**
+                 * Called when {@code count} number of items are removed from the given position.
+                 *
+                 * @param position The position of the item which has been removed.
+                 * @param count    The number of items which have been removed.
+                 */
+                @Override
+                public void onRemoved(int position, int count) {
+                    //Notify the changes to the adapter
+                    notifyItemRangeRemoved(position, count);
+                    //Rebuild item decorations on RecyclerView
+                    invalidateItemDecorations();
+                }
+
+                /**
+                 * Called when an item changes its position in the list.
+                 *
+                 * @param fromPosition The previous position of the item before the move.
+                 * @param toPosition   The new position of the item.
+                 */
+                @Override
+                public void onMoved(int fromPosition, int toPosition) {
+                    //Notify the changes to the adapter
+                    notifyItemMoved(fromPosition, toPosition);
+                    //Rebuild item decorations on RecyclerView
+                    invalidateItemDecorations();
+                }
+
+                /**
+                 * Called when {@code count} number of items are updated at the given position.
+                 *
+                 * @param position The position of the item which has been updated.
+                 * @param count    The number of items which has changed.
+                 */
+                @Override
+                public void onChanged(int position, int count, Object payload) {
+                    //Notify the changes to the adapter
+                    notifyItemRangeChanged(position, count, payload);
+                    //Rebuild item decorations on RecyclerView
+                    invalidateItemDecorations();
+                }
+
+                /**
+                 * Rebuilds the item decorations on {@link RecyclerView}
+                 */
+                private void invalidateItemDecorations() {
+                    if (mRecyclerView != null) {
+                        mRecyclerView.postDelayed(mRecyclerView::invalidateItemDecorations, 2);
+                    }
+                }
+
+            },
+                    //Build AsyncDifferConfig instance with the provided 'DiffUtil.ItemCallback' implementation
+                    new AsyncDifferConfig.Builder(DIFF_SALES).build()
+            );
+        }
+
+        /**
+         * Called by RecyclerView when it stops observing this Adapter.
+         *
+         * @param recyclerView The RecyclerView instance which stopped observing this adapter.
+         */
+        @Override
+        public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
+            super.onDetachedFromRecyclerView(recyclerView);
+            //As the RecyclerView is detached from the Adapter, clear the reference
+            mRecyclerView = null;
         }
 
         /**
@@ -559,6 +641,40 @@ public class SalesListFragment extends Fragment
 
             //Bind the Views with the data at the position
             holder.bind(position, salesLite);
+        }
+
+        /**
+         * Retrieves the {@link SalesLite} object at the specified position
+         * in the list, managed by {@code mDiffer}
+         *
+         * @param position The position of the required Item in the list
+         * @return The {@link SalesLite} object found at the specified position if any; else {@code null}
+         */
+        private SalesLite getItem(int position) {
+            return mDiffer != null ? mDiffer.getCurrentList().get(position) : null;
+        }
+
+        /**
+         * Returns the total number of items in the data set held by the adapter.
+         *
+         * @return The total number of items in this adapter.
+         */
+        @Override
+        public int getItemCount() {
+            return mDiffer != null ? mDiffer.getCurrentList().size() : 0;
+        }
+
+        /**
+         * Submits a new list of {@link SalesLite} objects to be diffed, and displayed. If a list
+         * is already being displayed, a difference will be computed on a background thread, which
+         * will dispatch Adapter.notifyItem events on the main thread.
+         *
+         * @param salesList The new list of {@link SalesLite} objects to be displayed.
+         */
+        void submitList(ArrayList<SalesLite> salesList) {
+            if (mDiffer != null) {
+                mDiffer.submitList(salesList);
+            }
         }
 
         /**
