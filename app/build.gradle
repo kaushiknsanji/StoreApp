@@ -16,6 +16,11 @@
 
 apply plugin: 'com.android.application'
 
+// Load the details for signing the APK
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
     //Constants defined for use with buildConfigField
     def BOOLEAN = "boolean"
@@ -23,6 +28,15 @@ android {
     def FALSE = "false"
     def LOG_CURSOR_QUERIES = "LOG_CURSOR_QUERIES"
     def LOG_STETHO = "LOG_STETHO"
+
+    signingConfigs {
+        release {
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
 
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
@@ -33,6 +47,7 @@ android {
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        archivesBaseName = "$applicationId-v$versionName"
     }
 
     buildTypes {
@@ -49,8 +64,9 @@ android {
             //Disable Stetho logging in Debug
             buildConfigField BOOLEAN, LOG_STETHO, FALSE
 
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 
