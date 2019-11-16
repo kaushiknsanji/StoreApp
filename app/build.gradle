@@ -44,9 +44,9 @@ android {
         }
 
         release {
-            //Disable Cursor Queries logging in Debug
+            //Disable Cursor Queries logging in Release
             buildConfigField BOOLEAN, LOG_CURSOR_QUERIES, FALSE
-            //Disable Stetho logging in Debug
+            //Disable Stetho logging in Release
             buildConfigField BOOLEAN, LOG_STETHO, FALSE
 
             minifyEnabled false
