@@ -16,7 +16,7 @@ This is the Release version 1.0 of the **StoreApp**. This release fixes several 
 * Using Product Attributes copy for detecting any changes later in the Product configuration - ([commit](https://github.com/kaushiknsanji/StoreApp/commit/3508b06cb7bc4b9ca44525f080a05fd4b55be0cb)).
 * Null Pointer check when a Supplier Contact is deleted while another Supplier Contact is being validated and recorded - ([commit](https://github.com/kaushiknsanji/StoreApp/commit/8ace8adfca5948df7dd225b4de4104bba1901fb4)).
 * Passing 0 as the required quantity to procure when no quantity is provided while procuring by Email - ([commit](https://github.com/kaushiknsanji/StoreApp/commit/a28a4085d1d541c8f1896297dde11e200455b0da)).
-* Invalidating/reloading Item decorations when new data item is added to the Product/Supplier/Sales lists - ([commit](https://github.com/kaushiknsanji/StoreApp/commit/47df67d1792dce0b552f832893dd77087effce4f)).
+* Invalidating/reloading Item decorations when new data item is added/updated/removed in the Product/Supplier/Sales lists - ([commit](https://github.com/kaushiknsanji/StoreApp/commit/47df67d1792dce0b552f832893dd77087effce4f)).
 * Configured an Activity Alias to launch the `MainActivity` - ([commit](https://github.com/kaushiknsanji/StoreApp/commit/e8f6bcd34a095c907f415a27d098dc03ec0f0500)).
 
 ## License
